@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
   <meta charset="utf-8">
-  <title>Eco System</title>
+  <title>tw-tradingview 1.0.1版</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description"
-    content="This is meta description">
+    content="API用於財務教育、非商業用途。資料僅供參考，使用者依本資料交易發生之損失需自行負責。">
   
   <meta name="author" content="Themefisher">
   <meta name="generator" content="Hugo 0.83.1" />
@@ -136,16 +136,16 @@
 
 
 	
-<section class="page-title-section overlay" style="background-image: url('/'),url('/images/backgrounds/page-title.jpg');" >
+<section class="page-title-section overlay" style="background-image: url('/images/backgrounds/api-page.png'),url('/images/backgrounds/page-title.jpg');" >
   <div class="container">
     <div class="row">
       <div class="col-md-8">
         <ul class="list-inline custom-breadcrumb">
           <li class="list-inline-item h2"><a class="text-primary font-secondary" href="https://taiwan-tradingview.github.io">Home</a></li>
           <li class="list-inline-item h5"><i class="ti-angle-right text-white"></i></li>
-          <li class="list-inline-item text-white h3 font-secondary">Eco System</li>
+          <li class="list-inline-item text-white h3 font-secondary">tw-tradingview 1.0.1版</li>
         </ul>
-        <p class="text-lighten"></p>
+        <p class="text-lighten">API用於財務教育、非商業用途。資料僅供參考，使用者依本資料交易發生之損失需自行負責。</p>
       </div>
     </div>
   </div>
@@ -156,105 +156,297 @@
 <section class="section">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 order-2 order-lg-1">
-        <div class="row">
-          
-          
-          
-          <div class="col-sm-6 mb-5">
-            <article
-              class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
-              <img class="card-img-top rounded-0" src="/images/blog/post-3.jpg" alt="Elegant Light Box Paper Cut Dioramas">
-              <div class="card-body">
-                
-                <ul class="list-inline mb-3">
-                  
-                  <li class="list-inline-item mr-3 ml-0"><i class="ti-calendar"></i>
-                    06 Jul, 2019</li>
-                  
-                  <li class="list-inline-item mr-3 ml-0"><i class="ti-user"></i> <a
-                      href="/author/mark-dinn">Mark Dinn</a>
-                  </li>
-                </ul>
-                <h4 class="card-title"><a href="https://taiwan-tradingview.github.io/blog/blog-post-3/">Elegant Light Box Paper Cut Dioramas</a></h4>
-                <p class="card-text">The standard Lorem Ipsum passage, used since the 1500s Lorem ipsum dolor sit amet, consectetur …</p>
-                <a href="https://taiwan-tradingview.github.io/blog/blog-post-3/" class="btn btn-primary btn-sm">Read More</a>
-              </div>
-            </article>
+      <div class="col-12">
+        <div class="d-flex">
+          <div class="text-center mr-4">
+            <div class="p-4 bg-primary text-white">
+              <span class="h2 d-block">21</span> JAN, 2021
+            </div>
           </div>
           
-          <div class="col-12 mt-4">
+          <div class="content">
+            <h2 id="installation">Installation</h2>
+<p>Install using pip</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pip install tw_tradingview<span style="color:#666">==</span><span style="color:#40a070">1.0</span><span style="color:#666">.</span><span style="color:#40a070">1</span>
+</code></pre></div><ul>
+<li>本地端環境<br>
+<a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#ta-lib">安裝talib</a>並儲存至user</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pip install TA_Lib<span style="color:#666">-</span><span style="color:#40a070">0.4</span><span style="color:#666">.</span><span style="color:#40a070">20</span><span style="color:#666">-</span>cp37<span style="color:#666">-</span>cp37m<span style="color:#666">-</span>win_amd64<span style="color:#666">.</span>whl
+</code></pre></div><ul>
+<li>colab環境</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pip install talib<span style="color:#666">-</span>binary
+</code></pre></div><hr>
+<h2 id="taiwan-stock-api">Taiwan Stock API</h2>
+<p><strong>tw_tradingview</strong> 為專門分析臺灣股市的Python套件，附帶自動化爬蟲及建立DB</p>
+<p>最新版爬蟲數據包含</p>
+<table>
+<thead>
+<tr>
+<th>面向</th>
+<th>數據</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>技術面</td>
+<td>開高低收量</td>
+</tr>
+<tr>
+<td>籌碼面</td>
+<td>三大法人、融資融券</td>
+</tr>
+<tr>
+<td>基本面</td>
+<td>月營收</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>資料來源:
+<a href="https://www.twse.com.tw/zh/">證交所</a>, <a href="https://www.tpex.org.tw/web/">櫃買中心</a>
+, <a href="https://mops.twse.com.tw/mops/web/index">公開資訊觀測站</a>
+, <a href="https://www.taifex.com.tw/cht/index">期交所</a>。</li>
+<li>API用於財務教育、非商業用途。資料僅供參考，使用者依本資料交易發生之損失需自行負責，本API不對資料內容錯誤、更新延誤或傳輸中斷負任何責任。</li>
+</ul>
+<hr>
+<h3 id="quick-start"><strong>Quick Start</strong></h3>
+<ul>
+<li>
+<h4 id="colab-httpscolabresearchgooglecomassetscolab-badgesvghttpscolabresearchgooglecomdrive1wdlocmjufnrgv_hv4mq-ei72wptsja9huspsharing"><a href="https://colab.research.google.com/drive/1WDlocMJufNRGV_hv4mq-eI72WPtSja9H?usp=sharing">Colab <img src="https://colab.research.google.com/assets/colab-badge.svg" alt=""></a></h4>
+</li>
+</ul>
+<h4 id="下載歷史數據">下載歷史數據</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview</span>
+
+tw_tradingview<span style="color:#666">.</span>download_cloud_data()
+</code></pre></div><p>industry 🆗<br>
+monthly_revenue 🆗<br>
+dealer 🆗<br>
+foreign_investors 🆗<br>
+investment_trust 🆗<br>
+Close 🆗<br>
+Volume 🆗<br>
+margin_trading 🆗<br>
+Low 🆗<br>
+short_selling 🆗<br>
+High 🆗<br>
+Open 🆗<br>
+⭐⭐⭐⭐⭐ Finish ⭐⭐⭐⭐⭐</p>
+<h4 id="取得數據庫資料">取得數據庫資料</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview.data</span> <span style="color:#007020;font-weight:bold">import</span> dataReader
+
+dataReader<span style="color:#666">.</span>twstock_close()
+</code></pre></div><table>
+<thead>
+<tr>
+<th>date</th>
+<th>0015</th>
+<th>0050</th>
+<th>0051</th>
+<th>0052</th>
+<th>0053</th>
+<th>0054</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2021-08-12</td>
+<td>NaN</td>
+<td>136.95</td>
+<td>57.20</td>
+<td>124.05</td>
+<td>66.00</td>
+<td>31.81</td>
+</tr>
+<tr>
+<td>2021-08-13</td>
+<td>NaN</td>
+<td>135.65</td>
+<td>56.35</td>
+<td>122.55</td>
+<td>65.40</td>
+<td>31.30</td>
+</tr>
+<tr>
+<td>2021-08-16</td>
+<td>NaN</td>
+<td>135.35</td>
+<td>55.50</td>
+<td>122.50</td>
+<td>65.30</td>
+<td>30.93</td>
+</tr>
+<tr>
+<td>2021-08-17</td>
+<td>NaN</td>
+<td>134.35</td>
+<td>54.80</td>
+<td>121.20</td>
+<td>64.70</td>
+<td>30.67</td>
+</tr>
+</tbody>
+</table>
+<h4 id="自動化爬蟲">自動化爬蟲</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview.crawler</span> <span style="color:#007020;font-weight:bold">import</span> auto_crawler
+
+auto_crawler()
+</code></pre></div><p>========= Start crawling price =========<br>
+2021-07-12 🆗<br>
+2021-07-13 🆗<br>
+=========       Finish✔         =========<br>
+========= Start crawling institution =========<br>
+2021-07-12 🆗<br>
+2021-07-13 🆗 
+=========       Finish✔         =========<br>
+========= Start crawling margin =========<br>
+2021-07-12 🆗<br>
+2021-07-13 🆗 
+=========       Finish✔         =========<br>
+========= Start crawling monthly_revenue =========<br>
+2021-07 🆗<br>
+=========       Finish✔         =========<br>
+⭐⭐⭐⭐⭐ All Finish ⭐⭐⭐⭐⭐</p>
+<h4 id="專屬套件">專屬套件</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview.stock</span> <span style="color:#007020;font-weight:bold">import</span> stock_dataframe,technical_chart
+
+dataname <span style="color:#666">=</span> <span style="color:#4070a0">&#39;2330&#39;</span>
+ohlcv <span style="color:#666">=</span> stock_dataframe(dataname)
+technical_chart(ohlcv,dataname)
+</code></pre></div><table>
+<thead>
+<tr>
+<th>date</th>
+<th>open</th>
+<th>close</th>
+<th>low</th>
+<th>high</th>
+<th>volume</th>
+<th>pct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2021-08-13</td>
+<td>585.0</td>
+<td>581.0</td>
+<td>579.0</td>
+<td>585.0</td>
+<td>25440.973</td>
+<td>-0.85</td>
+</tr>
+<tr>
+<td>2021-08-16</td>
+<td>582.0</td>
+<td>584.0</td>
+<td>578.0</td>
+<td>586.0</td>
+<td>19949.389</td>
+<td>0.52</td>
+</tr>
+<tr>
+<td>2021-08-17</td>
+<td>580.0</td>
+<td>580.0</td>
+<td>578.0</td>
+<td>582.0</td>
+<td>31845.499</td>
+<td>-0.68</td>
+</tr>
+<tr>
+<td>2021-08-18</td>
+<td>568.0</td>
+<td>574.0</td>
+<td>566.0</td>
+<td>575.0</td>
+<td>47063.629</td>
+<td>-1.03</td>
+</tr>
+<tr>
+<td>2021-08-19</td>
+<td>573.0</td>
+<td>559.0</td>
+<td>559.0</td>
+<td>573.0</td>
+<td>42133.375</td>
+<td>-2.61</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/images/technical_chart.png" alt=""></p>
+<h4 id="技術指標">技術指標</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview</span> <span style="color:#007020;font-weight:bold">import</span> indicator
+
+indicator<span style="color:#666">.</span>RSI(ohlcv)
+</code></pre></div><table>
+<thead>
+<tr>
+<th>date</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2021-08-13</td>
+<td>42.373579</td>
+</tr>
+<tr>
+<td>2021-08-16</td>
+<td>42.373579</td>
+</tr>
+<tr>
+<td>2021-08-17</td>
+<td>40.643127</td>
+</tr>
+<tr>
+<td>2021-08-18</td>
+<td>46.256672</td>
+</tr>
+<tr>
+<td>2021-08-19</td>
+<td>42.602784</td>
+</tr>
+</tbody>
+</table>
+<h4 id="個股回測">個股回測</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview.backtrader</span> <span style="color:#007020;font-weight:bold">import</span> backtest_single_stock
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">datetime</span>
+
+dataname <span style="color:#666">=</span> <span style="color:#4070a0">&#39;0050&#39;</span>
+ohlcv <span style="color:#666">=</span> stock_dataframe(dataname)
+
+<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">ma</span>(n):
+    <span style="color:#007020;font-weight:bold">return</span> ohlcv<span style="color:#666">.</span>close<span style="color:#666">.</span>rolling(n,min_periods<span style="color:#666">=</span><span style="color:#40a070">1</span>)<span style="color:#666">.</span>mean()
+
+entry <span style="color:#666">=</span> (ma(<span style="color:#40a070">5</span>)<span style="color:#666">&gt;=</span>ma(<span style="color:#40a070">60</span>))<span style="color:#666">&amp;</span>(ma(<span style="color:#40a070">5</span>)<span style="color:#666">.</span>shift()<span style="color:#666">&lt;</span>ma(<span style="color:#40a070">60</span>)<span style="color:#666">.</span>shift())
+<span style="color:#007020">exit</span> <span style="color:#666">=</span> (ma(<span style="color:#40a070">5</span>)<span style="color:#666">&lt;=</span>ma(<span style="color:#40a070">60</span>))<span style="color:#666">&amp;</span>(ma(<span style="color:#40a070">5</span>)<span style="color:#666">.</span>shift()<span style="color:#666">&gt;</span>ma(<span style="color:#40a070">60</span>)<span style="color:#666">.</span>shift())
+start_date <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2014</span>,<span style="color:#40a070">5</span>,<span style="color:#40a070">5</span>)
+end_date <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2021</span>,<span style="color:#40a070">8</span>,<span style="color:#40a070">23</span>)
+
+yc <span style="color:#666">=</span> backtest_single_stock(ohlcv,dataname,entry,<span style="color:#007020">exit</span>,start_date,end_date)
+</code></pre></div><p><img src="/images/backtest_roi.png" alt=""><br>
+<img src="/images/backtest_chart.png" alt=""><br>
+<img src="/images/backtest_log.png" alt=""></p>
+<hr>
+<h2 id="contact">Contact</h2>
+<h5 id="網站-httpstaiwan-tradingviewgithubio">網站: <a href="https://taiwan-tradingview.github.io/">https://taiwan-tradingview.github.io/</a></h5>
+<h5 id="email-taiwantradingviewgmailcom">Email: <a href="mailto:taiwan.tradingview@gmail.com">taiwan.tradingview@gmail.com</a></h5>
+<hr>
+<h2 id="reference">Reference</h2>
+<p>Alpha_Finance專案開發參考自:<br>
+<a href="https://twstock.readthedocs.io/zh_TW/latest/">twstock</a><br>
+<a href="https://finmindtrade.com/">FinMind</a><br>
+<a href="https://www.finlab.tw/">FinLab</a><br>
+<a href="https://blog.louie.lu/">blog.louie.lu</a></p>
+<p>若有侵害版權疑慮，請來信或留言告知，我們將儘速移除相關內容。</p>
+
+             <a href="https://github.com/taiwan-tradingview/tw-tradingview" class="btn btn-primary">Download</a>
             
-
-
           </div>
         </div>
       </div>
-      <!-- sidebar -->
-<aside class="col-lg-4 order-1 order-lg-2">
-  <!-- categories -->
-  <div class="bg-white mb-5">
-    <h4 class="mb-4">Categories</h4>
-    <ul class="list-unstyled">
-      <li class="border-bottom"><a href="/categories/automation-system" class="d-block pb-3 mt-3">Automation system</a></li>
-      <li class="border-bottom"><a href="/categories/deep-learning" class="d-block pb-3 mt-3">Deep learning</a></li>
-      <li class="border-bottom"><a href="/categories/eco-system" class="d-block pb-3 mt-3">Eco system</a></li>
-      <li class="border-bottom"><a href="/categories/education-system" class="d-block pb-3 mt-3">Education system</a></li>
-      <li class="border-bottom"><a href="/categories/english-learning" class="d-block pb-3 mt-3">English learning</a></li>
-      <li class="border-bottom"><a href="/categories/mathmatics-learning" class="d-block pb-3 mt-3">Mathmatics learning</a></li>
-    </ul>
-  </div>
-  <!-- tags -->
-  <div class="bg-white mb-5">
-    <h4 class="mb-4">Tags</h4>
-    <ul class="list-inline tag-list">
-      <li class="list-inline-item mb-2"><a href="/tags/advice">Advice</a></li>
-      <li class="list-inline-item mb-2"><a href="/tags/ai">Ai</a></li>
-      <li class="list-inline-item mb-2"><a href="/tags/automation">Automation</a></li>
-      <li class="list-inline-item mb-2"><a href="/tags/eco">Eco</a></li>
-      <li class="list-inline-item mb-2"><a href="/tags/education">Education</a></li>
-      <li class="list-inline-item mb-2"><a href="/tags/english">English</a></li>
-      <li class="list-inline-item mb-2"><a href="/tags/rules">Rules</a></li>
-    </ul>
-  </div>
-  <!-- latest post -->
-  <div class="bg-white">
-    <h4 class="mb-4">Latest Article</h4>
-    <!-- post-item -->
-    
-    <div class="media border-bottom border-color pb-3 mb-3">
-      <a href="https://taiwan-tradingview.github.io/blog/blog-post-1/"><img class="mr-3 post-thumb-sm" src="https://taiwan-tradingview.github.io/images/blog/post-1.jpg"></a>
-      <div class="media-body">
-        <a href="https://taiwan-tradingview.github.io/blog/blog-post-1/">
-          <h5 class="mt-0">Elegant Light Box Paper Cut Dioramas</h5>
-        </a>
-        06 Jul 2019
-      </div>
-    </div>
-    
-    <div class="media border-bottom border-color pb-3 mb-3">
-      <a href="https://taiwan-tradingview.github.io/blog/blog-post-2/"><img class="mr-3 post-thumb-sm" src="https://taiwan-tradingview.github.io/images/blog/post-2.jpg"></a>
-      <div class="media-body">
-        <a href="https://taiwan-tradingview.github.io/blog/blog-post-2/">
-          <h5 class="mt-0">Elegant Light Box Paper Cut Dioramas</h5>
-        </a>
-        06 Jul 2019
-      </div>
-    </div>
-    
-    <div class="media border-bottom border-color pb-3 mb-3">
-      <a href="https://taiwan-tradingview.github.io/blog/blog-post-3/"><img class="mr-3 post-thumb-sm" src="https://taiwan-tradingview.github.io/images/blog/post-3.jpg"></a>
-      <div class="media-body">
-        <a href="https://taiwan-tradingview.github.io/blog/blog-post-3/">
-          <h5 class="mt-0">Elegant Light Box Paper Cut Dioramas</h5>
-        </a>
-        06 Jul 2019
-      </div>
-    </div>
-    
-  </div>
-</aside>
-<!-- /sidebar -->
     </div>
   </div>
 </section>
