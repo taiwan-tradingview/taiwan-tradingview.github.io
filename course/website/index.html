@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8">
+  <title>如何架設個人網站</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description"
+    content="Hugo快速架站 &amp; Google服務">
+  
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Hugo 0.83.1" />
+  <!-- multilingual SEO optimizations -->
+  
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/bootstrap/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/slick/slick.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/animate/animate.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/venobox/venobox.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/themify-icons/themify-icons.css">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/scss/main.e88a60b286205da8d3956fa6cd1acdc4a1a1a926d87f7a98b7b19febcdae82d317f67403c17aff2adb6d893867ace5191804ae4dda3a0dc997987b5801c54610.css" integrity="sha512-6IpgsoYgXajTlW&#43;mzRrNxKGhqSbYf3qYt7Gf682ugtMX9nQDwXr/KtttiThnrOUZGASuTdo6DcmXmHtYAcVGEA==" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://taiwan-tradingview.github.io/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="https://taiwan-tradingview.github.io/images/favicon.png" type="image/x-icon">
+
+</head><body>
+<header class="fixed-top header">
+  
+  
+  <div class="top-header py-2 bg-white">
+    <div class="container">
+      <div class="row no-gutters align-items-center">
+        <div class="col-lg-4 text-center text-lg-left">
+          <ul class="list-inline">
+            
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-facebook"></i></a></li>
+            
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-instagram"></i></a></li>
+            
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-github"></i></a></li>
+            
+          </ul>
+        </div>
+        <div class="col-lg-8 text-center text-lg-right">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a class="text-color mr-3" href="tel:"><strong>CALL : </strong> </a></li>
+            <li class="list-inline-item">
+              <a class="text-color" href="mailto:taiwan.tradingview@gmail.com"><strong>EMAIL : </strong> taiwan.tradingview@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="navigation w-100  top-hider ">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark p-0">
+        <a class="navbar-brand" href="/"><img class="img-fluid"
+            src="https://taiwan-tradingview.github.io/images/logo.png" alt="Taiwan-Tradingview | 金融交易介面"></a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse text-center" id="navigation">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io">Home</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/course">程式課程</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/blog">財商部落格</a>
+            </li>
+            
+            
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                API
+              </a>
+              <div class="dropdown-menu">
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/notice">API使用教學</a>
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/teacher">團隊成員</a>
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/event">每日選股清單</a>
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/research">策略回測</a>
+                
+              </div>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/about">關於我們</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/contact">聯絡我們</a>
+            </li>
+            
+            
+          </ul>
+
+          
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+	
+<section class="page-title-section overlay" style="background-image: url('/images/backgrounds/page-title.png'),url('/images/backgrounds/page-title.jpg');" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb">
+          <li class="list-inline-item h2"><a class="text-primary font-secondary" href="https://taiwan-tradingview.github.io">Home</a></li>
+          <li class="list-inline-item h5"><i class="ti-angle-right text-white"></i></li>
+          <li class="list-inline-item text-white h3 font-secondary">如何架設個人網站</li>
+        </ul>
+        <p class="text-lighten">Hugo快速架站 &amp; Google服務</p>
+      </div>
+    </div>
+  </div>
+</section>
+	
+
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mb-4">
+        
+        <img style="height: 500px;width: 100%;object-fit: cover;" src="/images/courses/website.png"
+          class="img-fluid w-100">
+      </div>
+    </div>
+    
+    <div class="row align-items-center mb-5">
+      <div class="col-xl-3 order-1 col-sm-6 mb-4 mb-xl-0">
+        <h2>如何架設個人網站</h2>
+      </div>
+      <div class="col-xl-6 order-sm-3 order-xl-2 col-12 order-2">
+        <ul class="list-inline text-xl-center">
+          <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-calendar text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">DURATION</h6>
+                <p class="mb-0">06 Month</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-timer text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">WEEKLY</h6>
+                <p class="mb-0">03 hours</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-wallet text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">FEE</h6>
+                <p class="mb-0">From: $699</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xl-3 text-sm-right text-left order-sm-2 order-3 order-xl-3 col-sm-6 mb-4 mb-xl-0">
+        <a href="#" class="btn btn-primary">Apply now</a>
+      </div>
+      
+      <div class="col-12 mt-4 order-4">
+        <div class="border-bottom border-primary"></div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12 mb-4 content">
+        <h3 id="前言">前言</h3>
+<h5 id="相信很多人都想透過部落格的方式將知識寫成一篇篇的文章方便瀏覽其中不外乎是使用mediumwixbloggerwordpress等來架設網站或設計版面而我自己是使用medium來撰寫文章但使用到後期發現無法滿足個人高自由度的需求xd">相信很多人都想透過部落格的方式將知識寫成一篇篇的文章方便瀏覽，其中不外乎是使用Medium、Wix、Blogger、Wordpress等來架設網站或設計版面，而我自己是使用Medium來撰寫文章，但使用到後期發現無法滿足個人高自由度的需求XD!</h5>
+<p>.</p>
+<h5 id="首先是版面配置medium在更新之後就無法免費調整文章版面配置結果我的medium看起來就像是新聞網站完全無美感而言">首先是版面配置，Medium在更新之後就無法免費調整文章版面配置，結果我的Medium看起來就像是新聞網站完全無美感而言!</h5>
+<h5 id="不放棄的我再度尋找新的架站機會所幸在今年在hahow上發現這堂-github-免費架站術輕鬆打造個人品牌-httpshahowincourses5de8fec16117240026540b9cdiscussionsitem5de9c2d04e5f270021469334">不放棄的我再度尋找新的架站機會，所幸在今年在Hahow上發現這堂<a href="https://hahow.in/courses/5de8fec16117240026540b9c/discussions?item=5de9c2d04e5f270021469334">《 Github 免費架站術！輕鬆打造個人品牌 》</a></h5>
+<p><img src="/images/courses/hahow-hugo.png" alt=""></p>
+<h5 id="首先我點選學員作業發現網站的完成度很高再加上版面配置自由度非常高我就決定手刀買這堂cp值超高的課程囉">首先我點選學員作業發現網站的完成度很高，再加上版面配置自由度非常高，我就決定手刀買這堂CP值超高的課程囉!!</h5>
+<hr>
+<h3 id="目錄">目錄</h3>
+<pre><code>《一》設定網站版面
+
+《二》本地端運行網站
+
+《三》客制化網站
+
+《四》部署線上網頁
+
+《五》使用Google功能
+</code></pre><hr>
+<h3 id="一設定網站版面">《一》設定網站版面</h3>
+<h5 id="1進入hugo官網httpsgohugoio---點選themes--選擇網站版面--下載zip檔">1.進入<a href="https://gohugo.io/">Hugo官網</a>  ➨ 點選<code>Themes</code> ➨ 選擇網站版面 ➨ 下載zip檔</h5>
+<p><img src="/images/courses/hugo-themes.png" alt=""></p>
+<hr>
+<h5 id="2主檔案中的examplesite拉至桌面--新增themes資料夾--將主檔名改成name-hugo--移至themes">2.主檔案中的<code>exampleSite</code>拉至桌面 ➨ 新增<code>themes</code>資料夾 ➨ 將主檔名改成<code>*name*-hugo</code> ➨ 移至<code>themes</code></h5>
+<p><img src="/images/courses/themes.png" alt=""></p>
+<hr>
+<h5 id="3下載hugoexehttpsgithubcomgohugoiohugoreleases至examplesite">3.下載<a href="https://github.com/gohugoio/hugo/releases">hugo.exe</a>至<code>exampleSite</code></h5>
+<p><img src="/images/courses/hugo-exe.png" alt=""></p>
+<hr>
+<h3 id="二本地端運行網站">《二》本地端運行網站</h3>
+<h5 id="1cmd-examplesite--輸入hugo-server--複製網址通常為httplocalhost1313">1.<code>cmd</code> exampleSite ➨ 輸入<code>hugo server</code> ➨ 複製網址(通常為http://localhost:1313/)</h5>
+<p><img src="/images/courses/hugo-cmd.png" alt="">
+<img src="/images/courses/localhost.png" alt=""></p>
+<hr>
+<h3 id="三客制化網站">《三》客制化網站</h3>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">exampleSite <span style="color:#666">-----</span> content <span style="color:#666">-----</span> blog <span style="color:#60a0b0;font-style:italic"># 文章內容 md</span>
+                             <span style="color:#666">|</span>
+                             <span style="color:#666">|-</span> data <span style="color:#666">-----</span> homepage<span style="color:#666">.</span>yml <span style="color:#60a0b0;font-style:italic"># 首頁設計 yml</span>
+                             <span style="color:#666">|</span>
+                             <span style="color:#666">|-</span> static <span style="color:#666">-----</span> images <span style="color:#60a0b0;font-style:italic"># 圖片</span>
+                             <span style="color:#666">|</span>
+                             <span style="color:#666">|-</span> themes <span style="color:#666">-----</span> assets <span style="color:#666">-----</span>scss <span style="color:#60a0b0;font-style:italic"># 主題色 &amp; 字體</span>
+                             <span style="color:#666">|</span>
+                             <span style="color:#666">|-</span> config<span style="color:#666">.</span>toml <span style="color:#60a0b0;font-style:italic"># 個人資料</span>
+</code></pre></div><h5 id="1網址及網站icon設定">1.網址及網站icon設定</h5>
+<ul>
+<li>
+<h5 id="baseurl網址為httpsusernamegithubio"><code>baseURL</code>(網址)為<code>https://*Username*.github.io</code></h5>
+</li>
+<li>
+<h5 id="title可自由命名"><code>title</code>可自由命名</h5>
+</li>
+<li>
+<h5 id="將選定的icon命名為faviconpng網站圖示">將選定的icon命名為<code>favicon.png</code>(網站圖示)</h5>
+</li>
+</ul>
+<p><img src="/images/courses/config.png" alt=""></p>
+<hr>
+<h5 id="2字體程式碼設定">2.字體程式碼設定</h5>
+<ul>
+<li>
+<h5 id="google-fontshttpsfontsgooglecom選擇字體--vscode搜尋content---複製程式碼貼上"><a href="https://fonts.google.com/">google fonts</a>選擇字體 ➨ vscode搜尋<code>.content {</code> ➨ 複製程式碼貼上</h5>
+</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#007020;font-weight:bold">@import</span> <span style="color:#c65d09">url(&#39;https://fonts.googleapis.com/css2?family=PT+Serif&amp;display=swap&#39;)</span>;
+<span style="color:#0e84b5;font-weight:bold">.content</span> {
+  <span style="color:#666">*</span> {
+    <span style="color:#062873;font-weight:bold">font-family</span><span style="color:#555;font-weight:bold">:</span> <span style="color:#4070a0">&#39;PT Serif&#39;</span><span style="color:#666">,</span> <span style="color:#062873;font-weight:bold">serif</span>;
+    <span style="color:#062873;font-weight:bold">margin-bottom</span><span style="color:#555;font-weight:bold">:</span> <span style="color:#062873;font-weight:bold">20px</span>;
+  }
+</code></pre></div><p><img src="/images/courses/fonts.png" alt=""></p>
+<hr>
+<ul>
+<li>
+<h5 id="hugo-markuphttpsgohugoiogetting-startedconfiguration-markup選擇程式碼模板--highlight內的short-snippets--複製程式碼至configtoml--修改style"><a href="https://gohugo.io/getting-started/configuration-markup/">hugo markup</a>選擇程式碼模板 ➨ <code>Highlight</code>內的<code>Short snippets</code> ➨ 複製程式碼至<code>config.toml</code> ➨ 修改<code>style</code></h5>
+</li>
+</ul>
+<p><img src="/images/courses/highlight.png" alt=""></p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#666">[</span><span style="color:#062873;font-weight:bold">markup</span><span style="color:#666">]</span>
+<span style="color:#666">[</span><span style="color:#062873;font-weight:bold">markup</span><span style="color:#0e84b5;font-weight:bold">.highlight</span><span style="color:#666">]</span>
+<span style="color:#062873;font-weight:bold">style</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;friendly&#39;</span>
+<span style="color:#062873;font-weight:bold">tabWidth</span> <span style="color:#666">=</span> <span style="color:#062873;font-weight:bold">4</span>
+</code></pre></div><hr>
+<h5 id="3設定文章版面">3.設定文章版面</h5>
+<ul>
+<li>
+<h5 id="vscode搜尋summary--修改為description">vscode搜尋<code>.Summary</code> ➨ 修改為<code>Description</code></h5>
+</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#666">&lt;</span><span style="color:#062873;font-weight:bold">p</span> <span style="color:#062873;font-weight:bold">class</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;card-text mb-4&#34;</span><span style="color:#666">&gt;</span>{{ <span style="color:#0e84b5;font-weight:bold">.Description</span> <span style="color:#666">|</span> <span style="color:#062873;font-weight:bold">truncate</span> <span style="color:#062873;font-weight:bold">100</span> }}<span style="color:#666">&lt;/</span><span style="color:#062873;font-weight:bold">p</span><span style="color:#666">&gt;</span>
+</code></pre></div><hr>
+<h3 id="四部署線上網頁">《四》部署線上網頁</h3>
+<h5 id="1新增repository--repository-name-必須為帳號名稱githubio">1.新增repository ➨ Repository name 必須為<code>帳號名稱.github.io</code></h5>
+<p><img src="/images/courses/github-io.png" alt=""></p>
+<hr>
+<h5 id="2透過github-desktophttpsdesktopgithubcom下載專案位置本機文件github">2.透過<a href="https://desktop.github.com/">GitHub Desktop</a>下載專案(位置:本機/文件/GitHub/)</h5>
+<p><img src="/images/courses/hugo-desktop.png" alt=""></p>
+<hr>
+<h5 id="3上傳程式碼至github">3.上傳程式碼至GitHub</h5>
+<ul>
+<li>
+<h5 id="cmd-examplesite--輸入hugo--複製examplesitepublic內的檔案--貼至本機文件githubusernamegithubio"><code>cmd</code> exampleSite ➨ 輸入hugo ➨ 複製exampleSite/public內的檔案 ➨ 貼至本機/文件/GitHub/<em>Username</em>.github.io</h5>
+</li>
+<li>
+<h5 id="github-desktop-commit-to-main--fetch-origin"><code>GitHub Desktop</code> Commit to main ➨ Fetch origin</h5>
+</li>
+</ul>
+<p><img src="/images/courses/commit.png" alt=""></p>
+<hr>
+<h3 id="五使用google功能">《五》使用Google功能</h3>
+<h5 id="1設定google-analyticshttpsanalyticsgooglecomanalyticswebprovisionprovision">1.設定<a href="https://analytics.google.com/analytics/web/provision/#/provision">Google Analytics</a></h5>
+<p><img src="/images/courses/ga.png" alt=""></p>
+<hr>
+<ul>
+<li>
+<h5 id="將追蹤id貼至configtoml中的google_analitycs_id">將追蹤ID貼至<code>config.toml</code>中的<code>google_analitycs_id</code></h5>
+</li>
+</ul>
+<p><img src="/images/courses/ga-id.png" alt=""></p>
+<hr>
+<h5 id="2設定google-search-consolehttpssearchgooglecomsearch-consoleabout">2.設定<a href="https://search.google.com/search-console/about">Google Search Console</a></h5>
+<p><img src="/images/courses/google-search-console.png" alt=""></p>
+<hr>
+<ul>
+<li>
+<h5 id="貼上網址要求建立索引">貼上網址<code>要求建立索引</code></h5>
+</li>
+</ul>
+<p><img src="/images/courses/check.png" alt=""></p>
+<hr>
+<h3 id="結論">結論</h3>
+<h5 id="相信大家在架站的過程中絕對可以體會到使用github-pages的便利性及高自由度整個過程絕對比透過worldpress架站還來得有效率我操作幾次下來幾乎都可以在半小時內架好一個完整的模板一切都設定好後大家就可以將重心放在文章的質與量囉">相信大家在架站的過程中絕對可以體會到使用<code>GitHub Pages</code>的便利性及高自由度，整個過程絕對比透過worldpress架站還來得有效率，我操作幾次下來幾乎都可以在半小時內架好一個完整的模板，一切都設定好後大家就可以將重心放在文章的質與量囉!</h5>
+<p>.</p>
+<h5 id="而hahow課程httpshahowincourses5de8fec16117240026540b9cdiscussions中其實還有很多強大的功能和markdown寫法我這邊就不一一介紹了大家有興趣的話可以入手這堂超值課程這絕對是累積個人作品和超高客製化的網站救星啊">而<a href="https://hahow.in/courses/5de8fec16117240026540b9c/discussions">Hahow課程</a>中其實還有很多強大的功能和markdown寫法我這邊就不一一介紹了，大家有興趣的話可以入手這堂超值課程，這絕對是累積個人作品和超高客製化的網站救星啊!!</h5>
+<h5 id="而且也不用擔心沒有前端基礎我自己也是完全不懂前端語法但仍然可以架設出一個看起來非常專業的網站所以這堂課也很適合沒程式基礎的小白哦">而且也不用擔心沒有前端基礎，我自己也是完全不懂前端語法但仍然可以架設出一個看起來非常專業的網站，所以這堂課也很適合沒程式基礎的小白哦!</h5>
+<p>.</p>
+<h5 id="個人推薦-">個人推薦: ★★★★★</h5>
+
+      </div>
+      
+      <div class="col-12">
+        <h5 class="mb-3">teacher</h5>
+        
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+          <div class="media mb-2 mb-sm-0 align-items-center">
+            <img class="mr-4 img-fluid teacher-thumb-sm" src="/images/teachers/KB.png" alt="KB">
+            <div class="media-body">
+              <h4 class="mt-0"><a href="https://taiwan-tradingview.github.io/teacher/kb/">KB</a></h4>
+              Data Scientist
+            </div>
+          </div>
+          <div class="social-link">
+            <h6 class="d-none d-sm-block text-right">Contact Info</h6>
+            <ul class="list-inline">
+              
+              <li class="list-inline-item"><a class="d-inline-block text-light p-1" href="alphafinance.tw@gmail.com"><i class="ti-email"></i></a></li>
+              
+              <li class="list-inline-item"><a class="d-inline-block text-light p-1" href="https://www.instagram.com/Alpha_Finance.tw/"><i class="ti-instagram"></i></a></li>
+              
+              <li class="list-inline-item"><a class="d-inline-block text-light p-1" href="#"><i class="ti-facebook"></i></a></li>
+              
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-bottom border-primary mt-4"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="section-title">Related Course</h2>
+      </div>
+    </div>
+    <div class="row">
+      
+      
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/basis.png" alt="Python快速入門">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
+    </ul>
+    <h4 class="card-title"><a href="https://taiwan-tradingview.github.io/course/basis/">Python快速入門</a></h4>
+    <p class="card-text mb-4">Python基礎語法 &amp; Pandas應用</p>
+    <a href="https://taiwan-tradingview.github.io/course/basis/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/crawler.png" alt="Python網頁爬蟲實戰">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
+    </ul>
+    <h4 class="card-title"><a href="https://taiwan-tradingview.github.io/course/crawler/">Python網頁爬蟲實戰</a></h4>
+    <p class="card-text mb-4">認識網頁型態  &amp; 爬蟲技巧大公開</p>
+    <a href="https://taiwan-tradingview.github.io/course/crawler/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/database.png" alt="打造數據資料庫">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
+    </ul>
+    <h4 class="card-title"><a href="https://taiwan-tradingview.github.io/course/database/">打造數據資料庫</a></h4>
+    <p class="card-text mb-4">認識資料庫 &amp; 多執行緒爬蟲自動化</p>
+    <a href="https://taiwan-tradingview.github.io/course/database/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+<footer>
+  
+  
+  
+  <div class="newsletter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 ml-auto bg-primary py-5 newsletter-block">
+          <h3 class="text-white mb-4">Subscribe Newsletter</h3>
+          <form action="https://gmail.us4.list-manage.com/subscribe/post?u=463ee871f45d2d93748e77cad&amp;amp;id=a0a2c6d074" method="post" name="mc-embedded-subscribe-form" target="_blank">
+            <div class="input-wrapper">
+              <input type="email" class="form-control border-0" id="newsletter" name="newsletter" placeholder="Enter your email…">
+              <button type="submit" name="subscribe" class="btn btn-primary">Join</button>
+              <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                <input type="text" name="b_463ee871f45d2d93748e77cad_a0a2c6d074" tabindex="-1">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <div class="footer bg-footer section border-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
+          
+          <a class="logo-footer" href="/"><img class="img-fluid mb-4" src="https://taiwan-tradingview.github.io/images/logo.png" alt="Taiwan-Tradingview | 金融交易介面"></a>
+          <ul class="list-unstyled">
+            <li class="mb-4">Taiwan</li>
+            <li class="mb-4"><a href="mailto:taiwan.tradingview@gmail.com">taiwan.tradingview@gmail.com</a></li>
+            <li class="mb-4"></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">company</h4>
+          <ul class="list-unstyled">
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course">程式課程</a></li>
+            
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/blog">財商部落格</a></li>
+            
+            
+            
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/about">關於我們</a></li>
+            
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/contact">聯絡我們</a></li>
+            
+            
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">links</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice">API使用教學</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/teacher">團隊成員</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/event">每日選股清單</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/research">策略回測</a></li>
+            
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">Courses</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/pypi/">從GitHub到PYPI</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/ai/">人工智慧實戰模型</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/visual/">數據視覺化實戰</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/database/">打造數據資料庫</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/crawler/">Python網頁爬蟲實戰</a></li>
+            
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">new notice</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-033/">Alpha_Finance 0.3.3版</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-032/">Alpha_Finance 0.3.2版</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-031/">Alpha_Finance 0.3.1版</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="copyright py-4 bg-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 text-md-left text-center">
+          <p class="mb-3 mb-md-0">Copyright © Taiwan-Tradingview金融交易介面 2021</p>
+        </div>
+        <div class="col-md-5 text-md-right text-center">
+          <ul class="list-inline">
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-facebook text-primary"></i></a></li>
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-instagram text-primary"></i></a></li>
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-github text-primary"></i></a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Google Map API -->
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&amp;libraries=places"></script>
+
+
+<!-- JS Plugins -->
+
+<script src="https://taiwan-tradingview.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/filterizr/jquery.filterizr.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/google-map/gmap.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://taiwan-tradingview.github.io/js/script.min.js"></script>
+
+<!-- google analitycs -->
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-outline-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+
+</html>

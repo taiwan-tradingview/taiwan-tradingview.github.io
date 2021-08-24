@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8">
+  <title>打造數據資料庫</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description"
+    content="認識資料庫 &amp; 多執行緒爬蟲自動化">
+  
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Hugo 0.83.1" />
+  <!-- multilingual SEO optimizations -->
+  
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/bootstrap/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/slick/slick.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/animate/animate.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/venobox/venobox.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/themify-icons/themify-icons.css">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/scss/main.e88a60b286205da8d3956fa6cd1acdc4a1a1a926d87f7a98b7b19febcdae82d317f67403c17aff2adb6d893867ace5191804ae4dda3a0dc997987b5801c54610.css" integrity="sha512-6IpgsoYgXajTlW&#43;mzRrNxKGhqSbYf3qYt7Gf682ugtMX9nQDwXr/KtttiThnrOUZGASuTdo6DcmXmHtYAcVGEA==" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://taiwan-tradingview.github.io/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="https://taiwan-tradingview.github.io/images/favicon.png" type="image/x-icon">
+
+</head><body>
+<header class="fixed-top header">
+  
+  
+  <div class="top-header py-2 bg-white">
+    <div class="container">
+      <div class="row no-gutters align-items-center">
+        <div class="col-lg-4 text-center text-lg-left">
+          <ul class="list-inline">
+            
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-facebook"></i></a></li>
+            
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-instagram"></i></a></li>
+            
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-github"></i></a></li>
+            
+          </ul>
+        </div>
+        <div class="col-lg-8 text-center text-lg-right">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a class="text-color mr-3" href="tel:"><strong>CALL : </strong> </a></li>
+            <li class="list-inline-item">
+              <a class="text-color" href="mailto:taiwan.tradingview@gmail.com"><strong>EMAIL : </strong> taiwan.tradingview@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="navigation w-100  top-hider ">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark p-0">
+        <a class="navbar-brand" href="/"><img class="img-fluid"
+            src="https://taiwan-tradingview.github.io/images/logo.png" alt="Taiwan-Tradingview | 金融交易介面"></a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse text-center" id="navigation">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io">Home</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/course">程式課程</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/blog">財商部落格</a>
+            </li>
+            
+            
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                API
+              </a>
+              <div class="dropdown-menu">
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/notice">API使用教學</a>
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/teacher">團隊成員</a>
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/event">每日選股清單</a>
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/research">策略回測</a>
+                
+              </div>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/about">關於我們</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/contact">聯絡我們</a>
+            </li>
+            
+            
+          </ul>
+
+          
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+	
+<section class="page-title-section overlay" style="background-image: url('/images/backgrounds/page-title.png'),url('/images/backgrounds/page-title.jpg');" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb">
+          <li class="list-inline-item h2"><a class="text-primary font-secondary" href="https://taiwan-tradingview.github.io">Home</a></li>
+          <li class="list-inline-item h5"><i class="ti-angle-right text-white"></i></li>
+          <li class="list-inline-item text-white h3 font-secondary">打造數據資料庫</li>
+        </ul>
+        <p class="text-lighten">認識資料庫 &amp; 多執行緒爬蟲自動化</p>
+      </div>
+    </div>
+  </div>
+</section>
+	
+
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mb-4">
+        
+        <img style="height: 500px;width: 100%;object-fit: cover;" src="/images/courses/database.png"
+          class="img-fluid w-100">
+      </div>
+    </div>
+    
+    <div class="row align-items-center mb-5">
+      <div class="col-xl-3 order-1 col-sm-6 mb-4 mb-xl-0">
+        <h2>打造數據資料庫</h2>
+      </div>
+      <div class="col-xl-6 order-sm-3 order-xl-2 col-12 order-2">
+        <ul class="list-inline text-xl-center">
+          <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-calendar text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">DURATION</h6>
+                <p class="mb-0">06 Month</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-timer text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">WEEKLY</h6>
+                <p class="mb-0">03 hours</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-wallet text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">FEE</h6>
+                <p class="mb-0">From: $699</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xl-3 text-sm-right text-left order-sm-2 order-3 order-xl-3 col-sm-6 mb-4 mb-xl-0">
+        <a href="#" class="btn btn-primary">Apply now</a>
+      </div>
+      
+      <div class="col-12 mt-4 order-4">
+        <div class="border-bottom border-primary"></div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12 mb-4 content">
+        <h3 id="前言">前言</h3>
+<h5 id="在上個章節成功將資料爬了下來並進行數據分析但每次要做數據分析時不就要每次重新爬一次嗎而且如果要爬一個月的資料那不就要手動調整日期嗎">在上個章節成功將資料爬了下來，並進行數據分析，但每次要做數據分析時不就要每次重新爬一次嗎?而且如果要爬一個月的資料那不就要手動調整日期嗎?</h5>
+<h5 id="所以這堂課程會示範如何將數據儲存在本地資料庫方便每次取用時都可以快速拿取資料並架設成自動化爬蟲如此一來就不用再手動慢慢調爬蟲時間囉">所以這堂課程會示範如何將數據儲存在本地資料庫，方便每次取用時都可以快速拿取資料，並架設成自動化爬蟲，如此一來就不用再手動慢慢調爬蟲時間囉!</h5>
+<p>.</p>
+<h5 id="而本堂最大的重點就是使用多執行緒multithreading來優化爬蟲效率其實多執行緒是最近從learn-code-with-mikehttpswwwlearncodewithmikecom202011multithreading-with-python-web-scrapinghtml的文章學到這個技巧的在實際使用多執行緒爬蟲後才發現這也太好用了吧原本要爬20秒的資料只需要花4秒左右想像原本需要爬50分鐘的時間只需要花10分鐘想到就覺得興奮啊啊啊">而本堂最大的重點就是使用多執行緒(Multithreading)來優化爬蟲效率，其實多執行緒是最近從<a href="https://www.learncodewithmike.com/2020/11/multithreading-with-python-web-scraping.html">LEARN CODE WITH MIKE</a>的文章學到這個技巧的，在實際使用多執行緒爬蟲後才發現這也太好用了吧!原本要爬20秒的資料只需要花4秒左右，想像原本需要爬50分鐘的時間只需要花10分鐘，想到就覺得興奮啊啊啊!!!</h5>
+<hr>
+<h3 id="目錄">目錄</h3>
+<pre><code>《一》認識資料庫
+
+《二》Pickle模組
+
+《三》自動爬取股價
+
+《四》OS程序調度
+
+《五》爬蟲多線程
+</code></pre><hr>
+<h3 id="一認識資料庫">《一》認識資料庫</h3>
+<h5 id="資料庫溝通-crud--create--read--update--delete">資料庫溝通: C.R.U.D ➨ create / read / update / delete</h5>
+<table>
+<thead>
+<tr>
+<th>DataBase</th>
+<th>關聯式(Relational)</th>
+<th>非關聯式(Non-Relational)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>類別</td>
+<td>SQL(Structured Query Language)</td>
+<td>NoSQL</td>
+</tr>
+<tr>
+<td>型式</td>
+<td>表格型</td>
+<td>非表格型</td>
+</tr>
+<tr>
+<td>資料庫</td>
+<td>MySQL / SQLite / SQL Server</td>
+<td>MongoDB</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="二pickle模組">《二》Pickle模組</h3>
+<h5 id="1永續性">1.永續性</h5>
+<pre><code>保持物件，甚至在多次執行同一程式之間也保持物件。
+多次執行程式間可儲存應用程式物件，將物件儲存在磁碟上，方便日後檢索。
+</code></pre><h5 id="2讀取速度">2.讀取速度</h5>
+<pre><code>pkl使用二進位制，所以在讀取資料庫上明顯地較為快速，但缺點為無法節省空間，若資料量過大易造成儲存空間不夠。
+</code></pre><h5 id="3可移植性">3.可移植性</h5>
+<pre><code>pkl格式獨立於os且可相容不同Python版本，所以可以在各種作業系統(Windows/Mac OS/Linux)下讀取資料。
+</code></pre><hr>
+<h3 id="三自動爬取股價">《三》自動爬取股價</h3>
+<h5 id="data型態為表格--使用pdread">data型態為表格 ➨ 使用pd.read</h5>
+<p><img src="/images/courses/te.png" alt=""></p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">requests</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">datetime</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">pandas</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">pd</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">time</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">random</span>
+
+<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">crawler</span>(date):
+    
+    <span style="color:#60a0b0;font-style:italic"># 將日期改為可變參數 ---refer to FinLab部落格</span>
+    url <span style="color:#666">=</span> f<span style="color:#4070a0">&#34;https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php?l=zh-tw&amp;o=htm&amp;d={str(date.year-1911)+&#39;/&#39;+date.strftime(&#39;%m&#39;)+&#39;/&#39;+date.strftime(&#39;</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">&#39;)}&amp;se=EW&amp;s=8,desc,0&#34;</span>
+    headers <span style="color:#666">=</span> {<span style="color:#4070a0">&#39;User-Agent&#39;</span>:<span style="color:#4070a0">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/517.16 (KHTML, like Gecko) Chrome/12.0.4912.333 Safari/524.16&#39;</span>}
+    res <span style="color:#666">=</span> requests<span style="color:#666">.</span>get(url,headers<span style="color:#666">=</span>headers)
+    
+    <span style="color:#60a0b0;font-style:italic"># 資料整理</span>
+    df <span style="color:#666">=</span> pd<span style="color:#666">.</span>DataFrame(pd<span style="color:#666">.</span>read_html(res<span style="color:#666">.</span>text)[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>values)[[<span style="color:#40a070">0</span>,<span style="color:#40a070">1</span>,<span style="color:#40a070">2</span>,<span style="color:#40a070">3</span>,<span style="color:#40a070">4</span>,<span style="color:#40a070">5</span>,<span style="color:#40a070">6</span>,<span style="color:#40a070">7</span>]]
+    df<span style="color:#666">.</span>columns <span style="color:#666">=</span> [<span style="color:#4070a0">&#39;stock_id&#39;</span>,<span style="color:#4070a0">&#39;證券名稱&#39;</span>,<span style="color:#4070a0">&#39;收盤價&#39;</span>,<span style="color:#4070a0">&#39;漲跌&#39;</span>,<span style="color:#4070a0">&#39;開盤價&#39;</span>,<span style="color:#4070a0">&#39;最高價&#39;</span>,<span style="color:#4070a0">&#39;最低價&#39;</span>,<span style="color:#4070a0">&#39;成交股數&#39;</span>]
+    df <span style="color:#666">=</span> df<span style="color:#666">.</span>set_index(<span style="color:#4070a0">&#39;stock_id&#39;</span>)
+    df <span style="color:#666">=</span> df<span style="color:#666">.</span>applymap(<span style="color:#007020;font-weight:bold">lambda</span> s:pd<span style="color:#666">.</span>to_numeric(<span style="color:#007020">str</span>(s)<span style="color:#666">.</span>replace(<span style="color:#4070a0">&#39;,&#39;</span>,<span style="color:#4070a0">&#39;&#39;</span>),errors<span style="color:#666">=</span><span style="color:#4070a0">&#39;coerce&#39;</span>))<span style="color:#666">.</span>dropna(axis<span style="color:#666">=</span><span style="color:#40a070">0</span>,thresh<span style="color:#666">=</span><span style="color:#40a070">5</span>)<span style="color:#666">.</span>dropna(axis<span style="color:#666">=</span><span style="color:#40a070">1</span>,how<span style="color:#666">=</span><span style="color:#4070a0">&#39;all&#39;</span>)[[<span style="color:#4070a0">&#39;收盤價&#39;</span>,<span style="color:#4070a0">&#39;開盤價&#39;</span>,<span style="color:#4070a0">&#39;最高價&#39;</span>,<span style="color:#4070a0">&#39;最低價&#39;</span>,<span style="color:#4070a0">&#39;成交股數&#39;</span>]]
+    df[<span style="color:#4070a0">&#39;date&#39;</span>] <span style="color:#666">=</span> pd<span style="color:#666">.</span>to_datetime(date)
+    
+    time<span style="color:#666">.</span>sleep(random<span style="color:#666">.</span>randint(<span style="color:#40a070">4</span>,<span style="color:#40a070">6</span>))
+    
+    <span style="color:#007020;font-weight:bold">return</span> df
+
+
+<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">crawler_timeperiod</span>(dates):
+    
+    <span style="color:#60a0b0;font-style:italic"># 建立空的database</span>
+    database <span style="color:#666">=</span> pd<span style="color:#666">.</span>DataFrame()
+    
+    <span style="color:#007020;font-weight:bold">for</span> date <span style="color:#007020;font-weight:bold">in</span> dates:
+        <span style="color:#007020;font-weight:bold">try</span>:
+            data <span style="color:#666">=</span> crawler(date)
+            data[<span style="color:#4070a0">&#39;收盤價&#39;</span>]
+            <span style="color:#007020;font-weight:bold">print</span>(date<span style="color:#666">.</span>strftime(<span style="color:#4070a0">&#39;%Y/%m/</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">&#39;</span>),<span style="color:#4070a0">&#39;🆗&#39;</span>)
+            database <span style="color:#666">=</span> database<span style="color:#666">.</span>append(data)
+
+        <span style="color:#60a0b0;font-style:italic"># 若爬無資料</span>
+        <span style="color:#007020;font-weight:bold">except</span>:
+            <span style="color:#007020;font-weight:bold">print</span>(date<span style="color:#666">.</span>strftime(<span style="color:#4070a0">&#39;%Y/%m/</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">&#39;</span>),<span style="color:#4070a0">&#39;✖&#39;</span>)
+            time<span style="color:#666">.</span>sleep(random<span style="color:#666">.</span>randint(<span style="color:#40a070">3</span>,<span style="color:#40a070">6</span>))
+            <span style="color:#007020;font-weight:bold">continue</span>
+        <span style="color:#60a0b0;font-style:italic"># 避免爬蟲被擋</span>
+            
+    <span style="color:#60a0b0;font-style:italic"># 將資料以pkl型式儲存</span>
+    <span style="color:#007020;font-weight:bold">for</span> cname,dname <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">zip</span>(database<span style="color:#666">.</span>columns[:<span style="color:#666">-</span><span style="color:#40a070">1</span>],[<span style="color:#4070a0">&#39;close&#39;</span>,<span style="color:#4070a0">&#39;open&#39;</span>,<span style="color:#4070a0">&#39;high&#39;</span>,<span style="color:#4070a0">&#39;low&#39;</span>,<span style="color:#4070a0">&#39;volume&#39;</span>]):
+        database<span style="color:#666">.</span>pivot_table(cname,<span style="color:#4070a0">&#39;date&#39;</span>,<span style="color:#4070a0">&#39;stock_id&#39;</span>)<span style="color:#666">.</span>to_pickle(f<span style="color:#4070a0">&#34;{dname}.pkl&#34;</span>)
+
+
+<span style="color:#60a0b0;font-style:italic"># 選擇爬取時間段</span>
+start_date <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2021</span>,<span style="color:#40a070">8</span>,<span style="color:#40a070">3</span>)
+end_date <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2021</span>,<span style="color:#40a070">8</span>,<span style="color:#40a070">9</span>)
+dates <span style="color:#666">=</span> pd<span style="color:#666">.</span>date_range(start_date,end_date)
+
+crawler_timeperiod(dates)
+</code></pre></div><p>2021/08/03 🆗<br>
+2021/08/04 🆗<br>
+2021/08/05 🆗<br>
+2021/08/06 🆗<br>
+2021/08/07 ✖<br>
+2021/08/08 ✖<br>
+2021/08/09 🆗</p>
+<h5 id="拿取資料">拿取資料</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">data_name <span style="color:#666">=</span> <span style="color:#4070a0">&#39;close&#39;</span>
+
+pd<span style="color:#666">.</span>read_pickle(f<span style="color:#4070a0">&#34;{data_name}.pkl&#34;</span>)
+</code></pre></div><hr>
+<h3 id="四os程序調度">《四》OS程序調度</h3>
+<h5 id="1-multi-processing-多進程-vs-multi-threading-多線程">1. <code>Multi-processing (多進程)</code> v.s. <code>Multi-threading (多線程)</code></h5>
+<table>
+<thead>
+<tr>
+<th>類別</th>
+<th>Process</th>
+<th>Thread (light-weight process)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原理</td>
+<td>Parallelism</td>
+<td>Concurrency</td>
+</tr>
+<tr>
+<td>運作</td>
+<td>同時進行 (多員工)</td>
+<td>同步切換 (單員工)</td>
+</tr>
+<tr>
+<td>關係</td>
+<td>大層級</td>
+<td>小層級</td>
+</tr>
+<tr>
+<td>scheduling</td>
+<td>OS Resources</td>
+<td>OS CPU time</td>
+</tr>
+<tr>
+<td>overhead</td>
+<td>高</td>
+<td>低</td>
+</tr>
+<tr>
+<td>resources</td>
+<td>獨立</td>
+<td>共享</td>
+</tr>
+<tr>
+<td>適用</td>
+<td>CPU-bound  ➨ 高CPU計算</td>
+<td>I/O-bound ➨ requests後等待伺服器/資料庫回應 (爬蟲)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="2gil-global-interpreter-lock">2.GIL (Global Interpreter Lock)</h6>
+<pre><code>Python直譯器的lock ➨ 直譯器無法同時執行程式 (Concurrency) ➨ single thread
+</code></pre><pre><code>single-threaded program 執行速度較快
+</code></pre><pre><code>使用multi-processing破解GIL
+</code></pre><hr>
+<h3 id="五爬蟲多線程httpsbloglouielu20170801e4bda0e68980e4b88de79fa5e98193e79a84-python-e6a899e6ba96e587bde5bc8fe5baabe794a8e6b395-06-concurrent-futures">《五》<a href="https://blog.louie.lu/2017/08/01/%E4%BD%A0%E6%89%80%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84-python-%E6%A8%99%E6%BA%96%E5%87%BD%E5%BC%8F%E5%BA%AB%E7%94%A8%E6%B3%95-06-concurrent-futures/">爬蟲多線程</a></h3>
+<h5 id="使用concurrentfutures的threadpoolexecutor">使用<code>concurrent.futures</code>的<code>ThreadPoolExecutor</code></h5>
+<h5 id="crawlerpy">crawler.py</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">requests</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">datetime</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">pandas</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">pd</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">time</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">random</span>
+
+<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">crawler</span>(date):
+    
+    <span style="color:#60a0b0;font-style:italic"># 將日期改為可變參數 ---refer to FinLab部落格</span>
+    url <span style="color:#666">=</span> f<span style="color:#4070a0">&#34;https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php?l=zh-tw&amp;o=htm&amp;d={str(date.year-1911)+&#39;/&#39;+date.strftime(&#39;%m&#39;)+&#39;/&#39;+date.strftime(&#39;</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">&#39;)}&amp;se=EW&amp;s=8,desc,0&#34;</span>
+    headers <span style="color:#666">=</span> {<span style="color:#4070a0">&#39;User-Agent&#39;</span>:<span style="color:#4070a0">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/517.16 (KHTML, like Gecko) Chrome/12.0.4912.333 Safari/524.16&#39;</span>}
+    res <span style="color:#666">=</span> requests<span style="color:#666">.</span>get(url,headers<span style="color:#666">=</span>headers)
+    
+    <span style="color:#60a0b0;font-style:italic"># 資料整理</span>
+    df <span style="color:#666">=</span> pd<span style="color:#666">.</span>DataFrame(pd<span style="color:#666">.</span>read_html(res<span style="color:#666">.</span>text)[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>values)[[<span style="color:#40a070">0</span>,<span style="color:#40a070">1</span>,<span style="color:#40a070">2</span>,<span style="color:#40a070">3</span>,<span style="color:#40a070">4</span>,<span style="color:#40a070">5</span>,<span style="color:#40a070">6</span>,<span style="color:#40a070">7</span>]]
+    df<span style="color:#666">.</span>columns <span style="color:#666">=</span> [<span style="color:#4070a0">&#39;stock_id&#39;</span>,<span style="color:#4070a0">&#39;證券名稱&#39;</span>,<span style="color:#4070a0">&#39;收盤價&#39;</span>,<span style="color:#4070a0">&#39;漲跌&#39;</span>,<span style="color:#4070a0">&#39;開盤價&#39;</span>,<span style="color:#4070a0">&#39;最高價&#39;</span>,<span style="color:#4070a0">&#39;最低價&#39;</span>,<span style="color:#4070a0">&#39;成交股數&#39;</span>]
+    df <span style="color:#666">=</span> df<span style="color:#666">.</span>set_index(<span style="color:#4070a0">&#39;stock_id&#39;</span>)
+    df <span style="color:#666">=</span> df<span style="color:#666">.</span>applymap(<span style="color:#007020;font-weight:bold">lambda</span> s:pd<span style="color:#666">.</span>to_numeric(<span style="color:#007020">str</span>(s)<span style="color:#666">.</span>replace(<span style="color:#4070a0">&#39;,&#39;</span>,<span style="color:#4070a0">&#39;&#39;</span>),errors<span style="color:#666">=</span><span style="color:#4070a0">&#39;coerce&#39;</span>))<span style="color:#666">.</span>dropna(axis<span style="color:#666">=</span><span style="color:#40a070">0</span>,thresh<span style="color:#666">=</span><span style="color:#40a070">5</span>)<span style="color:#666">.</span>dropna(axis<span style="color:#666">=</span><span style="color:#40a070">1</span>,how<span style="color:#666">=</span><span style="color:#4070a0">&#39;all&#39;</span>)[[<span style="color:#4070a0">&#39;收盤價&#39;</span>,<span style="color:#4070a0">&#39;開盤價&#39;</span>,<span style="color:#4070a0">&#39;最高價&#39;</span>,<span style="color:#4070a0">&#39;最低價&#39;</span>,<span style="color:#4070a0">&#39;成交股數&#39;</span>]]
+    df[<span style="color:#4070a0">&#39;date&#39;</span>] <span style="color:#666">=</span> pd<span style="color:#666">.</span>to_datetime(date)
+    
+    time<span style="color:#666">.</span>sleep(random<span style="color:#666">.</span>randint(<span style="color:#40a070">4</span>,<span style="color:#40a070">6</span>))
+    
+    <span style="color:#007020;font-weight:bold">return</span> df
+</code></pre></div><h5 id="單線程爬蟲">⭐單線程爬蟲</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">crawler_timeperiod</span>(dates):
+    
+    <span style="color:#60a0b0;font-style:italic"># 建立空的database</span>
+    database <span style="color:#666">=</span> pd<span style="color:#666">.</span>DataFrame()
+    
+    <span style="color:#007020;font-weight:bold">for</span> date <span style="color:#007020;font-weight:bold">in</span> dates:
+        <span style="color:#007020;font-weight:bold">try</span>:
+            data <span style="color:#666">=</span> crawler(date)
+            data[<span style="color:#4070a0">&#39;收盤價&#39;</span>]
+            <span style="color:#007020;font-weight:bold">print</span>(date<span style="color:#666">.</span>strftime(<span style="color:#4070a0">&#39;%Y/%m/</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">&#39;</span>),<span style="color:#4070a0">&#39;🆗&#39;</span>)
+            database <span style="color:#666">=</span> database<span style="color:#666">.</span>append(data)
+        <span style="color:#60a0b0;font-style:italic"># 若爬無資料</span>
+        <span style="color:#007020;font-weight:bold">except</span>:
+            <span style="color:#007020;font-weight:bold">print</span>(date<span style="color:#666">.</span>strftime(<span style="color:#4070a0">&#39;%Y/%m/</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">&#39;</span>),<span style="color:#4070a0">&#39;✖&#39;</span>)
+            time<span style="color:#666">.</span>sleep(random<span style="color:#666">.</span>randint(<span style="color:#40a070">3</span>,<span style="color:#40a070">6</span>))
+            <span style="color:#007020;font-weight:bold">continue</span>
+        <span style="color:#60a0b0;font-style:italic"># 避免爬蟲被擋</span>
+            
+    <span style="color:#60a0b0;font-style:italic"># 將資料以pkl型式儲存</span>
+    <span style="color:#007020;font-weight:bold">for</span> cname,dname <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">zip</span>(database<span style="color:#666">.</span>columns[:<span style="color:#666">-</span><span style="color:#40a070">1</span>],[<span style="color:#4070a0">&#39;close&#39;</span>,<span style="color:#4070a0">&#39;open&#39;</span>,<span style="color:#4070a0">&#39;high&#39;</span>,<span style="color:#4070a0">&#39;low&#39;</span>,<span style="color:#4070a0">&#39;volume&#39;</span>]):
+        database<span style="color:#666">.</span>pivot_table(cname,<span style="color:#4070a0">&#39;date&#39;</span>,<span style="color:#4070a0">&#39;stock_id&#39;</span>)<span style="color:#666">.</span>to_pickle(f<span style="color:#4070a0">&#34;{dname}.pkl&#34;</span>)
+
+
+
+<span style="color:#60a0b0;font-style:italic"># 選擇爬取時間段</span>
+start_date <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2021</span>,<span style="color:#40a070">8</span>,<span style="color:#40a070">3</span>)
+end_date <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2021</span>,<span style="color:#40a070">8</span>,<span style="color:#40a070">9</span>)
+dates <span style="color:#666">=</span> pd<span style="color:#666">.</span>date_range(start_date,end_date)
+
+<span style="color:#60a0b0;font-style:italic"># 開始計時</span>
+start_time <span style="color:#666">=</span> time<span style="color:#666">.</span>time()
+
+crawler_timeperiod(dates)
+
+<span style="color:#60a0b0;font-style:italic"># 結束計時</span>
+end_time <span style="color:#666">=</span> time<span style="color:#666">.</span>time()
+<span style="color:#007020;font-weight:bold">print</span>(f<span style="color:#4070a0">&#34;共花了{end_time - start_time} 秒&#34;</span>)
+</code></pre></div><p>2021/08/03 🆗<br>
+2021/08/04 🆗<br>
+2021/08/05 🆗<br>
+2021/08/06 🆗<br>
+2021/08/07 ✖<br>
+2021/08/08 ✖<br>
+2021/08/09 🆗<br>
+共花了40.58158540725708 秒</p>
+<hr>
+<h5 id="多線程爬蟲">⭐多線程爬蟲</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">crawler_multithreading</span>(dates):
+    
+    <span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">concurrent</span>
+    
+    <span style="color:#60a0b0;font-style:italic"># 建立空的database</span>
+    database <span style="color:#666">=</span> pd<span style="color:#666">.</span>DataFrame()
+    
+    <span style="color:#60a0b0;font-style:italic"># 使用多線程 (ThreadPoolExecutor)</span>
+    <span style="color:#007020;font-weight:bold">with</span> concurrent<span style="color:#666">.</span>futures<span style="color:#666">.</span>ThreadPoolExecutor(max_workers<span style="color:#666">=</span><span style="color:#40a070">10</span>) <span style="color:#007020;font-weight:bold">as</span> executor:
+        data <span style="color:#666">=</span> {executor<span style="color:#666">.</span>submit(crawler,date): date <span style="color:#007020;font-weight:bold">for</span> date <span style="color:#007020;font-weight:bold">in</span> dates}
+        <span style="color:#007020;font-weight:bold">for</span> datum <span style="color:#007020;font-weight:bold">in</span> concurrent<span style="color:#666">.</span>futures<span style="color:#666">.</span>as_completed(data):
+            <span style="color:#007020;font-weight:bold">try</span>:
+                df <span style="color:#666">=</span> datum<span style="color:#666">.</span>result()
+                database <span style="color:#666">=</span> database<span style="color:#666">.</span>append(df)
+                <span style="color:#007020;font-weight:bold">print</span>(df[<span style="color:#4070a0">&#39;date&#39;</span>]<span style="color:#666">.</span>iloc[<span style="color:#666">-</span><span style="color:#40a070">1</span>]<span style="color:#666">.</span>strftime(<span style="color:#4070a0">&#39;%Y/%m/</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">&#39;</span>),<span style="color:#4070a0">&#39;🆗&#39;</span>)
+                
+            <span style="color:#60a0b0;font-style:italic"># 若爬無資料</span>
+            <span style="color:#007020;font-weight:bold">except</span>:
+                <span style="color:#007020;font-weight:bold">continue</span>
+
+    database <span style="color:#666">=</span> database<span style="color:#666">.</span>sort_values(<span style="color:#4070a0">&#39;date&#39;</span>)
+    <span style="color:#007020;font-weight:bold">for</span> cname,dname <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">zip</span>(database<span style="color:#666">.</span>columns[:<span style="color:#666">-</span><span style="color:#40a070">1</span>],[<span style="color:#4070a0">&#39;close&#39;</span>,<span style="color:#4070a0">&#39;open&#39;</span>,<span style="color:#4070a0">&#39;high&#39;</span>,<span style="color:#4070a0">&#39;low&#39;</span>,<span style="color:#4070a0">&#39;volume&#39;</span>]):
+        database<span style="color:#666">.</span>pivot_table(cname,<span style="color:#4070a0">&#39;date&#39;</span>,<span style="color:#4070a0">&#39;stock_id&#39;</span>)<span style="color:#666">.</span>to_pickle(f<span style="color:#4070a0">&#34;{dname}.pkl&#34;</span>)
+
+
+<span style="color:#60a0b0;font-style:italic"># 選擇爬取時間段</span>
+start_date <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2021</span>,<span style="color:#40a070">8</span>,<span style="color:#40a070">3</span>)
+end_date <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2021</span>,<span style="color:#40a070">8</span>,<span style="color:#40a070">9</span>)
+dates <span style="color:#666">=</span> pd<span style="color:#666">.</span>date_range(start_date,end_date)
+
+<span style="color:#60a0b0;font-style:italic"># 開始計時</span>
+start_time <span style="color:#666">=</span> time<span style="color:#666">.</span>time()
+
+crawler_multithreading(dates)
+
+<span style="color:#60a0b0;font-style:italic"># 結束計時</span>
+end_time <span style="color:#666">=</span> time<span style="color:#666">.</span>time()
+<span style="color:#007020;font-weight:bold">print</span>(f<span style="color:#4070a0">&#34;共花了{end_time - start_time} 秒&#34;</span>)
+</code></pre></div><p>2021/08/03 🆗<br>
+2021/08/05 🆗<br>
+2021/08/06 🆗<br>
+2021/08/09 🆗<br>
+2021/08/04 🆗<br>
+共花了9.753690958023071 秒</p>
+<hr>
+<h3 id="結論">結論</h3>
+<h5 id="相信大家有被多線程超強大的功能給驚豔到吧原本正常單線程爬蟲要花40秒改使用多線程後效率提升整整4倍只花了10秒不到就爬到一模一樣的數據量由此可知多線程及多進程是多麼重要的技術但大多數爬蟲開發人員會因為multi-threading程式碼太難理解而放棄">相信大家有被多線程超強大的功能給驚豔到吧!原本正常單線程爬蟲要花40秒，改使用多線程後效率提升整整4倍，只花了10秒不到就爬到一模一樣的數據量，由此可知多線程及多進程是多麼重要的技術，但大多數爬蟲開發人員會因為<code>multi-threading</code>程式碼太難理解而放棄。</h5>
+<h5 id="其實當初我在開發這段多線程爬蟲時也花了將近8小時的時間才逐漸理解concurrentfutures的運作方式並加以精簡其中的程式碼最後成功做出這支超越目前90以上爬取台股的爬蟲程式">其實當初我在開發這段多線程爬蟲時也花了將近8小時的時間才逐漸理解<code>concurrent.futures</code>的運作方式，並加以精簡其中的程式碼，最後成功做出這支超越目前90%以上爬取台股的爬蟲程式。</h5>
+<p>.</p>
+<h5 id="關於多線程及多進程的運作模式大家可以參考創立非同步任務--你所不知道的-python-標準函式庫用法httpsbloglouielu20170801e4bda0e68980e4b88de79fa5e98193e79a84-python-e6a899e6ba96e587bde5bc8fe5baabe794a8e6b395-06-concurrent-futures裡面有更多更深的程式碼可以加強這方面的專業知識哦">關於多線程及多進程的運作模式大家可以參考<a href="https://blog.louie.lu/2017/08/01/%E4%BD%A0%E6%89%80%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84-python-%E6%A8%99%E6%BA%96%E5%87%BD%E5%BC%8F%E5%BA%AB%E7%94%A8%E6%B3%95-06-concurrent-futures/">創立非同步任務 — 你所不知道的 Python 標準函式庫用法</a>，裡面有更多更深的程式碼可以加強這方面的專業知識哦!</h5>
+<p>.</p>
+<h5 id="專業程度-">專業程度: ★★★★★</h5>
+<p>.<br>
+文中多線程爬蟲方式參考<a href="https://blog.louie.lu/">blog.louie.lu</a>，若有侵害著作權，請來信或留言告知，我們將儘速移除相關內容。</p>
+
+      </div>
+      
+      <div class="col-12">
+        <h5 class="mb-3">teacher</h5>
+        
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+          <div class="media mb-2 mb-sm-0 align-items-center">
+            <img class="mr-4 img-fluid teacher-thumb-sm" src="/images/teachers/KB.png" alt="KB">
+            <div class="media-body">
+              <h4 class="mt-0"><a href="https://taiwan-tradingview.github.io/teacher/kb/">KB</a></h4>
+              Data Scientist
+            </div>
+          </div>
+          <div class="social-link">
+            <h6 class="d-none d-sm-block text-right">Contact Info</h6>
+            <ul class="list-inline">
+              
+              <li class="list-inline-item"><a class="d-inline-block text-light p-1" href="alphafinance.tw@gmail.com"><i class="ti-email"></i></a></li>
+              
+              <li class="list-inline-item"><a class="d-inline-block text-light p-1" href="https://www.instagram.com/Alpha_Finance.tw/"><i class="ti-instagram"></i></a></li>
+              
+              <li class="list-inline-item"><a class="d-inline-block text-light p-1" href="#"><i class="ti-facebook"></i></a></li>
+              
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-bottom border-primary mt-4"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="section-title">Related Course</h2>
+      </div>
+    </div>
+    <div class="row">
+      
+      
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/AI.png" alt="人工智慧實戰模型">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
+    </ul>
+    <h4 class="card-title"><a href="https://taiwan-tradingview.github.io/course/ai/">人工智慧實戰模型</a></h4>
+    <p class="card-text mb-4">機器學習 &amp; 神經網路</p>
+    <a href="https://taiwan-tradingview.github.io/course/ai/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/website.png" alt="如何架設個人網站">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Hugo</li>
+    </ul>
+    <h4 class="card-title"><a href="https://taiwan-tradingview.github.io/course/website/">如何架設個人網站</a></h4>
+    <p class="card-text mb-4">Hugo快速架站 &amp; Google服務</p>
+    <a href="https://taiwan-tradingview.github.io/course/website/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/environment.png" alt="建置Python開發環境">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
+    </ul>
+    <h4 class="card-title"><a href="https://taiwan-tradingview.github.io/course/environment/">建置Python開發環境</a></h4>
+    <p class="card-text mb-4">建立專案環境 &amp; 安裝超實用套件</p>
+    <a href="https://taiwan-tradingview.github.io/course/environment/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+<footer>
+  
+  
+  
+  <div class="newsletter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 ml-auto bg-primary py-5 newsletter-block">
+          <h3 class="text-white mb-4">Subscribe Newsletter</h3>
+          <form action="https://gmail.us4.list-manage.com/subscribe/post?u=463ee871f45d2d93748e77cad&amp;amp;id=a0a2c6d074" method="post" name="mc-embedded-subscribe-form" target="_blank">
+            <div class="input-wrapper">
+              <input type="email" class="form-control border-0" id="newsletter" name="newsletter" placeholder="Enter your email…">
+              <button type="submit" name="subscribe" class="btn btn-primary">Join</button>
+              <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                <input type="text" name="b_463ee871f45d2d93748e77cad_a0a2c6d074" tabindex="-1">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <div class="footer bg-footer section border-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
+          
+          <a class="logo-footer" href="/"><img class="img-fluid mb-4" src="https://taiwan-tradingview.github.io/images/logo.png" alt="Taiwan-Tradingview | 金融交易介面"></a>
+          <ul class="list-unstyled">
+            <li class="mb-4">Taiwan</li>
+            <li class="mb-4"><a href="mailto:taiwan.tradingview@gmail.com">taiwan.tradingview@gmail.com</a></li>
+            <li class="mb-4"></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">company</h4>
+          <ul class="list-unstyled">
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course">程式課程</a></li>
+            
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/blog">財商部落格</a></li>
+            
+            
+            
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/about">關於我們</a></li>
+            
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/contact">聯絡我們</a></li>
+            
+            
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">links</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice">API使用教學</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/teacher">團隊成員</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/event">每日選股清單</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/research">策略回測</a></li>
+            
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">Courses</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/pypi/">從GitHub到PYPI</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/ai/">人工智慧實戰模型</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/visual/">數據視覺化實戰</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/database/">打造數據資料庫</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/crawler/">Python網頁爬蟲實戰</a></li>
+            
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">new notice</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-033/">Alpha_Finance 0.3.3版</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-032/">Alpha_Finance 0.3.2版</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-031/">Alpha_Finance 0.3.1版</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="copyright py-4 bg-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 text-md-left text-center">
+          <p class="mb-3 mb-md-0">Copyright © Taiwan-Tradingview金融交易介面 2021</p>
+        </div>
+        <div class="col-md-5 text-md-right text-center">
+          <ul class="list-inline">
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-facebook text-primary"></i></a></li>
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-instagram text-primary"></i></a></li>
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-github text-primary"></i></a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Google Map API -->
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&amp;libraries=places"></script>
+
+
+<!-- JS Plugins -->
+
+<script src="https://taiwan-tradingview.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/filterizr/jquery.filterizr.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/google-map/gmap.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://taiwan-tradingview.github.io/js/script.min.js"></script>
+
+<!-- google analitycs -->
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-outline-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+
+</html>

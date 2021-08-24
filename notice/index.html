@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8">
+  <title>API使用說明</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description"
+    content="API用於財務教育、非商業用途。資料僅供參考，使用者依本資料交易發生之損失需自行負責，本API不對資料內容錯誤、更新延誤或傳輸中斷負任何責任。 ">
+  
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Hugo 0.83.1" />
+  <!-- multilingual SEO optimizations -->
+  
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/bootstrap/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/slick/slick.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/animate/animate.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/venobox/venobox.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/themify-icons/themify-icons.css">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/scss/main.e88a60b286205da8d3956fa6cd1acdc4a1a1a926d87f7a98b7b19febcdae82d317f67403c17aff2adb6d893867ace5191804ae4dda3a0dc997987b5801c54610.css" integrity="sha512-6IpgsoYgXajTlW&#43;mzRrNxKGhqSbYf3qYt7Gf682ugtMX9nQDwXr/KtttiThnrOUZGASuTdo6DcmXmHtYAcVGEA==" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://taiwan-tradingview.github.io/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="https://taiwan-tradingview.github.io/images/favicon.png" type="image/x-icon">
+
+</head><body>
+<header class="fixed-top header">
+  
+  
+  <div class="top-header py-2 bg-white">
+    <div class="container">
+      <div class="row no-gutters align-items-center">
+        <div class="col-lg-4 text-center text-lg-left">
+          <ul class="list-inline">
+            
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-facebook"></i></a></li>
+            
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-instagram"></i></a></li>
+            
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-github"></i></a></li>
+            
+          </ul>
+        </div>
+        <div class="col-lg-8 text-center text-lg-right">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a class="text-color mr-3" href="tel:"><strong>CALL : </strong> </a></li>
+            <li class="list-inline-item">
+              <a class="text-color" href="mailto:taiwan.tradingview@gmail.com"><strong>EMAIL : </strong> taiwan.tradingview@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="navigation w-100  top-hider ">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark p-0">
+        <a class="navbar-brand" href="/"><img class="img-fluid"
+            src="https://taiwan-tradingview.github.io/images/logo.png" alt="Taiwan-Tradingview | 金融交易介面"></a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse text-center" id="navigation">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io">Home</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/course">程式課程</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/blog">財商部落格</a>
+            </li>
+            
+            
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                API
+              </a>
+              <div class="dropdown-menu">
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/notice">API使用教學</a>
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/teacher">團隊成員</a>
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/event">每日選股清單</a>
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/research">策略回測</a>
+                
+              </div>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/about">關於我們</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/contact">聯絡我們</a>
+            </li>
+            
+            
+          </ul>
+
+          
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+	
+<section class="page-title-section overlay" style="background-image: url('/images/backgrounds/api-page.png'),url('/images/backgrounds/page-title.jpg');" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb">
+          <li class="list-inline-item h2"><a class="text-primary font-secondary" href="https://taiwan-tradingview.github.io">Home</a></li>
+          <li class="list-inline-item h5"><i class="ti-angle-right text-white"></i></li>
+          <li class="list-inline-item text-white h3 font-secondary">API使用說明</li>
+        </ul>
+        <p class="text-lighten">API用於財務教育、非商業用途。資料僅供參考，使用者依本資料交易發生之損失需自行負責，本API不對資料內容錯誤、更新延誤或傳輸中斷負任何責任。</p>
+      </div>
+    </div>
+  </div>
+</section>
+	
+
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <ul class="list-unstyled">
+          
+          
+          <li class="d-md-table mb-4 w-100 border-bottom hover-shadow">
+  <div class="d-md-table-cell text-center p-4 bg-primary text-white mb-4 mb-md-0"><span class="h2 d-block">21</span> JAN, 2021</div>
+  <div class="d-md-table-cell px-4 vertical-align-middle mb-4 mb-md-0">
+    <a href="https://taiwan-tradingview.github.io/notice/api-033/" class="h4 mb-3 d-block">Alpha_Finance 0.3.3版</a>
+    <p class="mb-0">API用於財務教育、非商業用途。資料僅供參考，使用者依本資料交易發生之損失需自行負責。</p>
+  </div>
+  <div class="d-md-table-cell text-right pr-0 pr-md-4"><a href="https://taiwan-tradingview.github.io/notice/api-033/" class="btn btn-primary">Read More</a></div>
+</li>
+          
+          <li class="d-md-table mb-4 w-100 border-bottom hover-shadow">
+  <div class="d-md-table-cell text-center p-4 bg-primary text-white mb-4 mb-md-0"><span class="h2 d-block">21</span> JAN, 2021</div>
+  <div class="d-md-table-cell px-4 vertical-align-middle mb-4 mb-md-0">
+    <a href="https://taiwan-tradingview.github.io/notice/api-032/" class="h4 mb-3 d-block">Alpha_Finance 0.3.2版</a>
+    <p class="mb-0">API用於財務教育、非商業用途。資料僅供參考，使用者依本資料交易發生之損失需自行負責。</p>
+  </div>
+  <div class="d-md-table-cell text-right pr-0 pr-md-4"><a href="https://taiwan-tradingview.github.io/notice/api-032/" class="btn btn-primary">Read More</a></div>
+</li>
+          
+          <li class="d-md-table mb-4 w-100 border-bottom hover-shadow">
+  <div class="d-md-table-cell text-center p-4 bg-primary text-white mb-4 mb-md-0"><span class="h2 d-block">21</span> JAN, 2021</div>
+  <div class="d-md-table-cell px-4 vertical-align-middle mb-4 mb-md-0">
+    <a href="https://taiwan-tradingview.github.io/notice/api-031/" class="h4 mb-3 d-block">Alpha_Finance 0.3.1版</a>
+    <p class="mb-0">API用於財務教育、非商業用途。資料僅供參考，使用者依本資料交易發生之損失需自行負責。</p>
+  </div>
+  <div class="d-md-table-cell text-right pr-0 pr-md-4"><a href="https://taiwan-tradingview.github.io/notice/api-031/" class="btn btn-primary">Read More</a></div>
+</li>
+          
+          <li class="d-md-table mb-4 w-100 border-bottom hover-shadow">
+  <div class="d-md-table-cell text-center p-4 bg-primary text-white mb-4 mb-md-0"><span class="h2 d-block">21</span> JAN, 2021</div>
+  <div class="d-md-table-cell px-4 vertical-align-middle mb-4 mb-md-0">
+    <a href="https://taiwan-tradingview.github.io/notice/api-030/" class="h4 mb-3 d-block">Alpha_Finance 0.3.0版</a>
+    <p class="mb-0">API用於財務教育、非商業用途。資料僅供參考，使用者依本資料交易發生之損失需自行負責。</p>
+  </div>
+  <div class="d-md-table-cell text-right pr-0 pr-md-4"><a href="https://taiwan-tradingview.github.io/notice/api-030/" class="btn btn-primary">Read More</a></div>
+</li>
+          
+          <li class="d-md-table mb-4 w-100 border-bottom hover-shadow">
+  <div class="d-md-table-cell text-center p-4 bg-primary text-white mb-4 mb-md-0"><span class="h2 d-block">21</span> JAN, 2021</div>
+  <div class="d-md-table-cell px-4 vertical-align-middle mb-4 mb-md-0">
+    <a href="https://taiwan-tradingview.github.io/notice/api-029/" class="h4 mb-3 d-block">Alpha_Finance 0.2.9版</a>
+    <p class="mb-0">API用於財務教育、非商業用途。資料僅供參考，使用者依本資料交易發生之損失需自行負責。</p>
+  </div>
+  <div class="d-md-table-cell text-right pr-0 pr-md-4"><a href="https://taiwan-tradingview.github.io/notice/api-029/" class="btn btn-primary">Read More</a></div>
+</li>
+          
+          <li class="d-md-table mb-4 w-100 border-bottom hover-shadow">
+  <div class="d-md-table-cell text-center p-4 bg-primary text-white mb-4 mb-md-0"><span class="h2 d-block">21</span> JAN, 2021</div>
+  <div class="d-md-table-cell px-4 vertical-align-middle mb-4 mb-md-0">
+    <a href="https://taiwan-tradingview.github.io/notice/api-027/" class="h4 mb-3 d-block">Alpha_Finance 0.2.7版</a>
+    <p class="mb-0">API用於財務教育、非商業用途。資料僅供參考，使用者依本資料交易發生之損失需自行負責。</p>
+  </div>
+  <div class="d-md-table-cell text-right pr-0 pr-md-4"><a href="https://taiwan-tradingview.github.io/notice/api-027/" class="btn btn-primary">Read More</a></div>
+</li>
+          
+          <li class="d-md-table mb-4 w-100 border-bottom hover-shadow">
+  <div class="d-md-table-cell text-center p-4 bg-primary text-white mb-4 mb-md-0"><span class="h2 d-block">21</span> JAN, 2021</div>
+  <div class="d-md-table-cell px-4 vertical-align-middle mb-4 mb-md-0">
+    <a href="https://taiwan-tradingview.github.io/notice/api-026/" class="h4 mb-3 d-block">Alpha_Finance 0.2.6版</a>
+    <p class="mb-0">API用於財務教育、非商業用途。資料僅供參考，使用者依本資料交易發生之損失需自行負責。</p>
+  </div>
+  <div class="d-md-table-cell text-right pr-0 pr-md-4"><a href="https://taiwan-tradingview.github.io/notice/api-026/" class="btn btn-primary">Read More</a></div>
+</li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<footer>
+  
+  
+  
+  <div class="newsletter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 ml-auto bg-primary py-5 newsletter-block">
+          <h3 class="text-white mb-4">Subscribe Newsletter</h3>
+          <form action="https://gmail.us4.list-manage.com/subscribe/post?u=463ee871f45d2d93748e77cad&amp;amp;id=a0a2c6d074" method="post" name="mc-embedded-subscribe-form" target="_blank">
+            <div class="input-wrapper">
+              <input type="email" class="form-control border-0" id="newsletter" name="newsletter" placeholder="Enter your email…">
+              <button type="submit" name="subscribe" class="btn btn-primary">Join</button>
+              <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                <input type="text" name="b_463ee871f45d2d93748e77cad_a0a2c6d074" tabindex="-1">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <div class="footer bg-footer section border-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
+          
+          <a class="logo-footer" href="/"><img class="img-fluid mb-4" src="https://taiwan-tradingview.github.io/images/logo.png" alt="Taiwan-Tradingview | 金融交易介面"></a>
+          <ul class="list-unstyled">
+            <li class="mb-4">Taiwan</li>
+            <li class="mb-4"><a href="mailto:taiwan.tradingview@gmail.com">taiwan.tradingview@gmail.com</a></li>
+            <li class="mb-4"></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">company</h4>
+          <ul class="list-unstyled">
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course">程式課程</a></li>
+            
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/blog">財商部落格</a></li>
+            
+            
+            
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/about">關於我們</a></li>
+            
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/contact">聯絡我們</a></li>
+            
+            
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">links</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice">API使用教學</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/teacher">團隊成員</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/event">每日選股清單</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/research">策略回測</a></li>
+            
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">Courses</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/pypi/">從GitHub到PYPI</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/ai/">人工智慧實戰模型</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/visual/">數據視覺化實戰</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/database/">打造數據資料庫</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/crawler/">Python網頁爬蟲實戰</a></li>
+            
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">new notice</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-033/">Alpha_Finance 0.3.3版</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-032/">Alpha_Finance 0.3.2版</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-031/">Alpha_Finance 0.3.1版</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="copyright py-4 bg-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 text-md-left text-center">
+          <p class="mb-3 mb-md-0">Copyright © Taiwan-Tradingview金融交易介面 2021</p>
+        </div>
+        <div class="col-md-5 text-md-right text-center">
+          <ul class="list-inline">
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-facebook text-primary"></i></a></li>
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-instagram text-primary"></i></a></li>
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-github text-primary"></i></a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Google Map API -->
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&amp;libraries=places"></script>
+
+
+<!-- JS Plugins -->
+
+<script src="https://taiwan-tradingview.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/filterizr/jquery.filterizr.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/google-map/gmap.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://taiwan-tradingview.github.io/js/script.min.js"></script>
+
+<!-- google analitycs -->
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-outline-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8">
+  <title>從GitHub到PYPI</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description"
+    content="專案架構 &amp; 套件更新上傳">
+  
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Hugo 0.83.1" />
+  <!-- multilingual SEO optimizations -->
+  
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/bootstrap/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/slick/slick.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/animate/animate.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/venobox/venobox.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/themify-icons/themify-icons.css">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/scss/main.e88a60b286205da8d3956fa6cd1acdc4a1a1a926d87f7a98b7b19febcdae82d317f67403c17aff2adb6d893867ace5191804ae4dda3a0dc997987b5801c54610.css" integrity="sha512-6IpgsoYgXajTlW&#43;mzRrNxKGhqSbYf3qYt7Gf682ugtMX9nQDwXr/KtttiThnrOUZGASuTdo6DcmXmHtYAcVGEA==" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://taiwan-tradingview.github.io/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="https://taiwan-tradingview.github.io/images/favicon.png" type="image/x-icon">
+
+</head><body>
+<header class="fixed-top header">
+  
+  
+  <div class="top-header py-2 bg-white">
+    <div class="container">
+      <div class="row no-gutters align-items-center">
+        <div class="col-lg-4 text-center text-lg-left">
+          <ul class="list-inline">
+            
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-facebook"></i></a></li>
+            
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-instagram"></i></a></li>
+            
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-github"></i></a></li>
+            
+          </ul>
+        </div>
+        <div class="col-lg-8 text-center text-lg-right">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a class="text-color mr-3" href="tel:"><strong>CALL : </strong> </a></li>
+            <li class="list-inline-item">
+              <a class="text-color" href="mailto:taiwan.tradingview@gmail.com"><strong>EMAIL : </strong> taiwan.tradingview@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="navigation w-100  top-hider ">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark p-0">
+        <a class="navbar-brand" href="/"><img class="img-fluid"
+            src="https://taiwan-tradingview.github.io/images/logo.png" alt="Taiwan-Tradingview | 金融交易介面"></a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse text-center" id="navigation">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io">Home</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/course">程式課程</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/blog">財商部落格</a>
+            </li>
+            
+            
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                API
+              </a>
+              <div class="dropdown-menu">
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/notice">API使用教學</a>
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/teacher">團隊成員</a>
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/event">每日選股清單</a>
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/research">策略回測</a>
+                
+              </div>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/about">關於我們</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/contact">聯絡我們</a>
+            </li>
+            
+            
+          </ul>
+
+          
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+	
+<section class="page-title-section overlay" style="background-image: url('/images/backgrounds/page-title.png'),url('/images/backgrounds/page-title.jpg');" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb">
+          <li class="list-inline-item h2"><a class="text-primary font-secondary" href="https://taiwan-tradingview.github.io">Home</a></li>
+          <li class="list-inline-item h5"><i class="ti-angle-right text-white"></i></li>
+          <li class="list-inline-item text-white h3 font-secondary">從GitHub到PYPI</li>
+        </ul>
+        <p class="text-lighten">專案架構 &amp; 套件更新上傳</p>
+      </div>
+    </div>
+  </div>
+</section>
+	
+
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mb-4">
+        
+        <img style="height: 500px;width: 100%;object-fit: cover;" src="/images/courses/pypi.png"
+          class="img-fluid w-100">
+      </div>
+    </div>
+    
+    <div class="row align-items-center mb-5">
+      <div class="col-xl-3 order-1 col-sm-6 mb-4 mb-xl-0">
+        <h2>從GitHub到PYPI</h2>
+      </div>
+      <div class="col-xl-6 order-sm-3 order-xl-2 col-12 order-2">
+        <ul class="list-inline text-xl-center">
+          <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-calendar text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">DURATION</h6>
+                <p class="mb-0">06 Month</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-timer text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">WEEKLY</h6>
+                <p class="mb-0">03 hours</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-wallet text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">FEE</h6>
+                <p class="mb-0">From: $699</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xl-3 text-sm-right text-left order-sm-2 order-3 order-xl-3 col-sm-6 mb-4 mb-xl-0">
+        <a href="#" class="btn btn-primary">Apply now</a>
+      </div>
+      
+      <div class="col-12 mt-4 order-4">
+        <div class="border-bottom border-primary"></div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12 mb-4 content">
+        <h3 id="前言">前言</h3>
+<h5 id="如果你學習python有一段時間後應該會覺得某些open-source的套件功能實在不太順手於是開始改寫套件開發完畢後發現哇自己根本是天才大多數時間都會覺得自己根本是廢物啊">如果你學習Python有一段時間後應該會覺得某些open source的套件功能實在不太順手，於是開始改寫套件，開發完畢後發現:哇!自己根本是天才(大多數時間都會覺得自己根本是廢物啊)!</h5>
+<h5 id="於是將自己的改寫好的專案上傳到github上但如果想在其他電腦或colab上安裝自己的套件時要輸入">於是將自己的改寫好的專案上傳到GitHub上，但如果想在其他電腦或colab上安裝自己的套件時要輸入:</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">pip install git<span style="color:#666">+</span>https:<span style="color:#666">//</span>github<span style="color:#666">.</span>com<span style="color:#666">/</span>User_Name<span style="color:#666">/</span>User_Repo<span style="color:#666">.</span>git
+</code></pre></div><p>.</p>
+<h5 id="咦前面課程安裝套件的指令好像沒這麼長欸以安裝pandas為例安裝pandas套件是輸入">咦!前面課程安裝套件的指令好像沒這麼長欸，以安裝pandas為例，安裝<code>pandas</code>套件是輸入:</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">pip install pandas
+</code></pre></div><h5 id="大家有看出差異嗎安裝pandas只要install套件名稱就好了那為什麼安裝自己的套件要寫專案的網址呢">大家有看出差異嗎?安裝<code>pandas</code>只要<code>install</code>套件名稱就好了，那為什麼安裝自己的套件要寫專案的網址呢?</h5>
+<h5 id="原因在於我們沒有將專案上傳到pypipython第三方軟體包的軟體存儲庫上所以無法使用">原因在於我們沒有將專案上傳到PYPI(Python第三方軟體包的軟體存儲庫)上，所以無法使用</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">pip install MyProject
+</code></pre></div><p>.</p>
+<h5 id="而本堂課的重點在於將自己的專案上傳到pypi上以方便日後下載時的指令快速簡單如果你對於安裝自己套件的指令沒那麼care的話可以跳過這堂課程哦">而本堂課的重點在於將自己的專案上傳到PYPI上以方便日後下載時的指令快速簡單，如果你對於安裝自己套件的指令沒那麼care的話可以跳過這堂課程哦!</h5>
+<hr>
+<h3 id="目錄">目錄</h3>
+<pre><code>《一》專案架構
+
+《二》PYPI上傳
+
+《三》更新版本
+</code></pre><hr>
+<h3 id="一專案架構">《一》專案架構</h3>
+<pre><code>Alpha_Finance --- Alpha_Finance --------------------- __init__.py #有__init__.py的套件才會被打包上傳
+                               |                                                                |
+                               |                                                                |- main.py #主套件
+                               |
+                               |- requirements.txt #專案所需套件
+                               |
+                               |- .gitignore #省略不上傳的資料
+                               |
+                               |- setup.py #上傳到PYPI的指令
+</code></pre><hr>
+<h3 id="二pypi上傳">《二》PYPI上傳</h3>
+<h5 id="1建立gitignore">1.建立<code>.gitignore</code></h5>
+<h5 id="直接使用gitignore模板httpsgithubcomgithubgitignoreblobmasterpythongitignore">直接使用<a href="https://github.com/github/gitignore/blob/master/Python.gitignore">.gitignore模板</a></h5>
+<hr>
+<h5 id="2建立setuppy">2.建立<code>setup.py</code></h5>
+<h5 id="改寫setuppy模板httpsgithubcomnavdeep-gsetuppyblobmastersetuppy">改寫<a href="https://github.com/navdeep-G/setup.py/blob/master/setup.py">setup.py模板</a></h5>
+<p>強烈建議REQUIRED不要使用io讀取txt的方式</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#60a0b0;font-style:italic">#!/usr/bin/env python</span>
+<span style="color:#60a0b0;font-style:italic"># -*- coding: utf-8 -*-</span>
+
+<span style="color:#60a0b0;font-style:italic"># Note: To use the &#39;upload&#39; functionality of this file, you must:</span>
+<span style="color:#60a0b0;font-style:italic">#   $ pipenv install twine --dev</span>
+
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">io</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">os</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">sys</span>
+<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">shutil</span> <span style="color:#007020;font-weight:bold">import</span> rmtree
+
+<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">setuptools</span> <span style="color:#007020;font-weight:bold">import</span> find_packages, setup, Command
+
+<span style="color:#60a0b0;font-style:italic"># Package meta-data.</span>
+NAME <span style="color:#666">=</span> <span style="color:#4070a0">&#39;Alpha_Finance&#39;</span>
+DESCRIPTION <span style="color:#666">=</span> <span style="color:#4070a0">&#39;This package is specially designed for Taiwan stock market.&#39;</span>
+URL <span style="color:#666">=</span> <span style="color:#4070a0">&#39;https://github.com/AlphaFinance/Alpha_Finance&#39;</span>
+EMAIL <span style="color:#666">=</span> <span style="color:#4070a0">&#39;alphafinance.tw@gmail.com&#39;</span>
+AUTHOR <span style="color:#666">=</span> <span style="color:#4070a0">&#39;KB&#39;</span>
+REQUIRES_PYTHON <span style="color:#666">=</span> <span style="color:#4070a0">&#39;&gt;=3.6.0&#39;</span>
+VERSION <span style="color:#666">=</span> <span style="color:#4070a0">&#39;0.1.0&#39;</span>
+
+<span style="color:#60a0b0;font-style:italic"># What packages are required for this module to be executed?</span>
+REQUIRED <span style="color:#666">=</span> [
+    <span style="color:#4070a0">&#39;requests==2.22.0&#39;</span>,
+    <span style="color:#4070a0">&#39;beautifulsoup4==4.9.3&#39;</span>,
+    <span style="color:#4070a0">&#39;selenium==3.141.0&#39;</span>,
+    <span style="color:#4070a0">&#39;ipywidgets==7.4.2&#39;</span>,
+    <span style="color:#4070a0">&#39;tqdm==4.31.1&#39;</span>,
+    <span style="color:#4070a0">&#39;seaborn==0.11.1&#39;</span>,
+    <span style="color:#4070a0">&#39;plotly==5.1.0&#39;</span>,
+    <span style="color:#4070a0">&#39;pyecharts==1.7.1&#39;</span>,
+    <span style="color:#4070a0">&#39;yfinance==0.1.62&#39;</span>,
+    <span style="color:#4070a0">&#39;fugle_realtime==0.2.9&#39;</span>,
+    <span style="color:#4070a0">&#39;tensorflow==1.14.0&#39;</span>,
+    <span style="color:#4070a0">&#39;scikit-learn==0.24.2&#39;</span>,
+    <span style="color:#4070a0">&#39;lightgbm==3.1.1&#39;</span>,
+    <span style="color:#4070a0">&#39;xgboost==1.4.2&#39;</span>,
+    <span style="color:#4070a0">&#39;keras==2.2.4&#39;</span>,
+    <span style="color:#4070a0">&#39;pandas==1.3.1&#39;</span>,
+    <span style="color:#4070a0">&#39;numpy==1.21.1&#39;</span>,
+    <span style="color:#4070a0">&#39;talib-binary&#39;</span>
+]
+
+<span style="color:#60a0b0;font-style:italic"># What packages are optional?</span>
+EXTRAS <span style="color:#666">=</span> {
+    <span style="color:#60a0b0;font-style:italic"># &#39;fancy feature&#39;: [&#39;django&#39;],</span>
+}
+
+<span style="color:#60a0b0;font-style:italic"># The rest you shouldn&#39;t have to touch too much :)</span>
+<span style="color:#60a0b0;font-style:italic"># ------------------------------------------------</span>
+</code></pre></div><hr>
+<h5 id="3建立pypirc">3.建立<code>.pypirc</code></h5>
+<h5 id="申請apihttpspypiorgmanageaccounttoken"><a href="https://pypi.org/manage/account/token/">申請API</a></h5>
+<p><img src="/images/courses/pypirc-api.png" alt=""></p>
+<h5 id="cusersapple下建立pypirc">C:\Users\apple下建立<code>.pypirc</code></h5>
+<pre><code>[pypi]
+  username = __token__
+  password = pypi-AgEIcHlwaS5vcmcCJGUwYWEzM2E3LThiMWEtNDQ0NS05ZDlASRWG3546FDGS23525FDGD64564
+</code></pre><hr>
+<h5 id="4pypi上傳">4.PYPI上傳</h5>
+<h5 id="cmd專案資料夾"><code>cmd</code>專案資料夾</h5>
+<p><img src="/images/courses/pypi-cmd.png" alt=""></p>
+<h5 id="安裝套件">安裝套件</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">pip install twine
+
+pip install wheel
+</code></pre></div><h5 id="打包上傳">打包上傳</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">python setup<span style="color:#666">.</span>py sdist
+
+python setup<span style="color:#666">.</span>py bdist_wheel
+
+twine upload dist<span style="color:#666">/*</span>
+</code></pre></div><p>上傳成功 !!!</p>
+<h2 id="imagescoursestwinepng"><img src="/images/courses/twine.png" alt=""></h2>
+<h3 id="三更新版本">《三》更新版本</h3>
+<h5 id="1修改版本">1.修改版本</h5>
+<p>setup.py</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">VERSION <span style="color:#666">=</span> <span style="color:#4070a0">&#39;0.1.1&#39;</span>  
+</code></pre></div><hr>
+<h5 id="2刪除檔案">2.刪除檔案</h5>
+<h2 id="imagescoursesdeletepng"><img src="/images/courses/delete.png" alt=""></h2>
+<h5 id="3打包上傳">3.打包上傳</h5>
+<p>更新成功!!!</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">python setup<span style="color:#666">.</span>py sdist
+
+python setup<span style="color:#666">.</span>py bdist_wheel
+
+twine upload dist<span style="color:#666">/*</span>
+</code></pre></div><p><img src="/images/courses/renew.png" alt=""></p>
+<hr>
+<h3 id="結論">結論</h3>
+<h5 id="從pypi上安裝自己套件的感覺是不是很有成就感啊而且整個上傳過程也比想像中來的容易許多每次更新上傳只需要短短三行程式碼就解決了">從PYPI上安裝自己套件的感覺是不是很有成就感啊!而且整個上傳過程也比想像中來的容易許多，每次更新上傳只需要短短三行程式碼就解決了!</h5>
+<p>.</p>
+<h5 id="而最後要注意的是更新版本後上傳到pypi外還要記得要將最新版本上傳到github上因為使用pip-install時會依照不同的安裝路徑安裝到不同的版本所以一定要記得更新所有開源的版本哦">而最後要注意的是更新版本後上傳到PYPI外，還要記得要將最新版本上傳到GitHub上，因為使用<code>pip install</code>時會依照不同的安裝路徑安裝到不同的版本，所以一定要記得更新所有開源的版本哦!</h5>
+
+      </div>
+      
+      <div class="col-12">
+        <h5 class="mb-3">teacher</h5>
+        
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+          <div class="media mb-2 mb-sm-0 align-items-center">
+            <img class="mr-4 img-fluid teacher-thumb-sm" src="/images/teachers/KB.png" alt="KB">
+            <div class="media-body">
+              <h4 class="mt-0"><a href="https://taiwan-tradingview.github.io/teacher/kb/">KB</a></h4>
+              Data Scientist
+            </div>
+          </div>
+          <div class="social-link">
+            <h6 class="d-none d-sm-block text-right">Contact Info</h6>
+            <ul class="list-inline">
+              
+              <li class="list-inline-item"><a class="d-inline-block text-light p-1" href="alphafinance.tw@gmail.com"><i class="ti-email"></i></a></li>
+              
+              <li class="list-inline-item"><a class="d-inline-block text-light p-1" href="https://www.instagram.com/Alpha_Finance.tw/"><i class="ti-instagram"></i></a></li>
+              
+              <li class="list-inline-item"><a class="d-inline-block text-light p-1" href="#"><i class="ti-facebook"></i></a></li>
+              
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-bottom border-primary mt-4"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="section-title">Related Course</h2>
+      </div>
+    </div>
+    <div class="row">
+      
+      
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/visual.png" alt="數據視覺化實戰">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
+    </ul>
+    <h4 class="card-title"><a href="https://taiwan-tradingview.github.io/course/visual/">數據視覺化實戰</a></h4>
+    <p class="card-text mb-4">認識視覺化套件 &amp; 客制化調整</p>
+    <a href="https://taiwan-tradingview.github.io/course/visual/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/crawler.png" alt="Python網頁爬蟲實戰">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
+    </ul>
+    <h4 class="card-title"><a href="https://taiwan-tradingview.github.io/course/crawler/">Python網頁爬蟲實戰</a></h4>
+    <p class="card-text mb-4">認識網頁型態  &amp; 爬蟲技巧大公開</p>
+    <a href="https://taiwan-tradingview.github.io/course/crawler/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/environment.png" alt="建置Python開發環境">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
+    </ul>
+    <h4 class="card-title"><a href="https://taiwan-tradingview.github.io/course/environment/">建置Python開發環境</a></h4>
+    <p class="card-text mb-4">建立專案環境 &amp; 安裝超實用套件</p>
+    <a href="https://taiwan-tradingview.github.io/course/environment/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+<footer>
+  
+  
+  
+  <div class="newsletter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 ml-auto bg-primary py-5 newsletter-block">
+          <h3 class="text-white mb-4">Subscribe Newsletter</h3>
+          <form action="https://gmail.us4.list-manage.com/subscribe/post?u=463ee871f45d2d93748e77cad&amp;amp;id=a0a2c6d074" method="post" name="mc-embedded-subscribe-form" target="_blank">
+            <div class="input-wrapper">
+              <input type="email" class="form-control border-0" id="newsletter" name="newsletter" placeholder="Enter your email…">
+              <button type="submit" name="subscribe" class="btn btn-primary">Join</button>
+              <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                <input type="text" name="b_463ee871f45d2d93748e77cad_a0a2c6d074" tabindex="-1">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <div class="footer bg-footer section border-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
+          
+          <a class="logo-footer" href="/"><img class="img-fluid mb-4" src="https://taiwan-tradingview.github.io/images/logo.png" alt="Taiwan-Tradingview | 金融交易介面"></a>
+          <ul class="list-unstyled">
+            <li class="mb-4">Taiwan</li>
+            <li class="mb-4"><a href="mailto:taiwan.tradingview@gmail.com">taiwan.tradingview@gmail.com</a></li>
+            <li class="mb-4"></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">company</h4>
+          <ul class="list-unstyled">
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course">程式課程</a></li>
+            
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/blog">財商部落格</a></li>
+            
+            
+            
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/about">關於我們</a></li>
+            
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/contact">聯絡我們</a></li>
+            
+            
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">links</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice">API使用教學</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/teacher">團隊成員</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/event">每日選股清單</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/research">策略回測</a></li>
+            
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">Courses</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/pypi/">從GitHub到PYPI</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/ai/">人工智慧實戰模型</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/visual/">數據視覺化實戰</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/database/">打造數據資料庫</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/crawler/">Python網頁爬蟲實戰</a></li>
+            
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">new notice</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-033/">Alpha_Finance 0.3.3版</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-032/">Alpha_Finance 0.3.2版</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-031/">Alpha_Finance 0.3.1版</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="copyright py-4 bg-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 text-md-left text-center">
+          <p class="mb-3 mb-md-0">Copyright © Taiwan-Tradingview金融交易介面 2021</p>
+        </div>
+        <div class="col-md-5 text-md-right text-center">
+          <ul class="list-inline">
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-facebook text-primary"></i></a></li>
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-instagram text-primary"></i></a></li>
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-github text-primary"></i></a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Google Map API -->
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&amp;libraries=places"></script>
+
+
+<!-- JS Plugins -->
+
+<script src="https://taiwan-tradingview.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/filterizr/jquery.filterizr.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/google-map/gmap.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://taiwan-tradingview.github.io/js/script.min.js"></script>
+
+<!-- google analitycs -->
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-outline-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+
+</html>

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8">
+  <title>人工智慧實戰模型</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description"
+    content="機器學習 &amp; 神經網路">
+  
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Hugo 0.83.1" />
+  <!-- multilingual SEO optimizations -->
+  
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/bootstrap/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/slick/slick.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/animate/animate.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/venobox/venobox.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/themify-icons/themify-icons.css">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/scss/main.e88a60b286205da8d3956fa6cd1acdc4a1a1a926d87f7a98b7b19febcdae82d317f67403c17aff2adb6d893867ace5191804ae4dda3a0dc997987b5801c54610.css" integrity="sha512-6IpgsoYgXajTlW&#43;mzRrNxKGhqSbYf3qYt7Gf682ugtMX9nQDwXr/KtttiThnrOUZGASuTdo6DcmXmHtYAcVGEA==" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://taiwan-tradingview.github.io/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="https://taiwan-tradingview.github.io/images/favicon.png" type="image/x-icon">
+
+</head><body>
+<header class="fixed-top header">
+  
+  
+  <div class="top-header py-2 bg-white">
+    <div class="container">
+      <div class="row no-gutters align-items-center">
+        <div class="col-lg-4 text-center text-lg-left">
+          <ul class="list-inline">
+            
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-facebook"></i></a></li>
+            
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-instagram"></i></a></li>
+            
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-github"></i></a></li>
+            
+          </ul>
+        </div>
+        <div class="col-lg-8 text-center text-lg-right">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a class="text-color mr-3" href="tel:"><strong>CALL : </strong> </a></li>
+            <li class="list-inline-item">
+              <a class="text-color" href="mailto:taiwan.tradingview@gmail.com"><strong>EMAIL : </strong> taiwan.tradingview@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="navigation w-100  top-hider ">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark p-0">
+        <a class="navbar-brand" href="/"><img class="img-fluid"
+            src="https://taiwan-tradingview.github.io/images/logo.png" alt="Taiwan-Tradingview | 金融交易介面"></a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse text-center" id="navigation">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io">Home</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/course">程式課程</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/blog">財商部落格</a>
+            </li>
+            
+            
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                API
+              </a>
+              <div class="dropdown-menu">
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/notice">API使用教學</a>
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/teacher">團隊成員</a>
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/event">每日選股清單</a>
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/research">策略回測</a>
+                
+              </div>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/about">關於我們</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/contact">聯絡我們</a>
+            </li>
+            
+            
+          </ul>
+
+          
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+	
+<section class="page-title-section overlay" style="background-image: url('/images/backgrounds/page-title.png'),url('/images/backgrounds/page-title.jpg');" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb">
+          <li class="list-inline-item h2"><a class="text-primary font-secondary" href="https://taiwan-tradingview.github.io">Home</a></li>
+          <li class="list-inline-item h5"><i class="ti-angle-right text-white"></i></li>
+          <li class="list-inline-item text-white h3 font-secondary">人工智慧實戰模型</li>
+        </ul>
+        <p class="text-lighten">機器學習 &amp; 神經網路</p>
+      </div>
+    </div>
+  </div>
+</section>
+	
+
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mb-4">
+        
+        <img style="height: 500px;width: 100%;object-fit: cover;" src="/images/courses/AI.png"
+          class="img-fluid w-100">
+      </div>
+    </div>
+    
+    <div class="row align-items-center mb-5">
+      <div class="col-xl-3 order-1 col-sm-6 mb-4 mb-xl-0">
+        <h2>人工智慧實戰模型</h2>
+      </div>
+      <div class="col-xl-6 order-sm-3 order-xl-2 col-12 order-2">
+        <ul class="list-inline text-xl-center">
+          <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-calendar text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">DURATION</h6>
+                <p class="mb-0">06 Month</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-timer text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">WEEKLY</h6>
+                <p class="mb-0">03 hours</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-wallet text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">FEE</h6>
+                <p class="mb-0">From: $699</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xl-3 text-sm-right text-left order-sm-2 order-3 order-xl-3 col-sm-6 mb-4 mb-xl-0">
+        <a href="#" class="btn btn-primary">Apply now</a>
+      </div>
+      
+      <div class="col-12 mt-4 order-4">
+        <div class="border-bottom border-primary"></div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12 mb-4 content">
+        <h3 id="前言">前言</h3>
+<h5 id="大家知道目前金融科技最有潛力的領域是什麼嗎">大家知道目前金融科技最有潛力的領域是什麼嗎?</h5>
+<h5 id="沒錯就是我們常常聽到人工智慧相較於其他程式語言最能凸顯出python與眾不同的特色就在於machine-learningneural-network在github上有非常多的開發者提供了強大的機器學習函式庫所以即使我們完全不了解機器學習背後演算法的原理還是能夠訓練出有用的model哦">沒錯!就是我們常常聽到人工智慧，相較於其他程式語言，最能凸顯出Python與眾不同的特色就在於<code>Machine Learning</code>&amp;<code>Neural Network</code>，在GitHub上有非常多的開發者提供了強大的機器學習函式庫，所以即使我們完全不了解機器學習背後演算法的原理，還是能夠訓練出有用的<code>model</code>哦!</h5>
+<hr>
+<h3 id="目錄">目錄</h3>
+<pre><code>《一》AI基礎概念
+
+《二》Machine Learning (機器學習)
+
+《三》Neural Network (神經網路)
+
+《四》訓練風險
+</code></pre><hr>
+<h3 id="一ai基礎概念">《一》AI基礎概念</h3>
+<h5 id="artificial-intelligence--machine-learning--deep-learning"><code>Artificial Intelligence</code> ➨ <code>Machine Learning</code> ➨ <code>Deep Learning</code></h5>
+<p><img src="/images/courses/ai-summary.png" alt="">
+<img src="/images/courses/ai-treemap.png" alt=""><br>
+圖片來源: <a href="https://www.raboobs.top/products.aspx?cname=big+data+deep+learning&amp;cid=28">raboobs</a>  <a href="https://blog.evolvemachinelearners.com/what-is-machine-learning/">EVOLVE</a></p>
+<hr>
+<h3 id="二machine-learning-機器學習">《二》Machine Learning (機器學習)</h3>
+<h5 id="1認識機器學習">1.認識機器學習</h5>
+<table>
+<thead>
+<tr>
+<th>參數</th>
+<th>意義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Feaures</strong></td>
+<td>訓練model從哪些角度進行學習</td>
+</tr>
+<tr>
+<td><strong>Label</strong></td>
+<td>正確解答</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>種類</th>
+<th>特色</th>
+<th>原理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Supervised (監督式學習)</strong></td>
+<td>有features &amp; label</td>
+<td>Input <code>features</code>，Output <code>label</code>，訓練model搜尋出兩者之間的關係。</td>
+</tr>
+<tr>
+<td><strong>Unsupervised (非監督式學習)</strong></td>
+<td>只有features</td>
+<td>Input <code>features</code>，沒有Output，訓練model搜尋樣本間的規律關係。相似度比對 (clustering)</td>
+</tr>
+<tr>
+<td><strong>Reinforcements (強化學習)</strong></td>
+<td>有features &amp; label(分數獎懲)</td>
+<td>與環境互動獲得回饋</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>演算法</th>
+<th>原理</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Classification</strong></td>
+<td>label為不連續值(種類) ➨ 分類</td>
+<td><code>True</code> / <code>False</code></td>
+</tr>
+<tr>
+<td><strong>Regression</strong></td>
+<td>label為連續值(數值) ➨ 規律性</td>
+<td><code>預測數值</code></td>
+</tr>
+</tbody>
+</table>
+<p><img src="/images/courses/c-r.png" alt=""><br>
+圖片來源:<a href="https://blog.evolvemachinelearners.com/what-is-machine-learning/">EVOLVE</a></p>
+<hr>
+<h5 id="2svm">2.SVM</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">
+
+</code></pre></div><hr>
+<h6 id="3lightgbm">3.LightGBM</h6>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">
+
+</code></pre></div><hr>
+<h5 id="4xgboost">4.XGBoost</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">
+
+</code></pre></div><hr>
+<h3 id="三neural-network-神經網路">《三》Neural Network (神經網路)</h3>
+<h5 id="1認識神經網路">1.認識神經網路</h5>
+<h5 id="深度學習可以看作機器學習的進化版都是為了建立model但深度學習使用類神經網路訓練模型而非機器學習使用的統計模型">深度學習可以看作機器學習的進化版，都是為了建立model，但深度學習使用類神經網路訓練模型，而非機器學習使用的統計模型。</h5>
+<table>
+<thead>
+<tr>
+<th>人工智慧</th>
+<th>訓練原理</th>
+<th>差異</th>
+<th>訓練時間</th>
+<th>預測時間</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>機器學習</td>
+<td>需人為製作<code>features</code></td>
+<td>需有domain knowledge</td>
+<td>快</td>
+<td>慢</td>
+</tr>
+<tr>
+<td>神經網路</td>
+<td>不需人為製作<code>features</code>，模型可自行生成</td>
+<td>不需domain knowledge</td>
+<td>慢</td>
+<td>快</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/images/courses/nn.png" alt=""><br>
+圖片來源:<a href="https://towardsdatascience.com/training-deep-neural-networks-9fdb1964b964">towardsdatascience</a></p>
+<hr>
+<h5 id="2keras">2.keras</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">
+
+</code></pre></div><hr>
+<h5 id="3lstm">3.LSTM</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">
+
+</code></pre></div><hr>
+<h5 id="4cnn">4.CNN</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">
+
+</code></pre></div><hr>
+<h3 id="四訓練風險">《四》訓練風險</h3>
+<p><img src="/images/courses/overfitting.png" alt=""><br>
+圖片來源:<a href="https://towardsdatascience.com/techniques-for-handling-underfitting-and-overfitting-in-machine-learning-348daa2380b9">towardsdatascience</a></p>
+<hr>
+<h3 id="結論">結論</h3>
+<h5 id="看完上述ai預測成果後就可以發現透過演算法和類神經元的訓練後竟然可以打造出幾乎可以拿來實戰的ai投資策略其實國內外已經陸續有少數基金機構將少數的資金拿來真正做ai交易">看完上述AI預測成果後就可以發現，透過演算法和類神經元的訓練後竟然可以打造出幾乎可以拿來實戰的AI投資策略，其實國內外已經陸續有少數基金機構將少數的資金拿來真正做AI交易。</h5>
+<h5 id="但以現今的技術想要達成ai完全替代傳統人工投資還要一大段路要走最大的問題出在模型的黑盒化大部分的時候我們只會得到模型output的交易訊號但卻沒辦法知道ai的思考方式這對於要落實ai交易自動化來說是非常巨大的風險">但以現今的技術想要達成AI完全替代傳統人工投資還要一大段路要走，最大的問題出在模型的黑盒化，大部分的時候我們只會得到模型output的交易訊號，但卻沒辦法知道AI的思考方式，這對於要落實AI交易自動化來說是非常巨大的風險。</h5>
+<h5 id="舉例來說若某天市場出現類似2008金融風暴或是2020疫情融斷等黑天鵝事件時我們無法得知ai會做出何種判斷有可能做出將全數部位一次出清而這種出清方式將會造成市場劇烈下跌進一步擴大投資資金的損失而到時責任歸屬也是一大問題">舉例來說，若某天市場出現類似2008金融風暴或是2020疫情融斷等黑天鵝事件時，我們無法得知AI會做出何種判斷，有可能做出將全數部位一次出清，而這種出清方式將會造成市場劇烈下跌，進一步擴大投資資金的損失。而到時責任歸屬也是一大問題。</h5>
+<p>.</p>
+<h5 id="即使ai在金融方面的應用還無法像其他領域這麼成功但是未來的發展潛力絕對不可小覷所以機器學習神經網路也逐漸成為python科學家必備的基礎知識囉">即使AI在金融方面的應用還無法像其他領域這麼成功，但是未來的發展潛力絕對不可小覷，所以機器學習、神經網路也逐漸成為python科學家必備的基礎知識囉!</h5>
+<p>.<br>
+本篇建構model的方式參考<a href="https://www.finlab.tw/">FinLab部落格</a>，若有侵害著作權，請來信或留言告知，我們將儘速移除相關內容。</p>
+
+      </div>
+      
+      <div class="col-12">
+        <h5 class="mb-3">teacher</h5>
+        
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+          <div class="media mb-2 mb-sm-0 align-items-center">
+            <img class="mr-4 img-fluid teacher-thumb-sm" src="/images/teachers/KB.png" alt="KB">
+            <div class="media-body">
+              <h4 class="mt-0"><a href="https://taiwan-tradingview.github.io/teacher/kb/">KB</a></h4>
+              Data Scientist
+            </div>
+          </div>
+          <div class="social-link">
+            <h6 class="d-none d-sm-block text-right">Contact Info</h6>
+            <ul class="list-inline">
+              
+              <li class="list-inline-item"><a class="d-inline-block text-light p-1" href="alphafinance.tw@gmail.com"><i class="ti-email"></i></a></li>
+              
+              <li class="list-inline-item"><a class="d-inline-block text-light p-1" href="https://www.instagram.com/Alpha_Finance.tw/"><i class="ti-instagram"></i></a></li>
+              
+              <li class="list-inline-item"><a class="d-inline-block text-light p-1" href="#"><i class="ti-facebook"></i></a></li>
+              
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-bottom border-primary mt-4"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="section-title">Related Course</h2>
+      </div>
+    </div>
+    <div class="row">
+      
+      
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/website.png" alt="如何架設個人網站">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Hugo</li>
+    </ul>
+    <h4 class="card-title"><a href="https://taiwan-tradingview.github.io/course/website/">如何架設個人網站</a></h4>
+    <p class="card-text mb-4">Hugo快速架站 &amp; Google服務</p>
+    <a href="https://taiwan-tradingview.github.io/course/website/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/database.png" alt="打造數據資料庫">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
+    </ul>
+    <h4 class="card-title"><a href="https://taiwan-tradingview.github.io/course/database/">打造數據資料庫</a></h4>
+    <p class="card-text mb-4">認識資料庫 &amp; 多執行緒爬蟲自動化</p>
+    <a href="https://taiwan-tradingview.github.io/course/database/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/basis.png" alt="Python快速入門">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
+    </ul>
+    <h4 class="card-title"><a href="https://taiwan-tradingview.github.io/course/basis/">Python快速入門</a></h4>
+    <p class="card-text mb-4">Python基礎語法 &amp; Pandas應用</p>
+    <a href="https://taiwan-tradingview.github.io/course/basis/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+<footer>
+  
+  
+  
+  <div class="newsletter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 ml-auto bg-primary py-5 newsletter-block">
+          <h3 class="text-white mb-4">Subscribe Newsletter</h3>
+          <form action="https://gmail.us4.list-manage.com/subscribe/post?u=463ee871f45d2d93748e77cad&amp;amp;id=a0a2c6d074" method="post" name="mc-embedded-subscribe-form" target="_blank">
+            <div class="input-wrapper">
+              <input type="email" class="form-control border-0" id="newsletter" name="newsletter" placeholder="Enter your email…">
+              <button type="submit" name="subscribe" class="btn btn-primary">Join</button>
+              <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                <input type="text" name="b_463ee871f45d2d93748e77cad_a0a2c6d074" tabindex="-1">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <div class="footer bg-footer section border-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
+          
+          <a class="logo-footer" href="/"><img class="img-fluid mb-4" src="https://taiwan-tradingview.github.io/images/logo.png" alt="Taiwan-Tradingview | 金融交易介面"></a>
+          <ul class="list-unstyled">
+            <li class="mb-4">Taiwan</li>
+            <li class="mb-4"><a href="mailto:taiwan.tradingview@gmail.com">taiwan.tradingview@gmail.com</a></li>
+            <li class="mb-4"></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">company</h4>
+          <ul class="list-unstyled">
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course">程式課程</a></li>
+            
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/blog">財商部落格</a></li>
+            
+            
+            
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/about">關於我們</a></li>
+            
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/contact">聯絡我們</a></li>
+            
+            
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">links</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice">API使用教學</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/teacher">團隊成員</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/event">每日選股清單</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/research">策略回測</a></li>
+            
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">Courses</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/pypi/">從GitHub到PYPI</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/ai/">人工智慧實戰模型</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/visual/">數據視覺化實戰</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/database/">打造數據資料庫</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/crawler/">Python網頁爬蟲實戰</a></li>
+            
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">new notice</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-033/">Alpha_Finance 0.3.3版</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-032/">Alpha_Finance 0.3.2版</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-031/">Alpha_Finance 0.3.1版</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="copyright py-4 bg-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 text-md-left text-center">
+          <p class="mb-3 mb-md-0">Copyright © Taiwan-Tradingview金融交易介面 2021</p>
+        </div>
+        <div class="col-md-5 text-md-right text-center">
+          <ul class="list-inline">
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-facebook text-primary"></i></a></li>
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-instagram text-primary"></i></a></li>
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-github text-primary"></i></a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Google Map API -->
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&amp;libraries=places"></script>
+
+
+<!-- JS Plugins -->
+
+<script src="https://taiwan-tradingview.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/filterizr/jquery.filterizr.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/google-map/gmap.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://taiwan-tradingview.github.io/js/script.min.js"></script>
+
+<!-- google analitycs -->
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-outline-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+
+</html>

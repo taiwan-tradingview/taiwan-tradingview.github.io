@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>API使用說明 on Taiwan-Tradingview | 金融交易介面</title>
+    <link>https://taiwan-tradingview.github.io/notice/</link>
+    <description>Recent content in API使用說明 on Taiwan-Tradingview | 金融交易介面</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; Taiwan-Tradingview金融交易介面 2021</copyright>
+    <lastBuildDate>Wed, 13 Jan 2021 15:27:17 +0800</lastBuildDate><atom:link href="https://taiwan-tradingview.github.io/notice/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Alpha_Finance 0.3.3版</title>
+      <link>https://taiwan-tradingview.github.io/notice/api-033/</link>
+      <pubDate>Wed, 13 Jan 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://taiwan-tradingview.github.io/notice/api-033/</guid>
+      <description>Installation Install using pip
+pip install Alpha_Finance==0.3.3  本地端環境
+安裝talib並儲存至user  pip install TA_Lib-0.</description>
+    </item>
+    
+    <item>
+      <title>Alpha_Finance 0.3.2版</title>
+      <link>https://taiwan-tradingview.github.io/notice/api-032/</link>
+      <pubDate>Tue, 12 Jan 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://taiwan-tradingview.github.io/notice/api-032/</guid>
+      <description>Installation Install using pip
+pip install Alpha_Finance==0.3.2  本地端環境
+安裝talib並儲存至user  pip install TA_Lib-0.</description>
+    </item>
+    
+    <item>
+      <title>Alpha_Finance 0.3.1版</title>
+      <link>https://taiwan-tradingview.github.io/notice/api-031/</link>
+      <pubDate>Mon, 11 Jan 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://taiwan-tradingview.github.io/notice/api-031/</guid>
+      <description>Installation Install using pip
+pip install Alpha_Finance==0.3.1  本地端環境
+安裝talib並儲存至user  pip install TA_Lib-0.</description>
+    </item>
+    
+    <item>
+      <title>Alpha_Finance 0.3.0版</title>
+      <link>https://taiwan-tradingview.github.io/notice/api-030/</link>
+      <pubDate>Sun, 10 Jan 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://taiwan-tradingview.github.io/notice/api-030/</guid>
+      <description>Installation Install using pip
+pip install Alpha_Finance==0.3.0  本地端環境
+安裝talib並儲存至user  pip install TA_Lib-0.</description>
+    </item>
+    
+    <item>
+      <title>Alpha_Finance 0.2.9版</title>
+      <link>https://taiwan-tradingview.github.io/notice/api-029/</link>
+      <pubDate>Sat, 09 Jan 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://taiwan-tradingview.github.io/notice/api-029/</guid>
+      <description>Installation Install using pip
+pip install Alpha_Finance==0.2.9  本地端環境
+安裝talib並儲存至user  pip install TA_Lib-0.</description>
+    </item>
+    
+    <item>
+      <title>Alpha_Finance 0.2.7版</title>
+      <link>https://taiwan-tradingview.github.io/notice/api-027/</link>
+      <pubDate>Thu, 07 Jan 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://taiwan-tradingview.github.io/notice/api-027/</guid>
+      <description>Installation Install using pip
+pip install Alpha_Finance==0.2.7  Taiwan Stock API Alpha_Finance 為專門分析臺灣股市的Python套件，附帶自動化爬蟲及建立DB</description>
+    </item>
+    
+    <item>
+      <title>Alpha_Finance 0.2.6版</title>
+      <link>https://taiwan-tradingview.github.io/notice/api-026/</link>
+      <pubDate>Wed, 06 Jan 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://taiwan-tradingview.github.io/notice/api-026/</guid>
+      <description>Installation Install using pip
+pip install Alpha_Finance==0.2.6  Taiwan Stock API Alpha_Finance 為專門分析臺灣股市的Python套件，附帶自動化爬蟲及建立DB</description>
+    </item>
+    
+  </channel>
+</rss>

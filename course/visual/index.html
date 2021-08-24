@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8">
+  <title>數據視覺化實戰</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description"
+    content="認識視覺化套件 &amp; 客制化調整">
+  
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Hugo 0.83.1" />
+  <!-- multilingual SEO optimizations -->
+  
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/bootstrap/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/slick/slick.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/animate/animate.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/venobox/venobox.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/themify-icons/themify-icons.css">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/scss/main.e88a60b286205da8d3956fa6cd1acdc4a1a1a926d87f7a98b7b19febcdae82d317f67403c17aff2adb6d893867ace5191804ae4dda3a0dc997987b5801c54610.css" integrity="sha512-6IpgsoYgXajTlW&#43;mzRrNxKGhqSbYf3qYt7Gf682ugtMX9nQDwXr/KtttiThnrOUZGASuTdo6DcmXmHtYAcVGEA==" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://taiwan-tradingview.github.io/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="https://taiwan-tradingview.github.io/images/favicon.png" type="image/x-icon">
+
+</head><body>
+<header class="fixed-top header">
+  
+  
+  <div class="top-header py-2 bg-white">
+    <div class="container">
+      <div class="row no-gutters align-items-center">
+        <div class="col-lg-4 text-center text-lg-left">
+          <ul class="list-inline">
+            
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-facebook"></i></a></li>
+            
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-instagram"></i></a></li>
+            
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-github"></i></a></li>
+            
+          </ul>
+        </div>
+        <div class="col-lg-8 text-center text-lg-right">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a class="text-color mr-3" href="tel:"><strong>CALL : </strong> </a></li>
+            <li class="list-inline-item">
+              <a class="text-color" href="mailto:taiwan.tradingview@gmail.com"><strong>EMAIL : </strong> taiwan.tradingview@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="navigation w-100  top-hider ">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark p-0">
+        <a class="navbar-brand" href="/"><img class="img-fluid"
+            src="https://taiwan-tradingview.github.io/images/logo.png" alt="Taiwan-Tradingview | 金融交易介面"></a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse text-center" id="navigation">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io">Home</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/course">程式課程</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/blog">財商部落格</a>
+            </li>
+            
+            
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                API
+              </a>
+              <div class="dropdown-menu">
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/notice">API使用教學</a>
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/teacher">團隊成員</a>
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/event">每日選股清單</a>
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/research">策略回測</a>
+                
+              </div>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/about">關於我們</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/contact">聯絡我們</a>
+            </li>
+            
+            
+          </ul>
+
+          
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+	
+<section class="page-title-section overlay" style="background-image: url('/images/backgrounds/page-title.png'),url('/images/backgrounds/page-title.jpg');" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb">
+          <li class="list-inline-item h2"><a class="text-primary font-secondary" href="https://taiwan-tradingview.github.io">Home</a></li>
+          <li class="list-inline-item h5"><i class="ti-angle-right text-white"></i></li>
+          <li class="list-inline-item text-white h3 font-secondary">數據視覺化實戰</li>
+        </ul>
+        <p class="text-lighten">認識視覺化套件 &amp; 客制化調整</p>
+      </div>
+    </div>
+  </div>
+</section>
+	
+
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mb-4">
+        
+        <img style="height: 500px;width: 100%;object-fit: cover;" src="/images/courses/visual.png"
+          class="img-fluid w-100">
+      </div>
+    </div>
+    
+    <div class="row align-items-center mb-5">
+      <div class="col-xl-3 order-1 col-sm-6 mb-4 mb-xl-0">
+        <h2>數據視覺化實戰</h2>
+      </div>
+      <div class="col-xl-6 order-sm-3 order-xl-2 col-12 order-2">
+        <ul class="list-inline text-xl-center">
+          <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-calendar text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">DURATION</h6>
+                <p class="mb-0">06 Month</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-timer text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">WEEKLY</h6>
+                <p class="mb-0">03 hours</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-wallet text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">FEE</h6>
+                <p class="mb-0">From: $699</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xl-3 text-sm-right text-left order-sm-2 order-3 order-xl-3 col-sm-6 mb-4 mb-xl-0">
+        <a href="#" class="btn btn-primary">Apply now</a>
+      </div>
+      
+      <div class="col-12 mt-4 order-4">
+        <div class="border-bottom border-primary"></div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12 mb-4 content">
+        <h3 id="前言">前言</h3>
+<h5 id="身為專業的資料科學家一定要懂得如何將冷冰冰的數據轉化成一般人可以輕易閱讀的圖表而數據視覺化正好是python的強項">身為專業的資料科學家一定要懂得如何將冷冰冰的數據轉化成一般人可以輕易閱讀的圖表，而數據視覺化正好是Python的強項。</h5>
+<p>.</p>
+<h5 id="在python的世界提供了非常多視覺化套件像是內建的matplotlib或是靜態的seaborn甚至有支援js的plotly和新竄起的pyecharts都是非常好用且簡單的套件">在Python的世界提供了非常多視覺化套件，像是內建的<code>matplotlib</code>，或是靜態的<code>seaborn</code>，甚至有支援JS的<code>plotly</code>和新竄起的<code>pyecharts</code>，都是非常好用且簡單的套件。</h5>
+<h5 id="那我們趕緊來學習要如何使用它們將冰冷的數據製作成精美的圖表吧">那我們趕緊來學習要如何使用它們將冰冷的數據製作成精美的圖表吧!</h5>
+<hr>
+<h3 id="目錄">目錄</h3>
+<pre><code>《一》matplotlib
+
+《二》seaborn
+
+《三》plotly
+
+《四》pyecharts
+</code></pre><hr>
+<h3 id="一matplotlibhttpswwwmachinelearningpluscomplotstop-50-matplotlib-visualizations-the-master-plots-python">《一》<a href="https://www.machinelearningplus.com/plots/top-50-matplotlib-visualizations-the-master-plots-python/">matplotlib</a></h3>
+<h5 id="1融資融券走勢圖">1.融資融券走勢圖</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">pandas</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">pd</span>
+
+<span style="color:#60a0b0;font-style:italic"># 讀取雲端資料</span>
+close <span style="color:#666">=</span> pd<span style="color:#666">.</span>read_pickle(<span style="color:#4070a0">&#39;https://github.com/AlphaFinance/DB_twstock/raw/main/database/Close.pkl&#39;</span>)
+margin_trading <span style="color:#666">=</span> pd<span style="color:#666">.</span>read_pickle(<span style="color:#4070a0">&#39;https://github.com/AlphaFinance/DB_twstock/raw/main/database/margin_trading.pkl&#39;</span>)
+short_selling <span style="color:#666">=</span> pd<span style="color:#666">.</span>read_pickle(<span style="color:#4070a0">&#39;https://github.com/AlphaFinance/DB_twstock/raw/main/database/short_selling.pkl&#39;</span>)
+
+<span style="color:#60a0b0;font-style:italic"># 開始畫圖</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">matplotlib.pyplot</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">plt</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">numpy</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">np</span>
+
+<span style="color:#60a0b0;font-style:italic"># 顯示中文字體</span>
+plt<span style="color:#666">.</span>rcParams[<span style="color:#4070a0">&#39;font.sans-serif&#39;</span>] <span style="color:#666">=</span> [<span style="color:#4070a0">&#39;Taipei Sans TC Beta&#39;</span>]
+
+stock_id <span style="color:#666">=</span> <span style="color:#4070a0">&#39;2330&#39;</span>
+year <span style="color:#666">=</span> <span style="color:#4070a0">&#39;2020&#39;</span>
+
+x <span style="color:#666">=</span> close[year:]<span style="color:#666">.</span>index<span style="color:#666">.</span>astype(<span style="color:#007020">str</span>)
+
+<span style="color:#60a0b0;font-style:italic"># 建立圖表格式</span>
+fig,(ax1,ax3) <span style="color:#666">=</span> plt<span style="color:#666">.</span>subplots(<span style="color:#40a070">1</span>,<span style="color:#40a070">2</span>,figsize<span style="color:#666">=</span>(<span style="color:#40a070">24</span>,<span style="color:#40a070">8</span>))
+
+<span style="color:#007020;font-weight:bold">for</span> ax,data,name <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">zip</span>([ax1,ax3],[margin_trading,short_selling],[<span style="color:#4070a0">&#39;融資買超&#39;</span>,<span style="color:#4070a0">&#39;融券賣超&#39;</span>]):
+    
+    <span style="color:#60a0b0;font-style:italic"># 股價走勢圖</span>
+    ax<span style="color:#666">.</span>plot(x,close[stock_id][year:],color<span style="color:#666">=</span><span style="color:#4070a0">&#39;tab:blue&#39;</span>,linewidth<span style="color:#666">=</span><span style="color:#40a070">2</span>,label<span style="color:#666">=</span>stock_id)
+    
+    <span style="color:#60a0b0;font-style:italic"># 融資券柱狀圖</span>
+    ax2 <span style="color:#666">=</span> ax<span style="color:#666">.</span>twinx()
+    ax2<span style="color:#666">.</span>bar(x,data[stock_id][year:],color<span style="color:#666">=</span>[<span style="color:#4070a0">&#39;tab:red&#39;</span> <span style="color:#007020;font-weight:bold">if</span> x<span style="color:#666">&gt;</span><span style="color:#40a070">0</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#4070a0">&#39;tab:green&#39;</span> <span style="color:#007020;font-weight:bold">for</span> x <span style="color:#007020;font-weight:bold">in</span> data[stock_id][year:]],width<span style="color:#666">=.</span><span style="color:#40a070">6</span>,label<span style="color:#666">=</span>name)
+    
+    ax<span style="color:#666">.</span>set_xlabel(<span style="color:#4070a0">&#39;Date&#39;</span>,fontsize<span style="color:#666">=</span><span style="color:#40a070">15</span>)
+    ax<span style="color:#666">.</span>set_ylabel(<span style="color:#4070a0">&#39;Price&#39;</span>,fontsize<span style="color:#666">=</span><span style="color:#40a070">15</span>,color<span style="color:#666">=</span><span style="color:#4070a0">&#39;tab:blue&#39;</span>)
+    ax2<span style="color:#666">.</span>set_ylabel(name,fontsize<span style="color:#666">=</span><span style="color:#40a070">15</span>,color<span style="color:#666">=</span><span style="color:#4070a0">&#39;tab:red&#39;</span>)
+    ax<span style="color:#666">.</span>tick_params(<span style="color:#4070a0">&#39;y&#39;</span>,labelcolor<span style="color:#666">=</span><span style="color:#4070a0">&#39;tab:blue&#39;</span>)
+    ax2<span style="color:#666">.</span>tick_params(<span style="color:#4070a0">&#39;y&#39;</span>,labelcolor<span style="color:#666">=</span><span style="color:#4070a0">&#39;tab:red&#39;</span>)
+    ax<span style="color:#666">.</span>legend(loc<span style="color:#666">=</span><span style="color:#4070a0">&#39;lower center&#39;</span>,fontsize<span style="color:#666">=</span><span style="color:#40a070">12</span>)
+    ax2<span style="color:#666">.</span>legend(loc<span style="color:#666">=</span><span style="color:#4070a0">&#39;upper left&#39;</span>,fontsize<span style="color:#666">=</span><span style="color:#40a070">12</span>)
+    
+    <span style="color:#60a0b0;font-style:italic"># 簡化X軸</span>
+    ax<span style="color:#666">.</span>set_xticks(np<span style="color:#666">.</span>arange(<span style="color:#40a070">0</span>,<span style="color:#007020">len</span>(x),<span style="color:#007020">len</span>(x)<span style="color:#666">/</span><span style="color:#40a070">8</span>))
+    ax<span style="color:#666">.</span>grid(<span style="color:#4070a0">&#39;-.&#39;</span>,alpha<span style="color:#666">=.</span><span style="color:#40a070">6</span>)
+
+fig<span style="color:#666">.</span>show()
+</code></pre></div><p><img src="/images/courses/plt.png" alt=""></p>
+<hr>
+<h5 id="2k線圖">2.K線圖</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">yfinance</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">yf</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">matplotlib.pyplot</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">plt</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">numpy</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">np</span>
+
+stock_id <span style="color:#666">=</span> <span style="color:#4070a0">&#39;2330.TW&#39;</span>
+
+<span style="color:#60a0b0;font-style:italic"># 使用yfinance套件爬取股價</span>
+s <span style="color:#666">=</span> yf<span style="color:#666">.</span>Ticker(stock_id)<span style="color:#666">.</span>history(period<span style="color:#666">=</span><span style="color:#4070a0">&#39;10mo&#39;</span>)
+x <span style="color:#666">=</span> s<span style="color:#666">.</span>index<span style="color:#666">.</span>astype(<span style="color:#007020">str</span>)
+
+<span style="color:#60a0b0;font-style:italic"># 建立圖表格式</span>
+fig,ax <span style="color:#666">=</span> plt<span style="color:#666">.</span>subplots(figsize<span style="color:#666">=</span>(<span style="color:#40a070">25</span>,<span style="color:#40a070">8</span>))
+
+ub <span style="color:#666">=</span> s[[<span style="color:#4070a0">&#39;Open&#39;</span>,<span style="color:#4070a0">&#39;Close&#39;</span>]]<span style="color:#666">.</span>max(axis<span style="color:#666">=</span><span style="color:#40a070">1</span>)
+lb <span style="color:#666">=</span> s[[<span style="color:#4070a0">&#39;Open&#39;</span>,<span style="color:#4070a0">&#39;Close&#39;</span>]]<span style="color:#666">.</span>min(axis<span style="color:#666">=</span><span style="color:#40a070">1</span>)
+
+<span style="color:#60a0b0;font-style:italic"># 股價走勢圖</span>
+ax<span style="color:#666">.</span>bar(x,ub<span style="color:#666">-</span>lb<span style="color:#666">*</span><span style="color:#40a070">0.996</span>,<span style="color:#40a070">0.5</span>,bottom<span style="color:#666">=</span>lb,color<span style="color:#666">=</span>[<span style="color:#4070a0">&#39;tab:red&#39;</span><span style="color:#007020;font-weight:bold">if</span> x<span style="color:#666">&gt;</span><span style="color:#40a070">0</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#4070a0">&#39;tab:green&#39;</span> <span style="color:#007020;font-weight:bold">for</span> x <span style="color:#007020;font-weight:bold">in</span> s[<span style="color:#4070a0">&#39;Close&#39;</span>]<span style="color:#666">-</span>s[<span style="color:#4070a0">&#39;Open&#39;</span>]])
+ax<span style="color:#666">.</span>vlines(x,s[<span style="color:#4070a0">&#39;Low&#39;</span>],s[<span style="color:#4070a0">&#39;High&#39;</span>],color<span style="color:#666">=</span>[<span style="color:#4070a0">&#39;tab:red&#39;</span><span style="color:#007020;font-weight:bold">if</span> x<span style="color:#666">&gt;</span><span style="color:#40a070">0</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#4070a0">&#39;tab:green&#39;</span> <span style="color:#007020;font-weight:bold">for</span> x <span style="color:#007020;font-weight:bold">in</span> s[<span style="color:#4070a0">&#39;Close&#39;</span>]<span style="color:#666">-</span>s[<span style="color:#4070a0">&#39;Open&#39;</span>]])
+
+<span style="color:#60a0b0;font-style:italic"># 成交量柱狀圖</span>
+ax2 <span style="color:#666">=</span> ax<span style="color:#666">.</span>twinx()
+ax2<span style="color:#666">.</span>bar(x,s[<span style="color:#4070a0">&#39;Volume&#39;</span>],color<span style="color:#666">=</span>[<span style="color:#4070a0">&#39;tab:red&#39;</span><span style="color:#007020;font-weight:bold">if</span> x<span style="color:#666">&gt;</span><span style="color:#40a070">0</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#4070a0">&#39;tab:green&#39;</span> <span style="color:#007020;font-weight:bold">for</span> x <span style="color:#007020;font-weight:bold">in</span> s[<span style="color:#4070a0">&#39;Close&#39;</span>]<span style="color:#666">-</span>s[<span style="color:#4070a0">&#39;Open&#39;</span>]],alpha<span style="color:#666">=.</span><span style="color:#40a070">5</span>)
+
+ax<span style="color:#666">.</span>set_xlabel(<span style="color:#4070a0">&#39;Date&#39;</span>,fontsize<span style="color:#666">=</span><span style="color:#40a070">12</span>)
+ax<span style="color:#666">.</span>set_ylabel(<span style="color:#4070a0">&#39;Price&#39;</span>,fontsize<span style="color:#666">=</span><span style="color:#40a070">12</span>)
+ax2<span style="color:#666">.</span>set_ylabel(<span style="color:#4070a0">&#39;Volume&#39;</span>,fontsize<span style="color:#666">=</span><span style="color:#40a070">12</span>)
+
+<span style="color:#60a0b0;font-style:italic"># 簡化X軸Y軸</span>
+ax<span style="color:#666">.</span>set_xticks(np<span style="color:#666">.</span>arange(<span style="color:#40a070">0</span>,<span style="color:#007020">len</span>(x),<span style="color:#007020">len</span>(x)<span style="color:#666">/</span><span style="color:#40a070">10</span>))
+ax<span style="color:#666">.</span>set_yticks(np<span style="color:#666">.</span>arange(s<span style="color:#666">.</span>Low<span style="color:#666">.</span>min()<span style="color:#666">*</span><span style="color:#40a070">0.7</span>,s<span style="color:#666">.</span>High<span style="color:#666">.</span>max(),s<span style="color:#666">.</span>Close<span style="color:#666">.</span>max()<span style="color:#666">/</span><span style="color:#40a070">12</span>))
+ax2<span style="color:#666">.</span>set_yticks(np<span style="color:#666">.</span>arange(<span style="color:#40a070">0</span>,s<span style="color:#666">.</span>Volume<span style="color:#666">.</span>max()<span style="color:#666">*</span><span style="color:#40a070">2</span>,s<span style="color:#666">.</span>Volume<span style="color:#666">.</span>max()<span style="color:#666">*</span><span style="color:#40a070">2</span><span style="color:#666">/</span><span style="color:#40a070">12</span>))
+ax<span style="color:#666">.</span>grid(<span style="color:#4070a0">&#39;-.&#39;</span>,alpha<span style="color:#666">=.</span><span style="color:#40a070">6</span>)
+
+ax<span style="color:#666">.</span>set_title(f<span style="color:#4070a0">&#34;{stock_id} K線圖&#34;</span>,fontsize<span style="color:#666">=</span><span style="color:#40a070">20</span>)
+
+fig<span style="color:#666">.</span>show()
+</code></pre></div><p><img src="/images/courses/kline.png" alt=""></p>
+<hr>
+<h3 id="二seabornhttpsseabornpydataorg">《二》<a href="https://seaborn.pydata.org/">seaborn</a></h3>
+<h5 id="月線股價熱力圖">月線股價熱力圖</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">yfinance</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">yf</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">seaborn</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">sns</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">matplotlib.pyplot</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">plt</span>
+
+<span style="color:#60a0b0;font-style:italic"># 使用yfinance套件爬取股價</span>
+stock_id <span style="color:#666">=</span> <span style="color:#4070a0">&#39;^TWII&#39;</span>
+s <span style="color:#666">=</span> yf<span style="color:#666">.</span>Ticker(stock_id)<span style="color:#666">.</span>history(<span style="color:#4070a0">&#39;max&#39;</span>)<span style="color:#666">.</span>Close
+
+<span style="color:#60a0b0;font-style:italic"># 以月份來分類資料</span>
+s <span style="color:#666">=</span> s<span style="color:#666">.</span>groupby([s<span style="color:#666">.</span>index<span style="color:#666">.</span>year,s<span style="color:#666">.</span>index<span style="color:#666">.</span>month])<span style="color:#666">.</span>last()<span style="color:#666">.</span>pct_change()<span style="color:#666">*</span><span style="color:#40a070">100</span>
+s<span style="color:#666">.</span>index<span style="color:#666">.</span>names <span style="color:#666">=</span> [<span style="color:#4070a0">&#39;year&#39;</span>,<span style="color:#4070a0">&#39;month&#39;</span>]
+s <span style="color:#666">=</span> s<span style="color:#666">.</span>unstack()
+
+<span style="color:#60a0b0;font-style:italic"># 建立圖表格式</span>
+fig,ax <span style="color:#666">=</span> plt<span style="color:#666">.</span>subplots(figsize<span style="color:#666">=</span>(<span style="color:#40a070">12</span>,<span style="color:#40a070">10</span>))
+sns<span style="color:#666">.</span>heatmap(s,cmap<span style="color:#666">=</span><span style="color:#4070a0">&#39;seismic&#39;</span>,center<span style="color:#666">=</span><span style="color:#40a070">0</span>,annot<span style="color:#666">=</span>True,fmt<span style="color:#666">=</span><span style="color:#4070a0">&#39;.2f&#39;</span>,ax<span style="color:#666">=</span>ax)
+
+fig<span style="color:#666">.</span>show()
+</code></pre></div><p><img src="/images/courses/heatmap.png" alt=""></p>
+<hr>
+<h3 id="三plotlyhttpsplotlycompython">《三》<a href="https://plotly.com/python/">plotly</a></h3>
+<h5 id="台股板塊圖">台股板塊圖</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">pandas</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">pd</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">plotly.express</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">px</span>
+
+<span style="color:#60a0b0;font-style:italic"># 讀取雲端資料</span>
+close <span style="color:#666">=</span> pd<span style="color:#666">.</span>read_pickle(<span style="color:#4070a0">&#39;https://github.com/AlphaFinance/DB_twstock/raw/main/database/Close.pkl&#39;</span>)
+volume <span style="color:#666">=</span> pd<span style="color:#666">.</span>read_pickle(<span style="color:#4070a0">&#39;https://github.com/AlphaFinance/DB_twstock/raw/main/database/Volume.pkl&#39;</span>)
+industry <span style="color:#666">=</span> pd<span style="color:#666">.</span>read_pickle(<span style="color:#4070a0">&#39;https://github.com/AlphaFinance/DB_twstock/raw/main/database/industry.pkl&#39;</span>)
+
+<span style="color:#60a0b0;font-style:italic"># 資料整理</span>
+industry[<span style="color:#4070a0">&#39;twstock&#39;</span>] <span style="color:#666">=</span> <span style="color:#4070a0">&#39;twstock&#39;</span>
+industry[<span style="color:#4070a0">&#39;name&#39;</span>] <span style="color:#666">=</span> industry<span style="color:#666">.</span>index<span style="color:#666">+</span><span style="color:#4070a0">&#39; &#39;</span><span style="color:#666">+</span>industry[<span style="color:#4070a0">&#39;公司簡稱&#39;</span>]
+industry[<span style="color:#4070a0">&#39;volume&#39;</span>] <span style="color:#666">=</span> volume[industry<span style="color:#666">.</span>index]<span style="color:#666">.</span>iloc[<span style="color:#666">-</span><span style="color:#40a070">1</span>]<span style="color:#666">/</span><span style="color:#40a070">1000</span>
+industry[<span style="color:#4070a0">&#39;pct&#39;</span>] <span style="color:#666">=</span> <span style="color:#007020">round</span>((close<span style="color:#666">/</span>close<span style="color:#666">.</span>shift()<span style="color:#666">-</span><span style="color:#40a070">1</span>)<span style="color:#666">*</span><span style="color:#40a070">100</span>,<span style="color:#40a070">2</span>)<span style="color:#666">.</span>iloc[<span style="color:#666">-</span><span style="color:#40a070">1</span>]<span style="color:#666">.</span>loc[industry<span style="color:#666">.</span>index]
+industry[<span style="color:#4070a0">&#39;ret&#39;</span>] <span style="color:#666">=</span> <span style="color:#007020">round</span>((close<span style="color:#666">/</span>close<span style="color:#666">.</span>shift()<span style="color:#666">-</span><span style="color:#40a070">1</span>)<span style="color:#666">*</span><span style="color:#40a070">100</span>,<span style="color:#40a070">2</span>)<span style="color:#666">.</span>iloc[<span style="color:#666">-</span><span style="color:#40a070">1</span>]<span style="color:#666">.</span>loc[industry<span style="color:#666">.</span>index]<span style="color:#666">.</span>astype(<span style="color:#007020">str</span>)<span style="color:#666">+</span><span style="color:#4070a0">&#39; %&#39;</span>
+industry[<span style="color:#4070a0">&#39;close&#39;</span>] <span style="color:#666">=</span> close[industry<span style="color:#666">.</span>index]<span style="color:#666">.</span>iloc[<span style="color:#666">-</span><span style="color:#40a070">1</span>]
+industry <span style="color:#666">=</span> industry<span style="color:#666">.</span>dropna()
+
+<span style="color:#60a0b0;font-style:italic"># 建立圖表格式</span>
+fig <span style="color:#666">=</span> px<span style="color:#666">.</span>treemap(
+    industry,
+    path<span style="color:#666">=</span>[<span style="color:#4070a0">&#39;twstock&#39;</span>,<span style="color:#4070a0">&#39;產業類別&#39;</span>,<span style="color:#4070a0">&#39;族群類股&#39;</span>,<span style="color:#4070a0">&#39;name&#39;</span>],
+    values<span style="color:#666">=</span><span style="color:#4070a0">&#39;volume&#39;</span>,color<span style="color:#666">=</span><span style="color:#4070a0">&#39;pct&#39;</span>,
+    color_continuous_midpoint<span style="color:#666">=</span><span style="color:#40a070">0</span>,color_continuous_scale<span style="color:#666">=</span><span style="color:#4070a0">&#39;balance&#39;</span>,
+    custom_data<span style="color:#666">=</span>[<span style="color:#4070a0">&#39;ret&#39;</span>,<span style="color:#4070a0">&#39;close&#39;</span>],
+    width<span style="color:#666">=</span><span style="color:#40a070">1500</span>,height<span style="color:#666">=</span><span style="color:#40a070">600</span>,
+    title<span style="color:#666">=</span>f<span style="color:#4070a0">&#34;台股板塊圖 {close.index[-1].strftime(&#39;%Y-%m-</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">&#39;)}&#34;</span>
+)
+
+<span style="color:#60a0b0;font-style:italic"># texttemplate ---refer to FinLab部落格</span>
+fig<span style="color:#666">.</span>update_traces(textposition<span style="color:#666">=</span><span style="color:#4070a0">&#39;middle center&#39;</span>,texttemplate<span style="color:#666">=</span><span style="color:#4070a0">&#39;%{label}&lt;br&gt;%{customdata[0]}&lt;br&gt;%{customdata[1]}&#39;</span>)
+
+fig<span style="color:#666">.</span>show()
+</code></pre></div><p><img src="/images/courses/treemap.png" alt=""></p>
+<hr>
+<h3 id="四pyechartshttpsgallerypyechartsorgreadme">《四》<a href="https://gallery.pyecharts.org/#/README">pyecharts</a></h3>
+<h5 id="可互動式k線圖">可互動式K線圖</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">yfinance</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">yf</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">talib</span>
+
+<span style="color:#60a0b0;font-style:italic"># 使用yfinance套件爬取股價</span>
+stock_id <span style="color:#666">=</span> <span style="color:#4070a0">&#39;2330.TW&#39;</span>
+s <span style="color:#666">=</span> yf<span style="color:#666">.</span>Ticker(stock_id)<span style="color:#666">.</span>history(<span style="color:#4070a0">&#39;max&#39;</span>)
+
+<span style="color:#60a0b0;font-style:italic"># pyecharts須為小寫且順序為開收低高量</span>
+s<span style="color:#666">.</span>columns <span style="color:#666">=</span> [<span style="color:#4070a0">&#39;open&#39;</span>,<span style="color:#4070a0">&#39;high&#39;</span>,<span style="color:#4070a0">&#39;low&#39;</span>,<span style="color:#4070a0">&#39;close&#39;</span>,<span style="color:#4070a0">&#39;volume&#39;</span>,<span style="color:#4070a0">&#39;div&#39;</span>,<span style="color:#4070a0">&#39;splits&#39;</span>]
+s <span style="color:#666">=</span> s[[<span style="color:#4070a0">&#39;open&#39;</span>,<span style="color:#4070a0">&#39;close&#39;</span>,<span style="color:#4070a0">&#39;low&#39;</span>,<span style="color:#4070a0">&#39;high&#39;</span>,<span style="color:#4070a0">&#39;volume&#39;</span>]]
+s[<span style="color:#4070a0">&#39;pct&#39;</span>] <span style="color:#666">=</span> <span style="color:#007020">round</span>((s<span style="color:#666">.</span>close<span style="color:#666">/</span>s<span style="color:#666">.</span>close<span style="color:#666">.</span>shift()<span style="color:#666">-</span><span style="color:#40a070">1</span>)<span style="color:#666">*</span><span style="color:#40a070">100</span>,<span style="color:#40a070">2</span>)
+
+<span style="color:#60a0b0;font-style:italic"># 決定成交量的顏色</span>
+s[<span style="color:#4070a0">&#39;value&#39;</span>] <span style="color:#666">=</span> (s<span style="color:#666">.</span>close<span style="color:#666">&gt;</span>s<span style="color:#666">.</span>open)<span style="color:#666">.</span>astype(<span style="color:#007020">int</span>)
+vol <span style="color:#666">=</span> s<span style="color:#666">.</span>reset_index()<span style="color:#666">.</span>reset_index()[[<span style="color:#4070a0">&#39;index&#39;</span>,<span style="color:#4070a0">&#39;volume&#39;</span>,<span style="color:#4070a0">&#39;value&#39;</span>]]
+
+<span style="color:#60a0b0;font-style:italic"># index須為str型式的list</span>
+x <span style="color:#666">=</span> <span style="color:#007020">list</span>(s<span style="color:#666">.</span>index<span style="color:#666">.</span>astype(<span style="color:#007020">str</span>))
+
+<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pyecharts.charts</span> <span style="color:#007020;font-weight:bold">import</span> Kline,Line,Bar,Grid
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">pyecharts.options</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">opts</span>
+<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pyecharts.globals</span> <span style="color:#007020;font-weight:bold">import</span> CurrentConfig,NotebookType
+<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pyecharts.commons.utils</span> <span style="color:#007020;font-weight:bold">import</span> JsCode
+<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">IPython.display</span> <span style="color:#007020;font-weight:bold">import</span> display,HTML
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">os</span>
+
+<span style="color:#60a0b0;font-style:italic"># JupyterLab環境下執行</span>
+CurrentConfig<span style="color:#666">.</span>NOTEBOOK_TYPE <span style="color:#666">=</span> NotebookType<span style="color:#666">.</span>JUPYTER_LAB
+Line()<span style="color:#666">.</span>load_javascript()
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">kline <span style="color:#666">=</span> (
+    Kline()
+    <span style="color:#666">.</span>add_xaxis(x)
+    <span style="color:#666">.</span>add_yaxis(<span style="color:#4070a0">&#39;kline&#39;</span>,s<span style="color:#666">.</span>values<span style="color:#666">.</span>tolist(),itemstyle_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>ItemStyleOpts(color<span style="color:#666">=</span><span style="color:#4070a0">&#34;#f11421&#34;</span>,color0<span style="color:#666">=</span><span style="color:#4070a0">&#34;#34b298&#34;</span>,border_color<span style="color:#666">=</span><span style="color:#4070a0">&#34;#f11421&#34;</span>,border_color0<span style="color:#666">=</span><span style="color:#4070a0">&#39;#34b298&#39;</span>))
+    
+    <span style="color:#60a0b0;font-style:italic"># 建立多個y軸</span>
+    <span style="color:#666">.</span>extend_axis(yaxis<span style="color:#666">=</span>opts<span style="color:#666">.</span>AxisOpts(<span style="color:#4070a0">&#39;value&#39;</span>,<span style="color:#4070a0">&#39;volume&#39;</span>,max_<span style="color:#666">=</span><span style="color:#007020">round</span>(s<span style="color:#666">.</span>volume<span style="color:#666">.</span>max()<span style="color:#666">*</span><span style="color:#40a070">3</span>)))
+    <span style="color:#666">.</span>extend_axis(yaxis<span style="color:#666">=</span>opts<span style="color:#666">.</span>AxisOpts(<span style="color:#4070a0">&#39;value&#39;</span>,<span style="color:#4070a0">&#39;pct&#39;</span>,min_<span style="color:#666">=</span><span style="color:#40a070">0</span>,max_<span style="color:#666">=</span><span style="color:#40a070">5000</span>,offset<span style="color:#666">=</span><span style="color:#40a070">500</span>))
+    <span style="color:#666">.</span>set_global_opts(
+        title_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>TitleOpts(stock_id),
+        
+        <span style="color:#60a0b0;font-style:italic"># 可互動顯示數據</span>
+        tooltip_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>TooltipOpts(trigger<span style="color:#666">=</span><span style="color:#4070a0">&#39;axis&#39;</span>,axis_pointer_type<span style="color:#666">=</span><span style="color:#4070a0">&#39;cross&#39;</span>,background_color<span style="color:#666">=</span><span style="color:#4070a0">&#39;rgba(0,0,0,0.4)&#39;</span>),
+        
+        <span style="color:#60a0b0;font-style:italic"># 多圖共同顯示數據</span>
+        axispointer_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>AxisPointerOpts(is_show<span style="color:#666">=</span>True,link<span style="color:#666">=</span>[{<span style="color:#4070a0">&#34;xAxisIndex&#34;</span>: <span style="color:#4070a0">&#34;all&#34;</span>}],label<span style="color:#666">=</span>opts<span style="color:#666">.</span>LabelOpts(background_color<span style="color:#666">=</span><span style="color:#4070a0">&#34;#777&#34;</span>)),
+        
+        <span style="color:#60a0b0;font-style:italic"># 自由縮放時間軸</span>
+        datazoom_opts<span style="color:#666">=</span>[opts<span style="color:#666">.</span>DataZoomOpts(type_<span style="color:#666">=</span><span style="color:#4070a0">&#39;inside&#39;</span>,range_start<span style="color:#666">=</span><span style="color:#40a070">95</span>,range_end<span style="color:#666">=</span><span style="color:#40a070">100</span>,xaxis_index<span style="color:#666">=</span>[<span style="color:#40a070">0</span>,<span style="color:#40a070">1</span>,<span style="color:#40a070">2</span>]),opts<span style="color:#666">.</span>DataZoomOpts(range_start<span style="color:#666">=</span><span style="color:#40a070">95</span>,range_end<span style="color:#666">=</span><span style="color:#40a070">100</span>,xaxis_index<span style="color:#666">=</span>[<span style="color:#40a070">0</span>,<span style="color:#40a070">1</span>,<span style="color:#40a070">2</span>])],
+        
+        <span style="color:#60a0b0;font-style:italic"># 決定成交量顏色</span>
+        visualmap_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>VisualMapOpts(series_index<span style="color:#666">=</span><span style="color:#40a070">1</span>,dimension<span style="color:#666">=</span><span style="color:#40a070">2</span>,is_piecewise<span style="color:#666">=</span>True,pieces<span style="color:#666">=</span>[{<span style="color:#4070a0">&#39;value&#39;</span>:<span style="color:#40a070">0</span>,<span style="color:#4070a0">&#39;color&#39;</span>:<span style="color:#4070a0">&#39;#34b298&#39;</span>},{<span style="color:#4070a0">&#39;value&#39;</span>:<span style="color:#40a070">1</span>,<span style="color:#4070a0">&#39;color&#39;</span>:<span style="color:#4070a0">&#39;#f11421&#39;</span>}]),
+        
+        <span style="color:#60a0b0;font-style:italic"># 背景調整</span>
+        yaxis_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>AxisOpts(is_scale<span style="color:#666">=</span>True,splitarea_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>SplitAreaOpts(areastyle_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>AreaStyleOpts(<span style="color:#40a070">0.6</span>)))
+    )
+)
+
+<span style="color:#60a0b0;font-style:italic"># yaxis_index = 1 &gt;&gt;&gt; 第1個y軸</span>
+bar <span style="color:#666">=</span> Bar()<span style="color:#666">.</span>add_yaxis(<span style="color:#4070a0">&#39;volume&#39;</span>,vol<span style="color:#666">.</span>values<span style="color:#666">.</span>tolist(),yaxis_index<span style="color:#666">=</span><span style="color:#40a070">1</span>,label_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>LabelOpts(False))
+
+
+<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">ma</span>(n):
+        <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020">round</span>(s<span style="color:#666">.</span>close<span style="color:#666">.</span>rolling(n,min_periods<span style="color:#666">=</span><span style="color:#40a070">1</span>)<span style="color:#666">.</span>mean(),<span style="color:#40a070">2</span>)
+
+line <span style="color:#666">=</span> Line()<span style="color:#666">.</span>add_xaxis(x)<span style="color:#666">.</span>add_yaxis(<span style="color:#4070a0">&#39;pct&#39;</span>,s<span style="color:#666">.</span>pct<span style="color:#666">.</span>tolist(),yaxis_index<span style="color:#666">=</span><span style="color:#40a070">2</span>,label_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>LabelOpts(False),is_symbol_show<span style="color:#666">=</span>False)
+main_line <span style="color:#666">=</span> Line()<span style="color:#666">.</span>add_xaxis(x)
+
+<span style="color:#007020;font-weight:bold">for</span> n,color <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">zip</span>([<span style="color:#40a070">5</span>,<span style="color:#40a070">20</span>,<span style="color:#40a070">60</span>],[<span style="color:#4070a0">&#39;#f6be10&#39;</span>,<span style="color:#4070a0">&#39;#c82bff&#39;</span>,<span style="color:#4070a0">&#39;#1088f6&#39;</span>]):
+    main_line<span style="color:#666">.</span>add_yaxis(<span style="color:#4070a0">&#39;ma&#39;</span><span style="color:#666">+</span><span style="color:#007020">str</span>(n),ma(n),label_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>LabelOpts(False),is_symbol_show<span style="color:#666">=</span>False,itemstyle_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>ItemStyleOpts(color<span style="color:#666">=</span>color))
+        
+<span style="color:#007020;font-weight:bold">for</span> f <span style="color:#007020;font-weight:bold">in</span> [bar,line,main_line]:
+    kline<span style="color:#666">.</span>overlap(f)
+
+idx1 <span style="color:#666">=</span> <span style="color:#007020">round</span>(talib<span style="color:#666">.</span>RSI(s<span style="color:#666">.</span>close<span style="color:#666">.</span>ffill(),<span style="color:#40a070">5</span>),<span style="color:#40a070">2</span>)
+idx1_name <span style="color:#666">=</span><span style="color:#4070a0">&#39;RSI&#39;</span>
+
+idx1_line <span style="color:#666">=</span> (
+    Line()
+    <span style="color:#666">.</span>add_xaxis(x)
+    <span style="color:#666">.</span>add_yaxis(idx1_name,idx1<span style="color:#666">.</span>tolist(),xaxis_index<span style="color:#666">=</span><span style="color:#40a070">1</span>,yaxis_index<span style="color:#666">=</span><span style="color:#40a070">3</span>,label_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>LabelOpts(False),is_symbol_show<span style="color:#666">=</span>False,itemstyle_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>ItemStyleOpts(color<span style="color:#666">=</span><span style="color:#4070a0">&#39;#ff8100&#39;</span>))
+    <span style="color:#666">.</span>set_global_opts(legend_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>LegendOpts(pos_top<span style="color:#666">=</span><span style="color:#4070a0">&#39;480px&#39;</span>),yaxis_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>AxisOpts(splitarea_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>SplitAreaOpts(areastyle_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>AreaStyleOpts(<span style="color:#40a070">0.6</span>))))
+)
+
+idx2 <span style="color:#666">=</span> <span style="color:#007020">round</span>(talib<span style="color:#666">.</span>MACD(s<span style="color:#666">.</span>close<span style="color:#666">.</span>ffill())[<span style="color:#40a070">2</span>]<span style="color:#666">*</span><span style="color:#40a070">100</span>,<span style="color:#40a070">2</span>)
+idx2_name <span style="color:#666">=</span><span style="color:#4070a0">&#39;MACD&#39;</span>
+
+idx2_bar <span style="color:#666">=</span> (
+    Bar()
+    <span style="color:#666">.</span>add_xaxis(x)
+    <span style="color:#666">.</span>add_yaxis(
+        idx2_name,idx2<span style="color:#666">.</span>tolist(),xaxis_index<span style="color:#666">=</span><span style="color:#40a070">2</span>,yaxis_index<span style="color:#666">=</span><span style="color:#40a070">4</span>,label_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>LabelOpts(False),
+        itemstyle_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>ItemStyleOpts(
+        color<span style="color:#666">=</span>JsCode(<span style="color:#4070a0">&#34;&#34;&#34;function(params) {var colorList;if (params.data &gt;= 0) {colorList=&#39;#f11421&#39;} else {colorList=&#39;#34b298&#39;} return colorList}&#34;&#34;&#34;</span>))
+    )
+    <span style="color:#666">.</span>set_global_opts(legend_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>LegendOpts(pos_top<span style="color:#666">=</span><span style="color:#4070a0">&#39;610px&#39;</span>),yaxis_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>AxisOpts(splitarea_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>SplitAreaOpts(areastyle_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>AreaStyleOpts(<span style="color:#40a070">0.6</span>))))
+)
+
+grid <span style="color:#666">=</span> Grid(init_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>InitOpts(<span style="color:#4070a0">&#39;1200px&#39;</span>,<span style="color:#4070a0">&#39;760px&#39;</span>))
+<span style="color:#007020;font-weight:bold">for</span> f,pos_top,height <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">zip</span>([kline,idx1_line,idx2_bar],[<span style="color:#4070a0">&#39;50px&#39;</span>,<span style="color:#4070a0">&#39;500px&#39;</span>,<span style="color:#4070a0">&#39;620px&#39;</span>],[<span style="color:#4070a0">&#39;400px&#39;</span>,<span style="color:#4070a0">&#39;80px&#39;</span>,<span style="color:#4070a0">&#39;80px&#39;</span>]):
+    grid<span style="color:#666">.</span>add(f,grid_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>GridOpts(<span style="color:#4070a0">&#39;5%&#39;</span>,pos_top,<span style="color:#4070a0">&#39;5%&#39;</span>,height<span style="color:#666">=</span>height),is_control_axis_index<span style="color:#666">=</span>True)
+
+<span style="color:#60a0b0;font-style:italic"># 存檔(&#39;render.html&#39;)</span>
+grid<span style="color:#666">.</span>render()
+<span style="color:#60a0b0;font-style:italic"># 開啟HTML檔</span>
+display(HTML(filename<span style="color:#666">=</span><span style="color:#4070a0">&#39;render.html&#39;</span>))
+<span style="color:#60a0b0;font-style:italic"># 刪除HTML檔</span>
+os<span style="color:#666">.</span>remove(<span style="color:#4070a0">&#39;render.html&#39;</span>)
+</code></pre></div><p><img src="/images/courses/pyecharts.png" alt=""></p>
+<hr>
+<h3 id="結論">結論</h3>
+<h5 id="相信大家都有被視覺化的效果給驚艷到了吧無論是要自己做一個看盤軟體或是要進行股市數據分析透過python你不需要code好幾個小時只需要打短短幾行程式碼就可以匯出不比市面上看盤軟體還差的介面">相信大家都有被視覺化的效果給驚艷到了吧!無論是要自己做一個看盤軟體或是要進行股市數據分析，透過Python你不需要code好幾個小時，只需要打短短幾行程式碼就可以匯出不比市面上看盤軟體還差的介面。</h5>
+<h5 id="更不用說還可以將國內外付費的技術指標整合起來讓你在投資的路上省下一大筆軟體成本勒">更不用說還可以將國內外付費的技術指標整合起來，讓你在投資的路上省下一大筆軟體成本勒~</h5>
+<p>.</p>
+<h5 id="以上這些都是數據分析最常用到的套件除了股市分析外還可以將會計報表透過python來寫成function類似excel的巨集絕對能讓大家在工作上更加事半功倍啊">以上這些都是數據分析最常用到的套件，除了股市分析外還可以將會計報表透過Python來寫成function(類似Excel的巨集)，絕對能讓大家在工作上更加事半功倍啊!</h5>
+<p>.</p>
+<h5 id="熱門程度-">熱門程度: ★★★★★</h5>
+<p>.<br>
+本篇treemap的方式參考<a href="https://www.finlab.tw/">FinLab部落格</a>，若有侵害著作權，請來信或留言告知，我們將儘速移除相關內容。</p>
+
+      </div>
+      
+      <div class="col-12">
+        <h5 class="mb-3">teacher</h5>
+        
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+          <div class="media mb-2 mb-sm-0 align-items-center">
+            <img class="mr-4 img-fluid teacher-thumb-sm" src="/images/teachers/KB.png" alt="KB">
+            <div class="media-body">
+              <h4 class="mt-0"><a href="https://taiwan-tradingview.github.io/teacher/kb/">KB</a></h4>
+              Data Scientist
+            </div>
+          </div>
+          <div class="social-link">
+            <h6 class="d-none d-sm-block text-right">Contact Info</h6>
+            <ul class="list-inline">
+              
+              <li class="list-inline-item"><a class="d-inline-block text-light p-1" href="alphafinance.tw@gmail.com"><i class="ti-email"></i></a></li>
+              
+              <li class="list-inline-item"><a class="d-inline-block text-light p-1" href="https://www.instagram.com/Alpha_Finance.tw/"><i class="ti-instagram"></i></a></li>
+              
+              <li class="list-inline-item"><a class="d-inline-block text-light p-1" href="#"><i class="ti-facebook"></i></a></li>
+              
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-bottom border-primary mt-4"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="section-title">Related Course</h2>
+      </div>
+    </div>
+    <div class="row">
+      
+      
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/environment.png" alt="建置Python開發環境">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
+    </ul>
+    <h4 class="card-title"><a href="https://taiwan-tradingview.github.io/course/environment/">建置Python開發環境</a></h4>
+    <p class="card-text mb-4">建立專案環境 &amp; 安裝超實用套件</p>
+    <a href="https://taiwan-tradingview.github.io/course/environment/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/pypi.png" alt="從GitHub到PYPI">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
+    </ul>
+    <h4 class="card-title"><a href="https://taiwan-tradingview.github.io/course/pypi/">從GitHub到PYPI</a></h4>
+    <p class="card-text mb-4">專案架構 &amp; 套件更新上傳</p>
+    <a href="https://taiwan-tradingview.github.io/course/pypi/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/database.png" alt="打造數據資料庫">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
+    </ul>
+    <h4 class="card-title"><a href="https://taiwan-tradingview.github.io/course/database/">打造數據資料庫</a></h4>
+    <p class="card-text mb-4">認識資料庫 &amp; 多執行緒爬蟲自動化</p>
+    <a href="https://taiwan-tradingview.github.io/course/database/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+<footer>
+  
+  
+  
+  <div class="newsletter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 ml-auto bg-primary py-5 newsletter-block">
+          <h3 class="text-white mb-4">Subscribe Newsletter</h3>
+          <form action="https://gmail.us4.list-manage.com/subscribe/post?u=463ee871f45d2d93748e77cad&amp;amp;id=a0a2c6d074" method="post" name="mc-embedded-subscribe-form" target="_blank">
+            <div class="input-wrapper">
+              <input type="email" class="form-control border-0" id="newsletter" name="newsletter" placeholder="Enter your email…">
+              <button type="submit" name="subscribe" class="btn btn-primary">Join</button>
+              <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                <input type="text" name="b_463ee871f45d2d93748e77cad_a0a2c6d074" tabindex="-1">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <div class="footer bg-footer section border-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
+          
+          <a class="logo-footer" href="/"><img class="img-fluid mb-4" src="https://taiwan-tradingview.github.io/images/logo.png" alt="Taiwan-Tradingview | 金融交易介面"></a>
+          <ul class="list-unstyled">
+            <li class="mb-4">Taiwan</li>
+            <li class="mb-4"><a href="mailto:taiwan.tradingview@gmail.com">taiwan.tradingview@gmail.com</a></li>
+            <li class="mb-4"></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">company</h4>
+          <ul class="list-unstyled">
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course">程式課程</a></li>
+            
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/blog">財商部落格</a></li>
+            
+            
+            
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/about">關於我們</a></li>
+            
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/contact">聯絡我們</a></li>
+            
+            
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">links</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice">API使用教學</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/teacher">團隊成員</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/event">每日選股清單</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/research">策略回測</a></li>
+            
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">Courses</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/pypi/">從GitHub到PYPI</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/ai/">人工智慧實戰模型</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/visual/">數據視覺化實戰</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/database/">打造數據資料庫</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/crawler/">Python網頁爬蟲實戰</a></li>
+            
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">new notice</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-033/">Alpha_Finance 0.3.3版</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-032/">Alpha_Finance 0.3.2版</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-031/">Alpha_Finance 0.3.1版</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="copyright py-4 bg-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 text-md-left text-center">
+          <p class="mb-3 mb-md-0">Copyright © Taiwan-Tradingview金融交易介面 2021</p>
+        </div>
+        <div class="col-md-5 text-md-right text-center">
+          <ul class="list-inline">
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-facebook text-primary"></i></a></li>
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-instagram text-primary"></i></a></li>
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-github text-primary"></i></a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Google Map API -->
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&amp;libraries=places"></script>
+
+
+<!-- JS Plugins -->
+
+<script src="https://taiwan-tradingview.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/filterizr/jquery.filterizr.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/google-map/gmap.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://taiwan-tradingview.github.io/js/script.min.js"></script>
+
+<!-- google analitycs -->
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-outline-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+
+</html>

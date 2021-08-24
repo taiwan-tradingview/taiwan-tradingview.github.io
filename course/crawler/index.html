@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8">
+  <title>Python網頁爬蟲實戰</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description"
+    content="認識網頁型態  &amp; 爬蟲技巧大公開">
+  
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Hugo 0.83.1" />
+  <!-- multilingual SEO optimizations -->
+  
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/bootstrap/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/slick/slick.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/animate/animate.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/venobox/venobox.css">
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/plugins/themify-icons/themify-icons.css">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://taiwan-tradingview.github.io/scss/main.e88a60b286205da8d3956fa6cd1acdc4a1a1a926d87f7a98b7b19febcdae82d317f67403c17aff2adb6d893867ace5191804ae4dda3a0dc997987b5801c54610.css" integrity="sha512-6IpgsoYgXajTlW&#43;mzRrNxKGhqSbYf3qYt7Gf682ugtMX9nQDwXr/KtttiThnrOUZGASuTdo6DcmXmHtYAcVGEA==" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://taiwan-tradingview.github.io/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="https://taiwan-tradingview.github.io/images/favicon.png" type="image/x-icon">
+
+</head><body>
+<header class="fixed-top header">
+  
+  
+  <div class="top-header py-2 bg-white">
+    <div class="container">
+      <div class="row no-gutters align-items-center">
+        <div class="col-lg-4 text-center text-lg-left">
+          <ul class="list-inline">
+            
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-facebook"></i></a></li>
+            
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-instagram"></i></a></li>
+            
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-github"></i></a></li>
+            
+          </ul>
+        </div>
+        <div class="col-lg-8 text-center text-lg-right">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a class="text-color mr-3" href="tel:"><strong>CALL : </strong> </a></li>
+            <li class="list-inline-item">
+              <a class="text-color" href="mailto:taiwan.tradingview@gmail.com"><strong>EMAIL : </strong> taiwan.tradingview@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="navigation w-100  top-hider ">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark p-0">
+        <a class="navbar-brand" href="/"><img class="img-fluid"
+            src="https://taiwan-tradingview.github.io/images/logo.png" alt="Taiwan-Tradingview | 金融交易介面"></a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse text-center" id="navigation">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io">Home</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/course">程式課程</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/blog">財商部落格</a>
+            </li>
+            
+            
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                API
+              </a>
+              <div class="dropdown-menu">
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/notice">API使用教學</a>
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/teacher">團隊成員</a>
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/event">每日選股清單</a>
+                
+                <a class="dropdown-item" href="https://taiwan-tradingview.github.io/research">策略回測</a>
+                
+              </div>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/about">關於我們</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://taiwan-tradingview.github.io/contact">聯絡我們</a>
+            </li>
+            
+            
+          </ul>
+
+          
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+	
+<section class="page-title-section overlay" style="background-image: url('/images/backgrounds/page-title.png'),url('/images/backgrounds/page-title.jpg');" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb">
+          <li class="list-inline-item h2"><a class="text-primary font-secondary" href="https://taiwan-tradingview.github.io">Home</a></li>
+          <li class="list-inline-item h5"><i class="ti-angle-right text-white"></i></li>
+          <li class="list-inline-item text-white h3 font-secondary">Python網頁爬蟲實戰</li>
+        </ul>
+        <p class="text-lighten">認識網頁型態  &amp; 爬蟲技巧大公開</p>
+      </div>
+    </div>
+  </div>
+</section>
+	
+
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mb-4">
+        
+        <img style="height: 500px;width: 100%;object-fit: cover;" src="/images/courses/crawler.png"
+          class="img-fluid w-100">
+      </div>
+    </div>
+    
+    <div class="row align-items-center mb-5">
+      <div class="col-xl-3 order-1 col-sm-6 mb-4 mb-xl-0">
+        <h2>Python網頁爬蟲實戰</h2>
+      </div>
+      <div class="col-xl-6 order-sm-3 order-xl-2 col-12 order-2">
+        <ul class="list-inline text-xl-center">
+          <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-calendar text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">DURATION</h6>
+                <p class="mb-0">06 Month</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-timer text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">WEEKLY</h6>
+                <p class="mb-0">03 hours</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-wallet text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">FEE</h6>
+                <p class="mb-0">From: $699</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xl-3 text-sm-right text-left order-sm-2 order-3 order-xl-3 col-sm-6 mb-4 mb-xl-0">
+        <a href="#" class="btn btn-primary">Apply now</a>
+      </div>
+      
+      <div class="col-12 mt-4 order-4">
+        <div class="border-bottom border-primary"></div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12 mb-4 content">
+        <h3 id="前言">前言</h3>
+<h5 id="終於來到python的重頭戲啦說到python最大的應用絕對非爬蟲莫屬那爬蟲到底是什麼呢">終於來到Python的重頭戲啦!說到Python最大的應用絕對非爬蟲莫屬，那爬蟲到底是什麼呢?</h5>
+<h5 id="爬蟲簡單來說就是到提供數據的網站ex證交所httpswwwtwsecomtwzh將想要的數據爬取下來並在程式介面上進行數據分析">爬蟲簡單來說就是到提供數據的網站(ex:<a href="https://www.twse.com.tw/zh/">證交所</a>)將想要的數據爬取下來，並在程式介面上進行數據分析。</h5>
+<p>.</p>
+<h5 id="但是由於過度頻繁地對網站進行request容易造成網站伺服器癱瘓一般而言大多數的網站對於爬蟲都有一定程度的防爬蟲機制像是短時間內限制request次數或是直接使用驗證碼機制防止爬蟲">但是由於過度頻繁地對網站進行request容易造成網站伺服器癱瘓，一般而言大多數的網站對於爬蟲都有一定程度的防爬蟲機制，像是短時間內限制request次數，或是直接使用驗證碼機制防止爬蟲。</h5>
+<h5 id="而對於不同網站都會有不同的爬蟲技巧本堂課程收錄了可以破解90以上網頁的爬蟲技術甚至可以爬到連網站上都無法顯示的data">而對於不同網站都會有不同的爬蟲技巧，本堂課程收錄了可以破解90%以上網頁的爬蟲技術，甚至可以爬到連網站上都無法顯示的data!</h5>
+<hr>
+<h3 id="目錄">目錄</h3>
+<pre><code>《一》認識網頁型態
+
+《二》網頁爬蟲技巧
+
+《三》證交所爬蟲
+
+《四》公開資訊觀測站爬蟲
+
+《五》期交所爬蟲
+
+《六》蝦皮爬蟲
+
+《七》鉅亨網爬蟲
+
+《八》CMoney爬蟲
+</code></pre><hr>
+<h3 id="一認識網頁型態">《一》認識網頁型態</h3>
+<table>
+<thead>
+<tr>
+<th>差異</th>
+<th>靜態網頁</th>
+<th>動態網頁</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>程式技術</td>
+<td>使用<code>HTML</code>、<code>CSS</code>做出的單獨網頁檔案</td>
+<td>透過<code>JavaScript</code>非同步的方式去跟伺服器資料庫索取資料</td>
+</tr>
+<tr>
+<td>優點</td>
+<td>技術成分簡單，載入速度快</td>
+<td>可因應不同需求展示不同內容，頁面管理有效率不需reload</td>
+</tr>
+<tr>
+<td>缺點</td>
+<td>無法因應不同需求展現不同內容</td>
+<td>載入速度中等</td>
+</tr>
+<tr>
+<td>範例</td>
+<td><a href="http://www.hsiu28.net/style/article_detail.php?id=21">hsiu28.net</a></td>
+<td><a href="https://tw.yahoo.com/">Yahoo.com</a></td>
+</tr>
+<tr>
+<td><a href="https://chrome.google.com/webstore/detail/quick-javascript-switcher/geddoclleiomckbhadiaipdggiiccfje?hl=zh-TW">Javascript Switcher</a></td>
+<td>正常顯示</td>
+<td>部分空白</td>
+</tr>
+<tr>
+<td>後台</td>
+<td>無</td>
+<td>有</td>
+</tr>
+<tr>
+<td>爬蟲難度</td>
+<td>容易</td>
+<td>困難</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="二網頁爬蟲技巧">《二》網頁爬蟲技巧</h3>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">                                                 <span style="color:#666">|--</span> pd <span style="color:#60a0b0;font-style:italic"># 表格</span>
+                        <span style="color:#666">|--</span> requests <span style="color:#666">--|--</span> res<span style="color:#666">.</span>json <span style="color:#60a0b0;font-style:italic"># 文字</span>
+                        <span style="color:#666">|</span>                        <span style="color:#666">|--</span> beautifulsoup <span style="color:#60a0b0;font-style:italic"># 文字</span>
+web crawler <span style="color:#666">--</span>
+                        <span style="color:#666">|</span>
+                        <span style="color:#666">|--</span> selenuim <span style="color:#60a0b0;font-style:italic"># 模擬瀏覽器</span>
+
+</code></pre></div><hr>
+<h3 id="三證交所httpswwwtwsecomtwzh爬蟲">《三》<a href="https://www.twse.com.tw/zh/">證交所</a>爬蟲</h3>
+<h5 id="data型態為表格--使用pdread">data型態為<code>表格</code> ➨ 使用<code>pd.read</code></h5>
+<p><img src="/images/courses/twse-close.png" alt=""></p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">requests</span>
+
+<span style="color:#60a0b0;font-style:italic"># 將網址中的json改為csv ---refer to FinLab部落格</span>
+url <span style="color:#666">=</span> <span style="color:#4070a0">&#39;https://www.twse.com.tw/exchangeReport/MI_INDEX?response=csv&amp;date=20210810&amp;type=ALLBUT0999&amp;_=1628643765268&#39;</span>
+headers <span style="color:#666">=</span> {<span style="color:#4070a0">&#39;User-Agent&#39;</span>:<span style="color:#4070a0">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/517.16 (KHTML, like Gecko) Chrome/12.0.4912.333 Safari/524.16&#39;</span>}
+
+res <span style="color:#666">=</span> requests<span style="color:#666">.</span>get(url,headers<span style="color:#666">=</span>headers)
+
+<span style="color:#60a0b0;font-style:italic"># 資料整理</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">pandas</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">pd</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">io</span>
+
+data <span style="color:#666">=</span> <span style="color:#4070a0">&#39;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#39;</span><span style="color:#666">.</span>join([l <span style="color:#007020;font-weight:bold">for</span> l <span style="color:#007020;font-weight:bold">in</span> res<span style="color:#666">.</span>text<span style="color:#666">.</span>split(<span style="color:#4070a0">&#39;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#39;</span>) <span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020">len</span>(l<span style="color:#666">.</span>split(<span style="color:#4070a0">&#39;,&#34;&#39;</span>))<span style="color:#666">&gt;=</span><span style="color:#40a070">12</span>])
+
+df <span style="color:#666">=</span> pd<span style="color:#666">.</span>read_csv(io<span style="color:#666">.</span>StringIO(data<span style="color:#666">.</span>replace(<span style="color:#4070a0">&#39;=&#39;</span>,<span style="color:#4070a0">&#39;&#39;</span>)))<span style="color:#666">.</span>rename(columns<span style="color:#666">=</span>{<span style="color:#4070a0">&#39;證券代號&#39;</span>:<span style="color:#4070a0">&#39;stock_id&#39;</span>})<span style="color:#666">.</span>set_index(<span style="color:#4070a0">&#39;stock_id&#39;</span>)
+df <span style="color:#666">=</span> df<span style="color:#666">.</span>applymap(<span style="color:#007020;font-weight:bold">lambda</span> s:pd<span style="color:#666">.</span>to_numeric(<span style="color:#007020">str</span>(s)<span style="color:#666">.</span>replace(<span style="color:#4070a0">&#39;,&#39;</span>,<span style="color:#4070a0">&#39;&#39;</span>),errors<span style="color:#666">=</span><span style="color:#4070a0">&#39;coerce&#39;</span>))<span style="color:#666">.</span>dropna(axis<span style="color:#666">=</span><span style="color:#40a070">1</span>,how<span style="color:#666">=</span><span style="color:#4070a0">&#39;all&#39;</span>)
+
+df
+</code></pre></div><p><img src="/images/courses/close.png" alt=""></p>
+<hr>
+<h3 id="四公開資訊觀測站爬蟲httpsmopstwsecomtwmopswebindex">《四》<a href="https://mops.twse.com.tw/mops/web/index">公開資訊觀測站爬蟲</a></h3>
+<h5 id="data型態為表格--使用pdread-1">data型態為表格 ➨ 使用<code>pd.read</code></h5>
+<h5 id="查詢按鍵--透過form-data調整參數">查詢按鍵 ➨ 透過<code>Form Data</code>調整參數</h5>
+<p><img src="/images/courses/mops.png" alt=""></p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">requests</span>
+
+url <span style="color:#666">=</span> <span style="color:#4070a0">&#39;https://mops.twse.com.tw/mops/web/ajax_t51sb01&#39;</span>
+headers <span style="color:#666">=</span> {<span style="color:#4070a0">&#39;User-Agent&#39;</span>: <span style="color:#4070a0">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/888.36 (KHTML, like Gecko) Chrome/23.0.2313.192 Safari/123.34&#39;</span>}
+
+<span style="color:#60a0b0;font-style:italic"># Form Data</span>
+payload <span style="color:#666">=</span> {
+    <span style="color:#4070a0">&#39;encodeURIComponent&#39;</span>: <span style="color:#4070a0">&#39;1&#39;</span>,
+    <span style="color:#4070a0">&#39;step&#39;</span>: <span style="color:#4070a0">&#39;1&#39;</span>,
+    <span style="color:#4070a0">&#39;firstin&#39;</span>: <span style="color:#4070a0">&#39;1&#39;</span>,
+    <span style="color:#4070a0">&#39;TYPEK&#39;</span>: <span style="color:#4070a0">&#39;sii&#39;</span> <span style="color:#60a0b0;font-style:italic"># 上市:sii / 上櫃:otc</span>
+}
+
+res <span style="color:#666">=</span> requests<span style="color:#666">.</span>post(url,headers<span style="color:#666">=</span>headers,data<span style="color:#666">=</span>payload)
+
+<span style="color:#60a0b0;font-style:italic"># 資料整理</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">pandas</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">pd</span>
+
+df <span style="color:#666">=</span> pd<span style="color:#666">.</span>read_html(res<span style="color:#666">.</span>text)[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>rename(columns<span style="color:#666">=</span>{<span style="color:#4070a0">&#39;公司代號&#39;</span>:<span style="color:#4070a0">&#39;stock_id&#39;</span>})<span style="color:#666">.</span>set_index(<span style="color:#4070a0">&#39;stock_id&#39;</span>)
+df
+</code></pre></div><p><img src="/images/courses/industry.png" alt=""></p>
+<hr>
+<h3 id="五期交所httpswwwtaifexcomtwchtindex爬蟲">《五》<a href="https://www.taifex.com.tw/cht/index">期交所</a>爬蟲</h3>
+<h5 id="下載csv檔--使用pdread">下載csv檔 ➨ 使用<code>pd.read</code></h5>
+<h5 id="下載按鍵--透過form-data調整參數">下載按鍵 ➨ 透過<code>Form Data</code>調整參數</h5>
+<p><img src="/images/courses/tfe.png" alt=""></p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">requests</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">datetime</span>
+
+StartDate <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2007</span>,<span style="color:#40a070">8</span>,<span style="color:#40a070">10</span>)
+EndDate <span style="color:#666">=</span> StartDate<span style="color:#666">+</span>datetime<span style="color:#666">.</span>timedelta(<span style="color:#40a070">365</span><span style="color:#666">*</span><span style="color:#40a070">3</span>)
+
+url <span style="color:#666">=</span> <span style="color:#4070a0">&#39;https://www.taifex.com.tw/cht/3/futAndOptDateDown&#39;</span>
+headers <span style="color:#666">=</span> {<span style="color:#4070a0">&#39;User-Agent&#39;</span>: <span style="color:#4070a0">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/333.33 (KHTML, like Gecko) Chrome/11.0.6665.188 Safari/999.36&#39;</span>}
+
+<span style="color:#60a0b0;font-style:italic"># Form Data</span>
+payload <span style="color:#666">=</span> {
+    <span style="color:#4070a0">&#39;firstDate&#39;</span>: f<span style="color:#4070a0">&#34;{StartDate.strftime(&#39;%Y/%m/</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">&#39;)}&#34;</span>, <span style="color:#60a0b0;font-style:italic"># 最舊可索取data ~ 期間為三年</span>
+    <span style="color:#4070a0">&#39;lastDate&#39;</span>: f<span style="color:#4070a0">&#34;{EndDate.strftime(&#39;%Y/%m/</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">&#39;)}&#34;</span>, <span style="color:#60a0b0;font-style:italic"># 當天日期</span>
+    <span style="color:#4070a0">&#39;queryStartDate&#39;</span>: f<span style="color:#4070a0">&#34;{StartDate.strftime(&#39;%Y/%m/</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">&#39;)}&#34;</span>, <span style="color:#60a0b0;font-style:italic"># 索取起始日期</span>
+    <span style="color:#4070a0">&#39;queryEndDate&#39;</span>: f<span style="color:#4070a0">&#34;{EndDate.strftime(&#39;%Y/%m/</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">&#39;)}&#34;</span>, <span style="color:#60a0b0;font-style:italic"># 索取結束日期</span>
+}
+
+res <span style="color:#666">=</span> requests<span style="color:#666">.</span>post(url,headers<span style="color:#666">=</span>headers,data<span style="color:#666">=</span>payload)
+
+<span style="color:#60a0b0;font-style:italic"># 資料整理</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">pandas</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">pd</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">io</span>
+
+df <span style="color:#666">=</span> pd<span style="color:#666">.</span>read_csv(io<span style="color:#666">.</span>StringIO(res<span style="color:#666">.</span>text))<span style="color:#666">.</span>rename(columns<span style="color:#666">=</span>{<span style="color:#4070a0">&#39;日期&#39;</span>:<span style="color:#4070a0">&#39;date&#39;</span>})<span style="color:#666">.</span>set_index([<span style="color:#4070a0">&#39;date&#39;</span>,<span style="color:#4070a0">&#39;身份別&#39;</span>])
+df <span style="color:#666">=</span> df<span style="color:#666">.</span>applymap(<span style="color:#007020;font-weight:bold">lambda</span> s:pd<span style="color:#666">.</span>to_numeric(<span style="color:#007020">str</span>(s),errors<span style="color:#666">=</span><span style="color:#4070a0">&#39;coerce&#39;</span>))
+
+df
+</code></pre></div><p><img src="/images/courses/future.png" alt=""></p>
+<hr>
+<h3 id="六蝦皮httpsshopeetw爬蟲">《六》<a href="https://shopee.tw/">蝦皮</a>爬蟲</h3>
+<h5 id="data型態為文字--使用resjson--beautifulsoup">data型態為文字 ➨ 使用<code>res.json()</code> / <code>beautifulsoup</code></h5>
+<p><img src="/images/courses/shopee.png" alt=""></p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">requests</span>
+
+url <span style="color:#666">=</span> <span style="color:#4070a0">&#39;https://shopee.tw/api/v4/search/search_items?by=relevancy&amp;keyword=jordan&amp;limit=60&amp;newest=0&amp;order=desc&amp;page_type=search&amp;scenario=PAGE_GLOBAL_SEARCH&amp;version=2&#39;</span>
+headers <span style="color:#666">=</span> {<span style="color:#4070a0">&#39;User-Agent&#39;</span>: <span style="color:#4070a0">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/111.26 (KHTML, like Gecko) Chrome/33.0.6785.145 Safari/666.11&#39;</span>}
+
+res <span style="color:#666">=</span> requests<span style="color:#666">.</span>get(url,headers<span style="color:#666">=</span>headers)
+
+<span style="color:#60a0b0;font-style:italic"># 資料整理</span>
+names <span style="color:#666">=</span> [product[<span style="color:#4070a0">&#39;item_basic&#39;</span>][<span style="color:#4070a0">&#39;name&#39;</span>] <span style="color:#007020;font-weight:bold">for</span> product <span style="color:#007020;font-weight:bold">in</span> res<span style="color:#666">.</span>json()[<span style="color:#4070a0">&#39;items&#39;</span>]]
+prices <span style="color:#666">=</span> [<span style="color:#007020">int</span>(product[<span style="color:#4070a0">&#39;item_basic&#39;</span>][<span style="color:#4070a0">&#39;price&#39;</span>])<span style="color:#666">/</span><span style="color:#40a070">10e4</span> <span style="color:#007020;font-weight:bold">for</span> product <span style="color:#007020;font-weight:bold">in</span> res<span style="color:#666">.</span>json()[<span style="color:#4070a0">&#39;items&#39;</span>]]
+
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">pandas</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">pd</span>
+
+df <span style="color:#666">=</span> pd<span style="color:#666">.</span>DataFrame({
+    <span style="color:#4070a0">&#39;price&#39;</span>:prices
+},index<span style="color:#666">=</span>[names])
+
+df
+</code></pre></div><p><img src="/images/courses/shopee-data.png" alt=""></p>
+<hr>
+<h3 id="七鉅亨網httpswwwcnyescom爬蟲">《七》<a href="https://www.cnyes.com/">鉅亨網</a>爬蟲</h3>
+<h5 id="data型態為文字--使用resjson--beautifulsoup-1">data型態為文字 ➨ 使用<code>res.json()</code> / <code>beautifulsoup</code></h5>
+<p><img src="/images/courses/cnyes.png" alt=""></p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">requests</span>
+
+url <span style="color:#666">=</span> <span style="color:#4070a0">&#39;https://news.cnyes.com/news/cat/headline&#39;</span>
+headers <span style="color:#666">=</span> {<span style="color:#4070a0">&#39;user-agent&#39;</span>: <span style="color:#4070a0">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/444.34 (KHTML, like Gecko) Chrome/15.0.4356.246 Safari/123.56&#39;</span>}
+
+res <span style="color:#666">=</span> requests<span style="color:#666">.</span>get(url,headers<span style="color:#666">=</span>headers)
+
+<span style="color:#60a0b0;font-style:italic"># 資料整理</span>
+<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">bs4</span> <span style="color:#007020;font-weight:bold">import</span> BeautifulSoup
+
+soup <span style="color:#666">=</span> BeautifulSoup(res<span style="color:#666">.</span>text,<span style="color:#4070a0">&#39;html.parser&#39;</span>)
+<span style="color:#007020;font-weight:bold">for</span> headline <span style="color:#007020;font-weight:bold">in</span> soup<span style="color:#666">.</span>find_all(class_<span style="color:#666">=</span><span style="color:#4070a0">&#34;_1Zdp&#34;</span>):
+    <span style="color:#007020;font-weight:bold">print</span>(headline<span style="color:#666">.</span>text)
+</code></pre></div><p>12:33理財美科技行情改走輪動風 美股ETF多元題材可掌握一籃子投資<br>
+12:30能源Delta打壓原油需求 亞洲已有4買家要求沙國9月減少供貨<br>
+12:20美股力挺通膨是暫時的！芝加哥Fed總裁Evans：得再多看幾個月的就業報告<br>
+12:10歐亞股南韓疫情煞不住！單日新增2223例創新高<br>
+12:03台灣政經7月減薪逾2成、中高齡再就業者 可申請1萬元生活補貼<br>
+12:03台股新聞建大自行車胎需求旺 品牌廠大老闆親自催貨穩料源<br>
+12:00美股美債殖利率升至三周高點 投行對後市看法不一</p>
+<hr>
+<h3 id="八cmoneyhttpswwwcmoneytwapp爬蟲">《八》<a href="https://www.cmoney.tw/app/">CMoney</a>爬蟲</h3>
+<h5 id="防爬蟲機制---使用selenuim">防爬蟲機制  ➨ 使用<code>selenuim</code></h5>
+<h5 id="安裝chromedriverhttpschromedriverchromiumorgdownloads-查看本機版本點選網頁自訂及管理--說明--關於google-chrome">安裝<a href="https://chromedriver.chromium.org/downloads">chromedriver</a> (查看本機版本:點選網頁<code>自訂及管理</code> ➨ <code>說明</code> ➨ <code>關於Google Chrome</code>)</h5>
+<p><img src="/images/courses/cmoney.png" alt=""></p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">selenium</span> <span style="color:#007020;font-weight:bold">import</span> webdriver
+
+driver <span style="color:#666">=</span> webdriver<span style="color:#666">.</span>Chrome(<span style="color:#4070a0">&#39;chromedriver.exe&#39;</span>)
+url <span style="color:#666">=</span> <span style="color:#4070a0">&#39;https://www.cmoney.tw/finance/f00039.aspx?s=2615&#39;</span>
+
+driver<span style="color:#666">.</span>get(url)
+driver<span style="color:#666">.</span>maximize_window() <span style="color:#60a0b0;font-style:italic"># 最大化視窗</span>
+
+<span style="color:#60a0b0;font-style:italic"># 資料整理</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">pandas</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">pd</span>
+
+df <span style="color:#666">=</span> pd<span style="color:#666">.</span>DataFrame()
+
+<span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(<span style="color:#40a070">2</span>,<span style="color:#40a070">40</span>):
+    <span style="color:#007020;font-weight:bold">try</span>:
+        df <span style="color:#666">=</span> df<span style="color:#666">.</span>append(pd<span style="color:#666">.</span>DataFrame({
+            <span style="color:#4070a0">&#39;買張&#39;</span>:driver<span style="color:#666">.</span>find_elements_by_xpath(f<span style="color:#4070a0">&#34;//*[@id=&#39;MainContent&#39;]/ul/li[1]/article/div/div/div/div/table/tbody/tr[{i}]&#34;</span>)[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>text<span style="color:#666">.</span>split(<span style="color:#4070a0">&#39; &#39;</span>)[<span style="color:#40a070">1</span>],
+            <span style="color:#4070a0">&#39;賣張&#39;</span>:driver<span style="color:#666">.</span>find_elements_by_xpath(f<span style="color:#4070a0">&#34;//*[@id=&#39;MainContent&#39;]/ul/li[1]/article/div/div/div/div/table/tbody/tr[{i}]&#34;</span>)[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>text<span style="color:#666">.</span>split(<span style="color:#4070a0">&#39; &#39;</span>)[<span style="color:#40a070">2</span>],
+            <span style="color:#4070a0">&#39;買賣超&#39;</span>:driver<span style="color:#666">.</span>find_elements_by_xpath(f<span style="color:#4070a0">&#34;//*[@id=&#39;MainContent&#39;]/ul/li[1]/article/div/div/div/div/table/tbody/tr[{i}]&#34;</span>)[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>text<span style="color:#666">.</span>split(<span style="color:#4070a0">&#39; &#39;</span>)[<span style="color:#40a070">3</span>],
+        },index<span style="color:#666">=</span>[driver<span style="color:#666">.</span>find_elements_by_xpath(f<span style="color:#4070a0">&#34;//*[@id=&#39;MainContent&#39;]/ul/li[1]/article/div/div/div/div/table/tbody/tr[{i}]&#34;</span>)[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>text<span style="color:#666">.</span>split(<span style="color:#4070a0">&#39; &#39;</span>)[<span style="color:#40a070">0</span>]]))
+    <span style="color:#007020;font-weight:bold">except</span>:
+        <span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(<span style="color:#40a070">2</span>,<span style="color:#40a070">40</span>):
+            <span style="color:#007020;font-weight:bold">try</span>:
+                df <span style="color:#666">=</span> df<span style="color:#666">.</span>append(pd<span style="color:#666">.</span>DataFrame({
+                    <span style="color:#4070a0">&#39;買張&#39;</span>:driver<span style="color:#666">.</span>find_elements_by_xpath(f<span style="color:#4070a0">&#34;//*[@id=&#39;MainContent&#39;]/ul/li[2]/article/div/div/div/div/table/tbody/tr[{i}]&#34;</span>)[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>text<span style="color:#666">.</span>split(<span style="color:#4070a0">&#39; &#39;</span>)[<span style="color:#40a070">1</span>],
+                    <span style="color:#4070a0">&#39;賣張&#39;</span>:driver<span style="color:#666">.</span>find_elements_by_xpath(f<span style="color:#4070a0">&#34;//*[@id=&#39;MainContent&#39;]/ul/li[2]/article/div/div/div/div/table/tbody/tr[{i}]&#34;</span>)[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>text<span style="color:#666">.</span>split(<span style="color:#4070a0">&#39; &#39;</span>)[<span style="color:#40a070">2</span>],
+                    <span style="color:#4070a0">&#39;買賣超&#39;</span>:driver<span style="color:#666">.</span>find_elements_by_xpath(f<span style="color:#4070a0">&#34;//*[@id=&#39;MainContent&#39;]/ul/li[2]/article/div/div/div/div/table/tbody/tr[{i}]&#34;</span>)[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>text<span style="color:#666">.</span>split(<span style="color:#4070a0">&#39; &#39;</span>)[<span style="color:#40a070">3</span>],
+                },index<span style="color:#666">=</span>[driver<span style="color:#666">.</span>find_elements_by_xpath(f<span style="color:#4070a0">&#34;//*[@id=&#39;MainContent&#39;]/ul/li[2]/article/div/div/div/div/table/tbody/tr[{i}]&#34;</span>)[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>text<span style="color:#666">.</span>split(<span style="color:#4070a0">&#39; &#39;</span>)[<span style="color:#40a070">0</span>]]))
+            <span style="color:#007020;font-weight:bold">except</span>:
+                <span style="color:#007020;font-weight:bold">pass</span>
+            <span style="color:#007020;font-weight:bold">pass</span>
+        <span style="color:#007020;font-weight:bold">break</span>
+
+dataset <span style="color:#666">=</span> df<span style="color:#666">.</span>applymap(<span style="color:#007020;font-weight:bold">lambda</span> s:pd<span style="color:#666">.</span>to_numeric(<span style="color:#007020">str</span>(s),errors<span style="color:#666">=</span><span style="color:#4070a0">&#39;coerce&#39;</span>))
+dataset <span style="color:#666">=</span> dataset<span style="color:#666">.</span>sort_values(<span style="color:#4070a0">&#39;買賣超&#39;</span>,ascending<span style="color:#666">=</span>False)
+dataset
+</code></pre></div><p><img src="/images/courses/cmoney-data.png" alt=""></p>
+<hr>
+<h3 id="結論">結論</h3>
+<h5 id="這堂課程提供了幾乎可以爬90以上的爬蟲技巧相信大家可以透過這些技術將自己想蒐集的資料給爬取下來進行分析但大家一定要特別注意爬蟲本身就是有點遊走在法律及道德邊緣的方法所以在爬蟲時也務必要遵守網路秩序不要將爬蟲技巧用在惡意攻擊網站上以免造成網站管理員的損害">這堂課程提供了幾乎可以爬90%以上的爬蟲技巧，相信大家可以透過這些技術將自己想蒐集的資料給爬取下來進行分析，但大家一定要特別注意爬蟲本身就是有點遊走在法律及道德邊緣的方法，所以在爬蟲時也務必要遵守網路秩序，不要將爬蟲技巧用在惡意攻擊網站上，以免造成網站管理員的損害。</h5>
+<p>.</p>
+<h5 id="另外想特別提一下在爬期交所的過程如果你是透過網站正常程序下載資料會發現期交所最多只會提供最近三年的資料而使用我們課程中的爬蟲可以拿到2007年的歷史數據由此可見爬蟲真的有非常強大的功能去蒐集資料所以啦我們才會一再強調爬蟲務必只能使用在正確的地方唷">另外想特別提一下在爬期交所的過程，如果你是透過網站正常程序下載資料會發現期交所最多只會提供最近三年的資料，而使用我們課程中的爬蟲可以拿到2007年的歷史數據，由此可見爬蟲真的有非常強大的功能去蒐集資料，所以啦~我們才會一再強調爬蟲務必只能使用在正確的地方唷!</h5>
+<p>.</p>
+<h5 id="熱門程度-">熱門程度: ★★★★★</h5>
+<p>.<br>
+本篇爬取證交所的方式參考<a href="https://www.finlab.tw/">FinLab部落格</a>，若有侵害著作權，請來信或留言告知，我們將儘速移除相關內容。</p>
+
+      </div>
+      
+      <div class="col-12">
+        <h5 class="mb-3">teacher</h5>
+        
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+          <div class="media mb-2 mb-sm-0 align-items-center">
+            <img class="mr-4 img-fluid teacher-thumb-sm" src="/images/teachers/KB.png" alt="KB">
+            <div class="media-body">
+              <h4 class="mt-0"><a href="https://taiwan-tradingview.github.io/teacher/kb/">KB</a></h4>
+              Data Scientist
+            </div>
+          </div>
+          <div class="social-link">
+            <h6 class="d-none d-sm-block text-right">Contact Info</h6>
+            <ul class="list-inline">
+              
+              <li class="list-inline-item"><a class="d-inline-block text-light p-1" href="alphafinance.tw@gmail.com"><i class="ti-email"></i></a></li>
+              
+              <li class="list-inline-item"><a class="d-inline-block text-light p-1" href="https://www.instagram.com/Alpha_Finance.tw/"><i class="ti-instagram"></i></a></li>
+              
+              <li class="list-inline-item"><a class="d-inline-block text-light p-1" href="#"><i class="ti-facebook"></i></a></li>
+              
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-bottom border-primary mt-4"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="section-title">Related Course</h2>
+      </div>
+    </div>
+    <div class="row">
+      
+      
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/basis.png" alt="Python快速入門">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
+    </ul>
+    <h4 class="card-title"><a href="https://taiwan-tradingview.github.io/course/basis/">Python快速入門</a></h4>
+    <p class="card-text mb-4">Python基礎語法 &amp; Pandas應用</p>
+    <a href="https://taiwan-tradingview.github.io/course/basis/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/database.png" alt="打造數據資料庫">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
+    </ul>
+    <h4 class="card-title"><a href="https://taiwan-tradingview.github.io/course/database/">打造數據資料庫</a></h4>
+    <p class="card-text mb-4">認識資料庫 &amp; 多執行緒爬蟲自動化</p>
+    <a href="https://taiwan-tradingview.github.io/course/database/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/visual.png" alt="數據視覺化實戰">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
+    </ul>
+    <h4 class="card-title"><a href="https://taiwan-tradingview.github.io/course/visual/">數據視覺化實戰</a></h4>
+    <p class="card-text mb-4">認識視覺化套件 &amp; 客制化調整</p>
+    <a href="https://taiwan-tradingview.github.io/course/visual/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+<footer>
+  
+  
+  
+  <div class="newsletter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 ml-auto bg-primary py-5 newsletter-block">
+          <h3 class="text-white mb-4">Subscribe Newsletter</h3>
+          <form action="https://gmail.us4.list-manage.com/subscribe/post?u=463ee871f45d2d93748e77cad&amp;amp;id=a0a2c6d074" method="post" name="mc-embedded-subscribe-form" target="_blank">
+            <div class="input-wrapper">
+              <input type="email" class="form-control border-0" id="newsletter" name="newsletter" placeholder="Enter your email…">
+              <button type="submit" name="subscribe" class="btn btn-primary">Join</button>
+              <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                <input type="text" name="b_463ee871f45d2d93748e77cad_a0a2c6d074" tabindex="-1">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <div class="footer bg-footer section border-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
+          
+          <a class="logo-footer" href="/"><img class="img-fluid mb-4" src="https://taiwan-tradingview.github.io/images/logo.png" alt="Taiwan-Tradingview | 金融交易介面"></a>
+          <ul class="list-unstyled">
+            <li class="mb-4">Taiwan</li>
+            <li class="mb-4"><a href="mailto:taiwan.tradingview@gmail.com">taiwan.tradingview@gmail.com</a></li>
+            <li class="mb-4"></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">company</h4>
+          <ul class="list-unstyled">
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course">程式課程</a></li>
+            
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/blog">財商部落格</a></li>
+            
+            
+            
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/about">關於我們</a></li>
+            
+            
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/contact">聯絡我們</a></li>
+            
+            
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">links</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice">API使用教學</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/teacher">團隊成員</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/event">每日選股清單</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/research">策略回測</a></li>
+            
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">Courses</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/pypi/">從GitHub到PYPI</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/ai/">人工智慧實戰模型</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/visual/">數據視覺化實戰</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/database/">打造數據資料庫</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/course/crawler/">Python網頁爬蟲實戰</a></li>
+            
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">new notice</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-033/">Alpha_Finance 0.3.3版</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-032/">Alpha_Finance 0.3.2版</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-031/">Alpha_Finance 0.3.1版</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="copyright py-4 bg-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 text-md-left text-center">
+          <p class="mb-3 mb-md-0">Copyright © Taiwan-Tradingview金融交易介面 2021</p>
+        </div>
+        <div class="col-md-5 text-md-right text-center">
+          <ul class="list-inline">
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-facebook text-primary"></i></a></li>
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-instagram text-primary"></i></a></li>
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-github text-primary"></i></a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Google Map API -->
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&amp;libraries=places"></script>
+
+
+<!-- JS Plugins -->
+
+<script src="https://taiwan-tradingview.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/filterizr/jquery.filterizr.min.js"></script>
+
+<script src="https://taiwan-tradingview.github.io/plugins/google-map/gmap.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://taiwan-tradingview.github.io/js/script.min.js"></script>
+
+<!-- google analitycs -->
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-outline-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+
+</html>
