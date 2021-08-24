@@ -143,50 +143,6 @@ pip install tw_tradingview==1.0.0  本地端環境
     </item>
     
     <item>
-      <title>tw-tradingview 0.3.3版</title>
-      <link>https://taiwan-tradingview.github.io/notice/api-033/</link>
-      <pubDate>Wed, 13 Jan 2021 15:27:17 +0800</pubDate>
-      
-      <guid>https://taiwan-tradingview.github.io/notice/api-033/</guid>
-      <description>Installation Install using pip
-pip install Alpha_Finance==0.3.3  本地端環境
-安裝talib並儲存至user  pip install TA_Lib-0.</description>
-    </item>
-    
-    <item>
-      <title>tw-tradingview 0.3.2版</title>
-      <link>https://taiwan-tradingview.github.io/notice/api-032/</link>
-      <pubDate>Tue, 12 Jan 2021 15:27:17 +0800</pubDate>
-      
-      <guid>https://taiwan-tradingview.github.io/notice/api-032/</guid>
-      <description>Installation Install using pip
-pip install Alpha_Finance==0.3.2  本地端環境
-安裝talib並儲存至user  pip install TA_Lib-0.</description>
-    </item>
-    
-    <item>
-      <title>tw-tradingview 0.3.1版</title>
-      <link>https://taiwan-tradingview.github.io/notice/api-031/</link>
-      <pubDate>Mon, 11 Jan 2021 15:27:17 +0800</pubDate>
-      
-      <guid>https://taiwan-tradingview.github.io/notice/api-031/</guid>
-      <description>Installation Install using pip
-pip install Alpha_Finance==0.3.1  本地端環境
-安裝talib並儲存至user  pip install TA_Lib-0.</description>
-    </item>
-    
-    <item>
-      <title>tw-tradingview 0.3.0版</title>
-      <link>https://taiwan-tradingview.github.io/notice/api-030/</link>
-      <pubDate>Sun, 10 Jan 2021 15:27:17 +0800</pubDate>
-      
-      <guid>https://taiwan-tradingview.github.io/notice/api-030/</guid>
-      <description>Installation Install using pip
-pip install Alpha_Finance==0.3.0  本地端環境
-安裝talib並儲存至user  pip install TA_Lib-0.</description>
-    </item>
-    
-    <item>
       <title>如何架設個人網站</title>
       <link>https://taiwan-tradingview.github.io/course/website/</link>
       <pubDate>Fri, 01 Jan 2021 15:27:17 +0800</pubDate>
