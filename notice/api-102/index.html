@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
   <meta charset="utf-8">
-  <title>關於我們</title>
+  <title>tw-tradingview 1.0.2版</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description"
-    content="無論是哪一種投資市場，往往隱藏嚴重的資訊不對稱，對於小資族的散戶們所接收到的資訊通常都是第三手以後，在交易市場中往往打的正是資訊戰，誰能擁有最多最快的資訊就能成為贏家!
-而我們參考市面上眾多優秀前輩們開發的金融套件並進行再研發，目的就是希望讓市場上的每一位散戶都能擁有更加公平的交易工具，並且將自身的交易經驗傳承下去!
-">
+    content="API用於財務教育、非商業用途。資料僅供參考，使用者依本資料交易發生之損失需自行負責。">
   
   <meta name="author" content="Themefisher">
   <meta name="generator" content="Hugo 0.83.1" />
@@ -138,17 +136,16 @@
 
 
 	
-<section class="page-title-section overlay" style="background-image: url('/images/backgrounds/team.png'),url('/images/backgrounds/page-title.jpg');" >
+<section class="page-title-section overlay" style="background-image: url('/images/backgrounds/api-page.png'),url('/images/backgrounds/page-title.jpg');" >
   <div class="container">
     <div class="row">
       <div class="col-md-8">
         <ul class="list-inline custom-breadcrumb">
           <li class="list-inline-item h2"><a class="text-primary font-secondary" href="https://taiwan-tradingview.github.io">Home</a></li>
           <li class="list-inline-item h5"><i class="ti-angle-right text-white"></i></li>
-          <li class="list-inline-item text-white h3 font-secondary">關於我們</li>
+          <li class="list-inline-item text-white h3 font-secondary">tw-tradingview 1.0.2版</li>
         </ul>
-        <p class="text-lighten">無論是哪一種投資市場，往往隱藏嚴重的資訊不對稱，對於小資族的散戶們所接收到的資訊通常都是第三手以後，在交易市場中往往打的正是資訊戰，誰能擁有最多最快的資訊就能成為贏家!
-而我們參考市面上眾多優秀前輩們開發的金融套件並進行再研發，目的就是希望讓市場上的每一位散戶都能擁有更加公平的交易工具，並且將自身的交易經驗傳承下去!</p>
+        <p class="text-lighten">API用於財務教育、非商業用途。資料僅供參考，使用者依本資料交易發生之損失需自行負責。</p>
       </div>
     </div>
   </div>
@@ -156,150 +153,305 @@
 	
 
 
-
-
 <section class="section">
   <div class="container">
     <div class="row">
       <div class="col-12">
-        
-        <img class="img-fluid w-100 mb-4" src="/images/about/about-page.png" alt="about image">
-        
-        <h3 id="數據資料庫">數據資料庫</h3>
+        <div class="d-flex">
+          <div class="text-center mr-4">
+            <div class="p-4 bg-primary text-white">
+              <span class="h2 d-block">21</span> JAN, 2021
+            </div>
+          </div>
+          
+          <div class="content">
+            <h2 id="installation">Installation</h2>
+<p>Install using pip</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pip install tw_tradingview<span style="color:#666">==</span><span style="color:#40a070">1.0</span><span style="color:#666">.</span><span style="color:#40a070">2</span>
+</code></pre></div><ul>
+<li>本地端環境<br>
+<a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#ta-lib">安裝talib</a>並儲存至user</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pip install TA_Lib<span style="color:#666">-</span><span style="color:#40a070">0.4</span><span style="color:#666">.</span><span style="color:#40a070">20</span><span style="color:#666">-</span>cp37<span style="color:#666">-</span>cp37m<span style="color:#666">-</span>win_amd64<span style="color:#666">.</span>whl
+</code></pre></div><ul>
+<li>colab環境</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pip install talib<span style="color:#666">-</span>binary
+</code></pre></div><hr>
+<h2 id="taiwan-stock-api">Taiwan Stock API</h2>
+<p><strong>tw_tradingview</strong> 為專門分析臺灣股市的Python套件，附帶自動化爬蟲及建立DB</p>
+<p>最新版爬蟲數據包含</p>
+<table>
+<thead>
+<tr>
+<th>面向</th>
+<th>數據</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>技術面</td>
+<td>開高低收量</td>
+</tr>
+<tr>
+<td>籌碼面</td>
+<td>三大法人、融資融券</td>
+</tr>
+<tr>
+<td>基本面</td>
+<td>月營收</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li>
-<h5 id="爬蟲股票期貨加密市場並建立歷史資料庫透過數據分析找出股市的規律性">爬蟲股票/期貨/加密市場，並建立歷史資料庫，透過數據分析找出股市的規律性。</h5>
-</li>
+<li>資料來源:
+<a href="https://www.twse.com.tw/zh/">證交所</a>, <a href="https://www.tpex.org.tw/web/">櫃買中心</a>
+, <a href="https://mops.twse.com.tw/mops/web/index">公開資訊觀測站</a>
+, <a href="https://www.taifex.com.tw/cht/index">期交所</a>。</li>
+<li>API用於財務教育、非商業用途。資料僅供參考，使用者依本資料交易發生之損失需自行負責，本API不對資料內容錯誤、更新延誤或傳輸中斷負任何責任。</li>
 </ul>
 <hr>
-<h3 id="策略回測">策略回測</h3>
+<h3 id="quick-start"><strong>Quick Start</strong></h3>
 <ul>
 <li>
-<h5 id="對知名投資策略進行數據回測對於報酬率等風險分析進階優化">對知名投資策略進行數據回測，對於報酬率等風險分析進階優化。</h5>
+<h4 id="colab-httpscolabresearchgooglecomassetscolab-badgesvghttpscolabresearchgooglecomdrive1wdlocmjufnrgv_hv4mq-ei72wptsja9huspsharing"><a href="https://colab.research.google.com/drive/1WDlocMJufNRGV_hv4mq-eI72WPtSja9H?usp=sharing">Colab <img src="https://colab.research.google.com/assets/colab-badge.svg" alt=""></a></h4>
 </li>
 </ul>
+<h4 id="下載歷史數據">下載歷史數據</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview</span>
+
+tw_tradingview<span style="color:#666">.</span>download_cloud_data()
+</code></pre></div><p>industry 🆗<br>
+monthly_revenue 🆗<br>
+dealer 🆗<br>
+foreign_investors 🆗<br>
+investment_trust 🆗<br>
+Close 🆗<br>
+Volume 🆗<br>
+margin_trading 🆗<br>
+Low 🆗<br>
+short_selling 🆗<br>
+High 🆗<br>
+Open 🆗<br>
+⭐⭐⭐⭐⭐ Finish ⭐⭐⭐⭐⭐</p>
+<h4 id="取得數據庫資料">取得數據庫資料</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview.data</span> <span style="color:#007020;font-weight:bold">import</span> dataReader
+
+dataReader<span style="color:#666">.</span>twstock_close()
+</code></pre></div><table>
+<thead>
+<tr>
+<th>date</th>
+<th>0015</th>
+<th>0050</th>
+<th>0051</th>
+<th>0052</th>
+<th>0053</th>
+<th>0054</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2021-08-12</td>
+<td>NaN</td>
+<td>136.95</td>
+<td>57.20</td>
+<td>124.05</td>
+<td>66.00</td>
+<td>31.81</td>
+</tr>
+<tr>
+<td>2021-08-13</td>
+<td>NaN</td>
+<td>135.65</td>
+<td>56.35</td>
+<td>122.55</td>
+<td>65.40</td>
+<td>31.30</td>
+</tr>
+<tr>
+<td>2021-08-16</td>
+<td>NaN</td>
+<td>135.35</td>
+<td>55.50</td>
+<td>122.50</td>
+<td>65.30</td>
+<td>30.93</td>
+</tr>
+<tr>
+<td>2021-08-17</td>
+<td>NaN</td>
+<td>134.35</td>
+<td>54.80</td>
+<td>121.20</td>
+<td>64.70</td>
+<td>30.67</td>
+</tr>
+</tbody>
+</table>
+<h4 id="自動化爬蟲">自動化爬蟲</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview.crawler</span> <span style="color:#007020;font-weight:bold">import</span> auto_crawler
+
+auto_crawler()
+</code></pre></div><p>========= Start crawling price =========<br>
+2021-07-12 🆗<br>
+2021-07-13 🆗<br>
+=========       Finish✔         =========<br>
+========= Start crawling institution =========<br>
+2021-07-12 🆗<br>
+2021-07-13 🆗 
+=========       Finish✔         =========<br>
+========= Start crawling margin =========<br>
+2021-07-12 🆗<br>
+2021-07-13 🆗 
+=========       Finish✔         =========<br>
+========= Start crawling monthly_revenue =========<br>
+2021-07 🆗<br>
+=========       Finish✔         =========<br>
+⭐⭐⭐⭐⭐ All Finish ⭐⭐⭐⭐⭐</p>
+<h4 id="專屬套件">專屬套件</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview.stock</span> <span style="color:#007020;font-weight:bold">import</span> stock_dataframe,technical_chart
+
+dataname <span style="color:#666">=</span> <span style="color:#4070a0">&#39;2330&#39;</span>
+ohlcv <span style="color:#666">=</span> stock_dataframe(dataname)
+technical_chart(ohlcv,dataname)
+</code></pre></div><table>
+<thead>
+<tr>
+<th>date</th>
+<th>open</th>
+<th>close</th>
+<th>low</th>
+<th>high</th>
+<th>volume</th>
+<th>pct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2021-08-13</td>
+<td>585.0</td>
+<td>581.0</td>
+<td>579.0</td>
+<td>585.0</td>
+<td>25440.973</td>
+<td>-0.85</td>
+</tr>
+<tr>
+<td>2021-08-16</td>
+<td>582.0</td>
+<td>584.0</td>
+<td>578.0</td>
+<td>586.0</td>
+<td>19949.389</td>
+<td>0.52</td>
+</tr>
+<tr>
+<td>2021-08-17</td>
+<td>580.0</td>
+<td>580.0</td>
+<td>578.0</td>
+<td>582.0</td>
+<td>31845.499</td>
+<td>-0.68</td>
+</tr>
+<tr>
+<td>2021-08-18</td>
+<td>568.0</td>
+<td>574.0</td>
+<td>566.0</td>
+<td>575.0</td>
+<td>47063.629</td>
+<td>-1.03</td>
+</tr>
+<tr>
+<td>2021-08-19</td>
+<td>573.0</td>
+<td>559.0</td>
+<td>559.0</td>
+<td>573.0</td>
+<td>42133.375</td>
+<td>-2.61</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/images/technical_chart.png" alt=""></p>
+<h4 id="技術指標">技術指標</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview</span> <span style="color:#007020;font-weight:bold">import</span> indicator
+
+indicator<span style="color:#666">.</span>RSI(ohlcv)
+</code></pre></div><table>
+<thead>
+<tr>
+<th>date</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2021-08-13</td>
+<td>42.373579</td>
+</tr>
+<tr>
+<td>2021-08-16</td>
+<td>42.373579</td>
+</tr>
+<tr>
+<td>2021-08-17</td>
+<td>40.643127</td>
+</tr>
+<tr>
+<td>2021-08-18</td>
+<td>46.256672</td>
+</tr>
+<tr>
+<td>2021-08-19</td>
+<td>42.602784</td>
+</tr>
+</tbody>
+</table>
+<h4 id="個股回測">個股回測</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview.backtrader</span> <span style="color:#007020;font-weight:bold">import</span> backtest_single_stock
+<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview.stock</span> <span style="color:#007020;font-weight:bold">import</span> stock_dataframe
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">datetime</span>
+
+dataname <span style="color:#666">=</span> <span style="color:#4070a0">&#39;0050&#39;</span>
+ohlcv <span style="color:#666">=</span> stock_dataframe(dataname)
+
+<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">ma</span>(n):
+    <span style="color:#007020;font-weight:bold">return</span> ohlcv<span style="color:#666">.</span>close<span style="color:#666">.</span>rolling(n,min_periods<span style="color:#666">=</span><span style="color:#40a070">1</span>)<span style="color:#666">.</span>mean()
+
+entry <span style="color:#666">=</span> (ma(<span style="color:#40a070">5</span>)<span style="color:#666">&gt;=</span>ma(<span style="color:#40a070">60</span>))<span style="color:#666">&amp;</span>(ma(<span style="color:#40a070">5</span>)<span style="color:#666">.</span>shift()<span style="color:#666">&lt;</span>ma(<span style="color:#40a070">60</span>)<span style="color:#666">.</span>shift())
+<span style="color:#007020">exit</span> <span style="color:#666">=</span> (ma(<span style="color:#40a070">5</span>)<span style="color:#666">&lt;=</span>ma(<span style="color:#40a070">60</span>))<span style="color:#666">&amp;</span>(ma(<span style="color:#40a070">5</span>)<span style="color:#666">.</span>shift()<span style="color:#666">&gt;</span>ma(<span style="color:#40a070">60</span>)<span style="color:#666">.</span>shift())
+start_date <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2014</span>,<span style="color:#40a070">5</span>,<span style="color:#40a070">5</span>)
+end_date <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2021</span>,<span style="color:#40a070">8</span>,<span style="color:#40a070">23</span>)
+
+yc,KPI <span style="color:#666">=</span> backtest_single_stock(ohlcv,dataname,entry,<span style="color:#007020">exit</span>,start_date,end_date)
+</code></pre></div><p><img src="/images/backtest_roi.png" alt=""> <br>
+<img src="/images/heatmap.png" alt="">
+<img src="/images/backtest_log.png" alt=""><br>
+<img src="/images/backtest_chart.png" alt=""></p>
 <hr>
-<h3 id="即時交易訊號">即時交易訊號</h3>
-<ul>
-<li>
-<h5 id="串接即時報價api並搭配專屬投資策略系統第一時間接收買賣訊號">串接即時報價API，並搭配專屬投資策略系統第一時間接收買賣訊號。</h5>
-</li>
-</ul>
+<h2 id="contact">Contact</h2>
+<h5 id="網站-httpstaiwan-tradingviewgithubio">網站: <a href="https://taiwan-tradingview.github.io/">https://taiwan-tradingview.github.io/</a></h5>
+<h5 id="email-taiwantradingviewgmailcom">Email: <a href="mailto:taiwan.tradingview@gmail.com">taiwan.tradingview@gmail.com</a></h5>
+<hr>
+<h2 id="reference">Reference</h2>
+<p>Alpha_Finance專案開發參考自:<br>
+<a href="https://twstock.readthedocs.io/zh_TW/latest/">twstock</a><br>
+<a href="https://finmindtrade.com/">FinMind</a><br>
+<a href="https://www.finlab.tw/">FinLab</a><br>
+<a href="https://blog.louie.lu/">blog.louie.lu</a></p>
+<p>若有侵害版權疑慮，請來信或留言告知，我們將儘速移除相關內容。</p>
 
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-<section class="section-sm bg-primary">
-  <div class="container">
-    <div class="row">
-      
-      
-      <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
-        <div class="text-center">
-          <h2 class="count text-white" data-count="1100">0</h2>
-          <h5 class="text-white">社團人數</h5>
-        </div>
-      </div>
-      
-      <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
-        <div class="text-center">
-          <h2 class="count text-white" data-count="1300">0</h2>
-          <h5 class="text-white">IG粉絲</h5>
-        </div>
-      </div>
-      
-      <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
-        <div class="text-center">
-          <h2 class="count text-white" data-count="60">0</h2>
-          <h5 class="text-white">學員好評</h5>
-        </div>
-      </div>
-      
-      <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
-        <div class="text-center">
-          <h2 class="count text-white" data-count="5">0</h2>
-          <h5 class="text-white">團隊成員</h5>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
-
-<section class="section bg-cover" data-background="https://taiwan-tradingview.github.io/images/backgrounds/mamba.png">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 col-sm-4 position-relative success-video">
-        <a class="play-btn venobox" href="https://www.youtube.com/watch?v=VSceuiPBpxY" data-vbtype="video">
-          <i class="ti-control-play"></i>
-        </a>
-      </div>
-      <div class="col-lg-6 col-sm-8">
-        <div class="bg-white p-5">
-          <h2 class="section-title">曼巴精神</h2>
-          <p><p>能站在這裡不是因為我們的天賦與才能，而是因為每天凌晨四點的苦練；站在這裡是因為我們擁有夢想，而誰都無法阻擋，即便有任何困難，我們也會利用它來讓自己變得更強，我們從不滿足、從不放棄、從不止步。</p>
-<p>如果你熱愛你在做的事，而且這件事能讓你感到開心，你付出過的所有努力與堅持都會是值得的。</p>
-<p>永不畏懼迎接挑戰、永遠保持好奇心，學會如何從別人身上學習並永不停歇你前進的腳步，人生學無止境，於是不斷學習顯得極為重要，而不是覺得自己什麼都懂，唯有這樣你才能成為更好的自己。</p>
-</p>
+             <a href="https://github.com/taiwan-tradingview/tw-tradingview" class="btn btn-primary">Download</a>
+            
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-
-
-
-
-<section class="section">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h2 class="section-title">Our Teachers</h2>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      
-      
-      <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
-        <div class="card border-0 rounded-0 hover-shadow mb-5">
-  <img class="card-img-top rounded-0" src="/images/teachers/KB.png" alt="KB">
-  <div class="card-body">
-    <h4 class="card-title"><a href="https://taiwan-tradingview.github.io/teacher/kb/">KB</a></h4>
-    <p>Data Scientist</p>
-    <ul class="list-inline">
-      
-      <li class="list-inline-item"><a class="text-color" href="taiwan-tradingview@gmail.com"><i class="ti-email"></i></a>
-      </li>
-      
-      <li class="list-inline-item"><a class="text-color" href="https://www.instagram.com/TW-Tradingview/"><i class="ti-instagram"></i></a>
-      </li>
-      
-      <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a>
-      </li>
-      
-    </ul>
-  </div>
-</div>
-      </div>
-      
-    </div>
-  </div>
-</section>
-
 
 
 
