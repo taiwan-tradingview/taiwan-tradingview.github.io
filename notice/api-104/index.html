@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
   <meta charset="utf-8">
-  <title>tw-tradingview 1.0.0版</title>
+  <title>tw-tradingview 1.0.4版</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -143,7 +143,7 @@
         <ul class="list-inline custom-breadcrumb">
           <li class="list-inline-item h2"><a class="text-primary font-secondary" href="https://taiwan-tradingview.github.io">Home</a></li>
           <li class="list-inline-item h5"><i class="ti-angle-right text-white"></i></li>
-          <li class="list-inline-item text-white h3 font-secondary">tw-tradingview 1.0.0版</li>
+          <li class="list-inline-item text-white h3 font-secondary">tw-tradingview 1.0.4版</li>
         </ul>
         <p class="text-lighten">API用於財務教育、非商業用途。資料僅供參考，使用者依本資料交易發生之損失需自行負責。</p>
       </div>
@@ -167,7 +167,7 @@
           <div class="content">
             <h2 id="installation">Installation</h2>
 <p>Install using pip</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pip install tw_tradingview<span style="color:#666">==</span><span style="color:#40a070">1.0</span><span style="color:#666">.</span><span style="color:#40a070">0</span>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pip install tw_tradingview<span style="color:#666">==</span><span style="color:#40a070">1.0</span><span style="color:#666">.</span><span style="color:#40a070">4</span>
 </code></pre></div><ul>
 <li>本地端環境<br>
 <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#ta-lib">安裝talib</a>並儲存至user</li>
@@ -412,6 +412,7 @@ indicator<span style="color:#666">.</span>RSI(ohlcv)
 </table>
 <h4 id="個股回測">個股回測</h4>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview.backtrader</span> <span style="color:#007020;font-weight:bold">import</span> backtest_single_stock
+<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview.stock</span> <span style="color:#007020;font-weight:bold">import</span> stock_dataframe
 <span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">datetime</span>
 
 dataname <span style="color:#666">=</span> <span style="color:#4070a0">&#39;0050&#39;</span>
@@ -425,10 +426,45 @@ entry <span style="color:#666">=</span> (ma(<span style="color:#40a070">5</span>
 start_date <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2014</span>,<span style="color:#40a070">5</span>,<span style="color:#40a070">5</span>)
 end_date <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2021</span>,<span style="color:#40a070">8</span>,<span style="color:#40a070">23</span>)
 
-yc <span style="color:#666">=</span> backtest_single_stock(ohlcv,dataname,entry,<span style="color:#007020">exit</span>,start_date,end_date)
-</code></pre></div><p><img src="/images/backtest_roi.png" alt=""><br>
-<img src="/images/backtest_chart.png" alt=""><br>
-<img src="/images/backtest_log.png" alt=""></p>
+yc,KPI <span style="color:#666">=</span> backtest_single_stock(ohlcv,dataname,entry,<span style="color:#007020">exit</span>,start_date,end_date)
+</code></pre></div><p><img src="/images/backtest_roi.png" alt=""> <br>
+<img src="/images/heatmap.png" alt="">
+<img src="/images/backtest_log.png" alt=""><br>
+<img src="/images/backtest_chart.png" alt=""></p>
+<h4 id="全市場回測">全市場回測</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview.data</span> <span style="color:#007020;font-weight:bold">import</span> dataReader
+
+c <span style="color:#666">=</span> dataReader<span style="color:#666">.</span>twstock_close()
+o <span style="color:#666">=</span> dataReader<span style="color:#666">.</span>twstock_open()
+h <span style="color:#666">=</span> dataReader<span style="color:#666">.</span>twstock_high()
+l <span style="color:#666">=</span> dataReader<span style="color:#666">.</span>twstock_low()
+v <span style="color:#666">=</span> dataReader<span style="color:#666">.</span>twstock_volume()<span style="color:#666">/</span><span style="color:#40a070">1000</span>
+
+<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">ma</span>(n):
+    <span style="color:#007020;font-weight:bold">return</span> c<span style="color:#666">.</span>rolling(n,min_periods<span style="color:#666">=</span><span style="color:#40a070">1</span>)<span style="color:#666">.</span>mean()
+
+<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">bias</span>(n):
+    <span style="color:#007020;font-weight:bold">return</span> (c<span style="color:#666">/</span>ma(n)<span style="color:#666">-</span><span style="color:#40a070">1</span>)<span style="color:#666">*</span><span style="color:#40a070">100</span>
+
+cond1 <span style="color:#666">=</span> (c<span style="color:#666">&gt;=</span>ma(<span style="color:#40a070">5</span>))<span style="color:#666">&amp;</span>(c<span style="color:#666">&gt;=</span><span style="color:#40a070">20</span>)<span style="color:#666">&amp;</span>(v<span style="color:#666">.</span>rolling(<span style="color:#40a070">5</span>,min_periods<span style="color:#666">=</span><span style="color:#40a070">1</span>)<span style="color:#666">.</span>mean()<span style="color:#666">&gt;=</span><span style="color:#40a070">1000</span>)
+cond2 <span style="color:#666">=</span> (c<span style="color:#666">&gt;=</span>ma(<span style="color:#40a070">20</span>))<span style="color:#666">&amp;</span>(c<span style="color:#666">&gt;=</span>ma(<span style="color:#40a070">60</span>))<span style="color:#666">&amp;</span>(c<span style="color:#666">&gt;=</span>ma(<span style="color:#40a070">120</span>))<span style="color:#666">&amp;</span>(ma(<span style="color:#40a070">5</span>)<span style="color:#666">&gt;=</span>ma(<span style="color:#40a070">20</span>))<span style="color:#666">&amp;</span>(ma(<span style="color:#40a070">20</span>)<span style="color:#666">&gt;=</span>ma(<span style="color:#40a070">60</span>))<span style="color:#666">&amp;</span>(ma(<span style="color:#40a070">60</span>)<span style="color:#666">&gt;=</span>ma(<span style="color:#40a070">120</span>))
+cond3 <span style="color:#666">=</span> c<span style="color:#666">/</span>c<span style="color:#666">.</span>shift()<span style="color:#666">&gt;</span><span style="color:#40a070">1.05</span>
+entry <span style="color:#666">=</span> cond1<span style="color:#666">&amp;</span>cond2<span style="color:#666">&amp;</span>cond3
+<span style="color:#007020">exit</span> <span style="color:#666">=</span> c<span style="color:#666">&lt;</span>ma(<span style="color:#40a070">5</span>)
+
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">datetime</span>
+
+holding_periods <span style="color:#666">=</span> <span style="color:#40a070">8</span>
+start_date <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2011</span>,<span style="color:#40a070">1</span>,<span style="color:#40a070">1</span>)
+end_date <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2021</span>,<span style="color:#40a070">8</span>,<span style="color:#40a070">26</span>)
+
+<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview.backtrader</span> <span style="color:#007020;font-weight:bold">import</span> backtest_all_twstock
+
+yc,KPI <span style="color:#666">=</span> backtest_all_twstock(entry,<span style="color:#007020">exit</span>,holding_periods,start_date,end_date)
+</code></pre></div><p><img src="/images/backtest_all.png" alt=""><br>
+<img src="/images/heatmap.png" alt=""><br>
+<img src="/images/backtest_log.png" alt=""> <br>
+<img src="/images/backtest_chart.png" alt=""></p>
 <hr>
 <h2 id="contact">Contact</h2>
 <h5 id="網站-httpstaiwan-tradingviewgithubio">網站: <a href="https://taiwan-tradingview.github.io/">https://taiwan-tradingview.github.io/</a></h5>
