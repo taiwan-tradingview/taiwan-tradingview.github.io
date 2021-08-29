@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;copy; Taiwan-Tradingview金融交易介面 2021</copyright>
-    <lastBuildDate>Mon, 18 Jan 2021 15:27:17 +0800</lastBuildDate><atom:link href="https://taiwan-tradingview.github.io/notice/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Jan 2021 15:27:17 +0800</lastBuildDate><atom:link href="https://taiwan-tradingview.github.io/notice/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tw-tradingview 1.0.5版</title>
+      <link>https://taiwan-tradingview.github.io/notice/api-105/</link>
+      <pubDate>Tue, 19 Jan 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://taiwan-tradingview.github.io/notice/api-105/</guid>
+      <description>Installation Install using pip
+pip install tw_tradingview==1.0.5  本地端環境
+安裝talib並儲存至user  pip install TA_Lib-0.</description>
+    </item>
+    
     <item>
       <title>tw-tradingview 1.0.4版</title>
       <link>https://taiwan-tradingview.github.io/notice/api-104/</link>
