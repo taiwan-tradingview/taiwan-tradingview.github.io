@@ -122,6 +122,28 @@
     </item>
     
     <item>
+      <title>tw-tradingview 1.0.7版</title>
+      <link>https://taiwan-tradingview.github.io/notice/api-107/</link>
+      <pubDate>Thu, 21 Jan 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://taiwan-tradingview.github.io/notice/api-107/</guid>
+      <description>Installation Install using pip
+pip install tw_tradingview==1.0.7  本地端環境
+安裝talib並儲存至user  pip install TA_Lib-0.</description>
+    </item>
+    
+    <item>
+      <title>tw-tradingview 1.0.6版</title>
+      <link>https://taiwan-tradingview.github.io/notice/api-106/</link>
+      <pubDate>Wed, 20 Jan 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://taiwan-tradingview.github.io/notice/api-106/</guid>
+      <description>Installation Install using pip
+pip install tw_tradingview==1.0.6  本地端環境
+安裝talib並儲存至user  pip install TA_Lib-0.</description>
+    </item>
+    
+    <item>
       <title>tw-tradingview 1.0.5版</title>
       <link>https://taiwan-tradingview.github.io/notice/api-105/</link>
       <pubDate>Tue, 19 Jan 2021 15:27:17 +0800</pubDate>
@@ -144,39 +166,6 @@ pip install tw_tradingview==1.0.4  本地端環境
     </item>
     
     <item>
-      <title>tw-tradingview 1.0.3版</title>
-      <link>https://taiwan-tradingview.github.io/notice/api-103/</link>
-      <pubDate>Sun, 17 Jan 2021 15:27:17 +0800</pubDate>
-      
-      <guid>https://taiwan-tradingview.github.io/notice/api-103/</guid>
-      <description>Installation Install using pip
-pip install tw_tradingview==1.0.3  本地端環境
-安裝talib並儲存至user  pip install TA_Lib-0.</description>
-    </item>
-    
-    <item>
-      <title>tw-tradingview 1.0.2版</title>
-      <link>https://taiwan-tradingview.github.io/notice/api-102/</link>
-      <pubDate>Sat, 16 Jan 2021 15:27:17 +0800</pubDate>
-      
-      <guid>https://taiwan-tradingview.github.io/notice/api-102/</guid>
-      <description>Installation Install using pip
-pip install tw_tradingview==1.0.2  本地端環境
-安裝talib並儲存至user  pip install TA_Lib-0.</description>
-    </item>
-    
-    <item>
-      <title>tw-tradingview 1.0.1版</title>
-      <link>https://taiwan-tradingview.github.io/notice/api-101/</link>
-      <pubDate>Fri, 15 Jan 2021 15:27:17 +0800</pubDate>
-      
-      <guid>https://taiwan-tradingview.github.io/notice/api-101/</guid>
-      <description>Installation Install using pip
-pip install tw_tradingview==1.0.1  本地端環境
-安裝talib並儲存至user  pip install TA_Lib-0.</description>
-    </item>
-    
-    <item>
       <title>建置Python開發環境</title>
       <link>https://taiwan-tradingview.github.io/course/environment/</link>
       <pubDate>Fri, 15 Jan 2021 15:27:17 +0800</pubDate>
@@ -184,17 +173,6 @@ pip install tw_tradingview==1.0.1  本地端環境
       <guid>https://taiwan-tradingview.github.io/course/environment/</guid>
       <description>前言 如果說要開發小型專案的話我個人首推Jupyter Lab(前身為Jupyter Notebook)，相較於vscode、spyter、pycharm，它的優勢在於能即時執行程式碼，而不需要再去cmd下python app.py等指令，再加上它的output效果非常優，無論是pandas、matplotlib、plotly呈現的表格及圖片使我們在數據分析上有超棒的觀賞性。 .
 說到安裝套件就必須提一下當初我的痛苦，當時我剛學Python想安裝套件時我呆呆地一個一個pip install，所以你可以想像如果我要安裝20個packages時那畫面有多美了XD 所幸本人的懶人病促使我去搜尋如何一鍵安裝所有想要的套件，所有安裝小訣竅都寫在這篇教學文中囉!!  目錄 《一》安裝miniconda 《二》建立開發環境 《三》安裝套件 《四》下載中文字體  《一》安裝miniconda 1.</description>
-    </item>
-    
-    <item>
-      <title>tw-tradingview 1.0.0版</title>
-      <link>https://taiwan-tradingview.github.io/notice/api-100/</link>
-      <pubDate>Thu, 14 Jan 2021 15:27:17 +0800</pubDate>
-      
-      <guid>https://taiwan-tradingview.github.io/notice/api-100/</guid>
-      <description>Installation Install using pip
-pip install tw_tradingview==1.0.0  本地端環境
-安裝talib並儲存至user  pip install TA_Lib-0.</description>
     </item>
     
     <item>

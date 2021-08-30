@@ -221,20 +221,7 @@
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview</span>
 
 tw_tradingview<span style="color:#666">.</span>download_cloud_data()
-</code></pre></div><p>industry 🆗<br>
-monthly_revenue 🆗<br>
-dealer 🆗<br>
-foreign_investors 🆗<br>
-investment_trust 🆗<br>
-Close 🆗<br>
-Volume 🆗<br>
-margin_trading 🆗<br>
-Low 🆗<br>
-short_selling 🆗<br>
-High 🆗<br>
-Open 🆗<br>
-⭐⭐⭐⭐⭐ Finish ⭐⭐⭐⭐⭐</p>
-<h4 id="取得數據庫資料">取得數據庫資料</h4>
+</code></pre></div><h4 id="取得數據庫資料">取得數據庫資料</h4>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview.data</span> <span style="color:#007020;font-weight:bold">import</span> dataReader
 
 dataReader<span style="color:#666">.</span>twstock_close()
@@ -293,23 +280,7 @@ dataReader<span style="color:#666">.</span>twstock_close()
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview.crawler</span> <span style="color:#007020;font-weight:bold">import</span> auto_crawler
 
 auto_crawler()
-</code></pre></div><p>========= Start crawling price =========<br>
-2021-07-12 🆗<br>
-2021-07-13 🆗<br>
-=========       Finish✔         =========<br>
-========= Start crawling institution =========<br>
-2021-07-12 🆗<br>
-2021-07-13 🆗 
-=========       Finish✔         =========<br>
-========= Start crawling margin =========<br>
-2021-07-12 🆗<br>
-2021-07-13 🆗 
-=========       Finish✔         =========<br>
-========= Start crawling monthly_revenue =========<br>
-2021-07 🆗<br>
-=========       Finish✔         =========<br>
-⭐⭐⭐⭐⭐ All Finish ⭐⭐⭐⭐⭐</p>
-<h4 id="專屬套件">專屬套件</h4>
+</code></pre></div><h4 id="專屬套件">專屬套件</h4>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview.stock</span> <span style="color:#007020;font-weight:bold">import</span> stock_dataframe,technical_chart
 
 dataname <span style="color:#666">=</span> <span style="color:#4070a0">&#39;2330&#39;</span>
@@ -375,96 +346,6 @@ technical_chart(ohlcv,dataname)
 </tr>
 </tbody>
 </table>
-<p><img src="/images/technical_chart.png" alt=""></p>
-<h4 id="技術指標">技術指標</h4>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview</span> <span style="color:#007020;font-weight:bold">import</span> indicator
-
-indicator<span style="color:#666">.</span>RSI(ohlcv)
-</code></pre></div><table>
-<thead>
-<tr>
-<th>date</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2021-08-13</td>
-<td>42.373579</td>
-</tr>
-<tr>
-<td>2021-08-16</td>
-<td>42.373579</td>
-</tr>
-<tr>
-<td>2021-08-17</td>
-<td>40.643127</td>
-</tr>
-<tr>
-<td>2021-08-18</td>
-<td>46.256672</td>
-</tr>
-<tr>
-<td>2021-08-19</td>
-<td>42.602784</td>
-</tr>
-</tbody>
-</table>
-<h4 id="個股回測">個股回測</h4>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview.backtrader</span> <span style="color:#007020;font-weight:bold">import</span> backtest_single_stock
-<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview.stock</span> <span style="color:#007020;font-weight:bold">import</span> stock_dataframe
-<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">datetime</span>
-
-dataname <span style="color:#666">=</span> <span style="color:#4070a0">&#39;0050&#39;</span>
-ohlcv <span style="color:#666">=</span> stock_dataframe(dataname)
-
-<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">ma</span>(n):
-    <span style="color:#007020;font-weight:bold">return</span> ohlcv<span style="color:#666">.</span>close<span style="color:#666">.</span>rolling(n,min_periods<span style="color:#666">=</span><span style="color:#40a070">1</span>)<span style="color:#666">.</span>mean()
-
-entry <span style="color:#666">=</span> (ma(<span style="color:#40a070">5</span>)<span style="color:#666">&gt;=</span>ma(<span style="color:#40a070">60</span>))<span style="color:#666">&amp;</span>(ma(<span style="color:#40a070">5</span>)<span style="color:#666">.</span>shift()<span style="color:#666">&lt;</span>ma(<span style="color:#40a070">60</span>)<span style="color:#666">.</span>shift())
-<span style="color:#007020">exit</span> <span style="color:#666">=</span> (ma(<span style="color:#40a070">5</span>)<span style="color:#666">&lt;=</span>ma(<span style="color:#40a070">60</span>))<span style="color:#666">&amp;</span>(ma(<span style="color:#40a070">5</span>)<span style="color:#666">.</span>shift()<span style="color:#666">&gt;</span>ma(<span style="color:#40a070">60</span>)<span style="color:#666">.</span>shift())
-start_date <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2014</span>,<span style="color:#40a070">5</span>,<span style="color:#40a070">5</span>)
-end_date <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2021</span>,<span style="color:#40a070">8</span>,<span style="color:#40a070">23</span>)
-
-yc,KPI <span style="color:#666">=</span> backtest_single_stock(ohlcv,dataname,entry,<span style="color:#007020">exit</span>,start_date,end_date)
-</code></pre></div><p><img src="/images/backtest_roi.png" alt=""> <br>
-<img src="/images/heatmap.png" alt=""><br>
-<img src="/images/backtest_log.png" alt=""><br>
-<img src="/images/backtest_chart.png" alt=""></p>
-<h4 id="全市場回測">全市場回測</h4>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview.data</span> <span style="color:#007020;font-weight:bold">import</span> dataReader
-
-c <span style="color:#666">=</span> dataReader<span style="color:#666">.</span>twstock_close()
-o <span style="color:#666">=</span> dataReader<span style="color:#666">.</span>twstock_open()
-h <span style="color:#666">=</span> dataReader<span style="color:#666">.</span>twstock_high()
-l <span style="color:#666">=</span> dataReader<span style="color:#666">.</span>twstock_low()
-v <span style="color:#666">=</span> dataReader<span style="color:#666">.</span>twstock_volume()<span style="color:#666">/</span><span style="color:#40a070">1000</span>
-
-<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">ma</span>(n):
-    <span style="color:#007020;font-weight:bold">return</span> c<span style="color:#666">.</span>rolling(n,min_periods<span style="color:#666">=</span><span style="color:#40a070">1</span>)<span style="color:#666">.</span>mean()
-
-<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">bias</span>(n):
-    <span style="color:#007020;font-weight:bold">return</span> (c<span style="color:#666">/</span>ma(n)<span style="color:#666">-</span><span style="color:#40a070">1</span>)<span style="color:#666">*</span><span style="color:#40a070">100</span>
-
-cond1 <span style="color:#666">=</span> (c<span style="color:#666">&gt;=</span>ma(<span style="color:#40a070">5</span>))<span style="color:#666">&amp;</span>(c<span style="color:#666">&gt;=</span><span style="color:#40a070">20</span>)<span style="color:#666">&amp;</span>(v<span style="color:#666">.</span>rolling(<span style="color:#40a070">5</span>,min_periods<span style="color:#666">=</span><span style="color:#40a070">1</span>)<span style="color:#666">.</span>mean()<span style="color:#666">&gt;=</span><span style="color:#40a070">1000</span>)
-cond2 <span style="color:#666">=</span> (c<span style="color:#666">&gt;=</span>ma(<span style="color:#40a070">20</span>))<span style="color:#666">&amp;</span>(c<span style="color:#666">&gt;=</span>ma(<span style="color:#40a070">60</span>))<span style="color:#666">&amp;</span>(c<span style="color:#666">&gt;=</span>ma(<span style="color:#40a070">120</span>))<span style="color:#666">&amp;</span>(ma(<span style="color:#40a070">5</span>)<span style="color:#666">&gt;=</span>ma(<span style="color:#40a070">20</span>))<span style="color:#666">&amp;</span>(ma(<span style="color:#40a070">20</span>)<span style="color:#666">&gt;=</span>ma(<span style="color:#40a070">60</span>))<span style="color:#666">&amp;</span>(ma(<span style="color:#40a070">60</span>)<span style="color:#666">&gt;=</span>ma(<span style="color:#40a070">120</span>))
-cond3 <span style="color:#666">=</span> c<span style="color:#666">/</span>c<span style="color:#666">.</span>shift()<span style="color:#666">&gt;</span><span style="color:#40a070">1.05</span>
-entry <span style="color:#666">=</span> cond1<span style="color:#666">&amp;</span>cond2<span style="color:#666">&amp;</span>cond3
-<span style="color:#007020">exit</span> <span style="color:#666">=</span> c<span style="color:#666">&lt;</span>ma(<span style="color:#40a070">5</span>)
-
-<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">datetime</span>
-
-holding_periods <span style="color:#666">=</span> <span style="color:#40a070">8</span>
-start_date <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2011</span>,<span style="color:#40a070">1</span>,<span style="color:#40a070">1</span>)
-end_date <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2021</span>,<span style="color:#40a070">8</span>,<span style="color:#40a070">26</span>)
-
-<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">tw_tradingview.backtrader</span> <span style="color:#007020;font-weight:bold">import</span> backtest_all_twstock
-
-yc,KPI <span style="color:#666">=</span> backtest_all_twstock(entry,<span style="color:#007020">exit</span>,holding_periods,start_date,end_date)
-</code></pre></div><p><img src="/images/backtest_all.png" alt=""><br>
-<img src="/images/heatmap.png" alt=""><br>
-<img src="/images/backtest_log.png" alt=""> <br>
-<img src="/images/backtest_chart.png" alt=""></p>
 <hr>
 <h2 id="contact">Contact</h2>
 <h5 id="網站-httpstaiwan-tradingviewgithubio">網站: <a href="https://taiwan-tradingview.github.io/">https://taiwan-tradingview.github.io/</a></h5>
@@ -478,7 +359,7 @@ yc,KPI <span style="color:#666">=</span> backtest_all_twstock(entry,<span style=
 <a href="https://blog.louie.lu/">blog.louie.lu</a></p>
 <p>若有侵害版權疑慮，請來信或留言告知，我們將儘速移除相關內容。</p>
 
-             <a href="https://github.com/taiwan-tradingview/tw-tradingview" class="btn btn-primary">Download</a>
+             <a href="https://pypi.org/project/tw-tradingview/#description" class="btn btn-primary">Download</a>
             
           </div>
         </div>
@@ -588,11 +469,11 @@ yc,KPI <span style="color:#666">=</span> backtest_all_twstock(entry,<span style=
           <h4 class="text-white mb-5 text-uppercase">new notice</h4>
           <ul class="list-unstyled">
             
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-107/">tw-tradingview 1.0.7版</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-106/">tw-tradingview 1.0.6版</a></li>
+            
             <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-105/">tw-tradingview 1.0.5版</a></li>
-            
-            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-104/">tw-tradingview 1.0.4版</a></li>
-            
-            <li class="mb-3"><a class="text-color" href="https://taiwan-tradingview.github.io/notice/api-103/">tw-tradingview 1.0.3版</a></li>
             
           </ul>
         </div>

@@ -7,7 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;copy; Taiwan-Tradingview金融交易介面 2021</copyright>
-    <lastBuildDate>Tue, 19 Jan 2021 15:27:17 +0800</lastBuildDate><atom:link href="https://taiwan-tradingview.github.io/notice/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Jan 2021 15:27:17 +0800</lastBuildDate><atom:link href="https://taiwan-tradingview.github.io/notice/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tw-tradingview 1.0.7版</title>
+      <link>https://taiwan-tradingview.github.io/notice/api-107/</link>
+      <pubDate>Thu, 21 Jan 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://taiwan-tradingview.github.io/notice/api-107/</guid>
+      <description>Installation Install using pip
+pip install tw_tradingview==1.0.7  本地端環境
+安裝talib並儲存至user  pip install TA_Lib-0.</description>
+    </item>
+    
+    <item>
+      <title>tw-tradingview 1.0.6版</title>
+      <link>https://taiwan-tradingview.github.io/notice/api-106/</link>
+      <pubDate>Wed, 20 Jan 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://taiwan-tradingview.github.io/notice/api-106/</guid>
+      <description>Installation Install using pip
+pip install tw_tradingview==1.0.6  本地端環境
+安裝talib並儲存至user  pip install TA_Lib-0.</description>
+    </item>
+    
     <item>
       <title>tw-tradingview 1.0.5版</title>
       <link>https://taiwan-tradingview.github.io/notice/api-105/</link>
@@ -27,50 +49,6 @@ pip install tw_tradingview==1.0.5  本地端環境
       <guid>https://taiwan-tradingview.github.io/notice/api-104/</guid>
       <description>Installation Install using pip
 pip install tw_tradingview==1.0.4  本地端環境
-安裝talib並儲存至user  pip install TA_Lib-0.</description>
-    </item>
-    
-    <item>
-      <title>tw-tradingview 1.0.3版</title>
-      <link>https://taiwan-tradingview.github.io/notice/api-103/</link>
-      <pubDate>Sun, 17 Jan 2021 15:27:17 +0800</pubDate>
-      
-      <guid>https://taiwan-tradingview.github.io/notice/api-103/</guid>
-      <description>Installation Install using pip
-pip install tw_tradingview==1.0.3  本地端環境
-安裝talib並儲存至user  pip install TA_Lib-0.</description>
-    </item>
-    
-    <item>
-      <title>tw-tradingview 1.0.2版</title>
-      <link>https://taiwan-tradingview.github.io/notice/api-102/</link>
-      <pubDate>Sat, 16 Jan 2021 15:27:17 +0800</pubDate>
-      
-      <guid>https://taiwan-tradingview.github.io/notice/api-102/</guid>
-      <description>Installation Install using pip
-pip install tw_tradingview==1.0.2  本地端環境
-安裝talib並儲存至user  pip install TA_Lib-0.</description>
-    </item>
-    
-    <item>
-      <title>tw-tradingview 1.0.1版</title>
-      <link>https://taiwan-tradingview.github.io/notice/api-101/</link>
-      <pubDate>Fri, 15 Jan 2021 15:27:17 +0800</pubDate>
-      
-      <guid>https://taiwan-tradingview.github.io/notice/api-101/</guid>
-      <description>Installation Install using pip
-pip install tw_tradingview==1.0.1  本地端環境
-安裝talib並儲存至user  pip install TA_Lib-0.</description>
-    </item>
-    
-    <item>
-      <title>tw-tradingview 1.0.0版</title>
-      <link>https://taiwan-tradingview.github.io/notice/api-100/</link>
-      <pubDate>Thu, 14 Jan 2021 15:27:17 +0800</pubDate>
-      
-      <guid>https://taiwan-tradingview.github.io/notice/api-100/</guid>
-      <description>Installation Install using pip
-pip install tw_tradingview==1.0.0  本地端環境
 安裝talib並儲存至user  pip install TA_Lib-0.</description>
     </item>
     
