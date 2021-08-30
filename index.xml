@@ -122,6 +122,17 @@
     </item>
     
     <item>
+      <title>tw-tradingview 1.0.8版</title>
+      <link>https://taiwan-tradingview.github.io/notice/api-108/</link>
+      <pubDate>Fri, 22 Jan 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://taiwan-tradingview.github.io/notice/api-108/</guid>
+      <description>Installation Install using pip
+pip install tw_tradingview==1.0.8  本地端環境
+安裝talib並儲存至user  pip install TA_Lib-0.</description>
+    </item>
+    
+    <item>
       <title>tw-tradingview 1.0.7版</title>
       <link>https://taiwan-tradingview.github.io/notice/api-107/</link>
       <pubDate>Thu, 21 Jan 2021 15:27:17 +0800</pubDate>
@@ -176,6 +187,17 @@ pip install tw_tradingview==1.0.4  本地端環境
     </item>
     
     <item>
+      <title>MACD高績效大盤策略</title>
+      <link>https://taiwan-tradingview.github.io/blog/benchmark-macd/</link>
+      <pubDate>Fri, 01 Jan 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://taiwan-tradingview.github.io/blog/benchmark-macd/</guid>
+      <description>前言 如何判斷市場多空一直是最熱門的話題，而在實際進場投資前資深的老手一定會先判斷目前的市場方向。 舉例來說，假設目前加權指數位在季線以下，那麼就會判斷目前市場偏空看待，而有些更資深的高手會使用更高階的指標和資訊來分析市場局勢，但是實際上到底有沒有效還是需要透過回測來驗證可行性! .
+本篇的大盤策略僅使用了簡單的技術指標:MACD和均線，咦~感覺好像很陽春，但其實有時候越簡單的指標反而預測地越精準，所以大家一定要先將簡單基礎的指標學到精熟，再從實驗中對參數進行優化，最後我們就能打造出高勝率的投資策略囉~ .
+ 進場策略 MACD由負轉正 股價&amp;gt;季線 月線上揚 當日紅K棒  出場策略 MACD正轉負 or 股價跌破季線  開始回測  結論 從過去長達24年回測的結果可以發現MACD搭配均線的交易方式非常穩健，勝率高達57.</description>
+    </item>
+    
+    <item>
       <title>如何架設個人網站</title>
       <link>https://taiwan-tradingview.github.io/course/website/</link>
       <pubDate>Fri, 01 Jan 2021 15:27:17 +0800</pubDate>
@@ -183,60 +205,6 @@ pip install tw_tradingview==1.0.4  本地端環境
       <guid>https://taiwan-tradingview.github.io/course/website/</guid>
       <description>前言 相信很多人都想透過部落格的方式將知識寫成一篇篇的文章方便瀏覽，其中不外乎是使用Medium、Wix、Blogger、Wordpress等來架設網站或設計版面，而我自己是使用Medium來撰寫文章，但使用到後期發現無法滿足個人高自由度的需求XD! .
 首先是版面配置，Medium在更新之後就無法免費調整文章版面配置，結果我的Medium看起來就像是新聞網站完全無美感而言! 不放棄的我再度尋找新的架站機會，所幸在今年在Hahow上發現這堂《 Github 免費架站術！輕鬆打造個人品牌 》 首先我點選學員作業發現網站的完成度很高，再加上版面配置自由度非常高，我就決定手刀買這堂CP值超高的課程囉!!  目錄 《一》設定網站版面 《二》本地端運行網站 《三》客制化網站 《四》部署線上網頁 《五》使用Google功能  《一》設定網站版面 1.</description>
-    </item>
-    
-    <item>
-      <title>Elegant Light Box Paper Cut Dioramas</title>
-      <link>https://taiwan-tradingview.github.io/blog/blog-post-1/</link>
-      <pubDate>Sat, 06 Jul 2019 15:27:17 +0600</pubDate>
-      
-      <guid>https://taiwan-tradingview.github.io/blog/blog-post-1/</guid>
-      <description>The standard Lorem Ipsum passage, used since the 1500s Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
-    <item>
-      <title>Elegant Light Box Paper Cut Dioramas</title>
-      <link>https://taiwan-tradingview.github.io/blog/blog-post-2/</link>
-      <pubDate>Sat, 06 Jul 2019 15:27:17 +0600</pubDate>
-      
-      <guid>https://taiwan-tradingview.github.io/blog/blog-post-2/</guid>
-      <description>The standard Lorem Ipsum passage, used since the 1500s Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
-    <item>
-      <title>Elegant Light Box Paper Cut Dioramas</title>
-      <link>https://taiwan-tradingview.github.io/blog/blog-post-3/</link>
-      <pubDate>Sat, 06 Jul 2019 15:27:17 +0600</pubDate>
-      
-      <guid>https://taiwan-tradingview.github.io/blog/blog-post-3/</guid>
-      <description>The standard Lorem Ipsum passage, used since the 1500s Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
-    <item>
-      <title>Elegant Light Box Paper Cut Dioramas</title>
-      <link>https://taiwan-tradingview.github.io/blog/blog-post-4/</link>
-      <pubDate>Sat, 06 Jul 2019 15:27:17 +0600</pubDate>
-      
-      <guid>https://taiwan-tradingview.github.io/blog/blog-post-4/</guid>
-      <description>The standard Lorem Ipsum passage, used since the 1500s Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
-    <item>
-      <title>Elegant Light Box Paper Cut Dioramas</title>
-      <link>https://taiwan-tradingview.github.io/blog/blog-post-5/</link>
-      <pubDate>Sat, 06 Jul 2019 15:27:17 +0600</pubDate>
-      
-      <guid>https://taiwan-tradingview.github.io/blog/blog-post-5/</guid>
-      <description>The standard Lorem Ipsum passage, used since the 1500s Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
-    <item>
-      <title>Elegant Light Box Paper Cut Dioramas</title>
-      <link>https://taiwan-tradingview.github.io/blog/blog-post-6/</link>
-      <pubDate>Sat, 06 Jul 2019 15:27:17 +0600</pubDate>
-      
-      <guid>https://taiwan-tradingview.github.io/blog/blog-post-6/</guid>
-      <description>The standard Lorem Ipsum passage, used since the 1500s Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
     </item>
     
     <item>

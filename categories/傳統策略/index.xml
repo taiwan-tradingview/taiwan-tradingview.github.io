@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>傳統策略 on Taiwan-Tradingview | 金融交易介面</title>
+    <link>https://taiwan-tradingview.github.io/categories/%E5%82%B3%E7%B5%B1%E7%AD%96%E7%95%A5/</link>
+    <description>Recent content in 傳統策略 on Taiwan-Tradingview | 金融交易介面</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; Taiwan-Tradingview金融交易介面 2021</copyright>
+    <lastBuildDate>Fri, 01 Jan 2021 15:27:17 +0800</lastBuildDate><atom:link href="https://taiwan-tradingview.github.io/categories/%E5%82%B3%E7%B5%B1%E7%AD%96%E7%95%A5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MACD高績效大盤策略</title>
+      <link>https://taiwan-tradingview.github.io/blog/benchmark-macd/</link>
+      <pubDate>Fri, 01 Jan 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://taiwan-tradingview.github.io/blog/benchmark-macd/</guid>
+      <description>前言 如何判斷市場多空一直是最熱門的話題，而在實際進場投資前資深的老手一定會先判斷目前的市場方向。 舉例來說，假設目前加權指數位在季線以下，那麼就會判斷目前市場偏空看待，而有些更資深的高手會使用更高階的指標和資訊來分析市場局勢，但是實際上到底有沒有效還是需要透過回測來驗證可行性! .
+本篇的大盤策略僅使用了簡單的技術指標:MACD和均線，咦~感覺好像很陽春，但其實有時候越簡單的指標反而預測地越精準，所以大家一定要先將簡單基礎的指標學到精熟，再從實驗中對參數進行優化，最後我們就能打造出高勝率的投資策略囉~ .
+ 進場策略 MACD由負轉正 股價&amp;gt;季線 月線上揚 當日紅K棒  出場策略 MACD正轉負 or 股價跌破季線  開始回測  結論 從過去長達24年回測的結果可以發現MACD搭配均線的交易方式非常穩健，勝率高達57.</description>
+    </item>
+    
+  </channel>
+</rss>
