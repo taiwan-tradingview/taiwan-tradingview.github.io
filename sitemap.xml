@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://taiwan-tradingview.github.io/event/</loc>
-    <lastmod>2030-03-09T15:27:17+06:00</lastmod>
-  </url><url>
     <loc>https://taiwan-tradingview.github.io/event/event-1/</loc>
     <lastmod>2030-03-09T15:27:17+06:00</lastmod>
   </url><url>
@@ -24,6 +21,9 @@
     <lastmod>2030-03-09T15:27:17+06:00</lastmod>
   </url><url>
     <loc>https://taiwan-tradingview.github.io/</loc>
+    <lastmod>2030-03-09T15:27:17+06:00</lastmod>
+  </url><url>
+    <loc>https://taiwan-tradingview.github.io/event/</loc>
     <lastmod>2030-03-09T15:27:17+06:00</lastmod>
   </url><url>
     <loc>https://taiwan-tradingview.github.io/course/pypi/</loc>
@@ -122,28 +122,7 @@
     <loc>https://taiwan-tradingview.github.io/categories/english-learning/</loc>
     <lastmod>2019-07-06T15:27:17+06:00</lastmod>
   </url><url>
-    <loc>https://taiwan-tradingview.github.io/research/research-1/</loc>
-    <lastmod>2019-07-06T15:27:17+06:00</lastmod>
-  </url><url>
-    <loc>https://taiwan-tradingview.github.io/research/research-2/</loc>
-    <lastmod>2019-07-06T15:27:17+06:00</lastmod>
-  </url><url>
-    <loc>https://taiwan-tradingview.github.io/research/research-3/</loc>
-    <lastmod>2019-07-06T15:27:17+06:00</lastmod>
-  </url><url>
-    <loc>https://taiwan-tradingview.github.io/research/research-4/</loc>
-    <lastmod>2019-07-06T15:27:17+06:00</lastmod>
-  </url><url>
-    <loc>https://taiwan-tradingview.github.io/research/research-5/</loc>
-    <lastmod>2019-07-06T15:27:17+06:00</lastmod>
-  </url><url>
-    <loc>https://taiwan-tradingview.github.io/research/research-6/</loc>
-    <lastmod>2019-07-06T15:27:17+06:00</lastmod>
-  </url><url>
     <loc>https://taiwan-tradingview.github.io/categories/mathmatics-learning/</loc>
-    <lastmod>2019-07-06T15:27:17+06:00</lastmod>
-  </url><url>
-    <loc>https://taiwan-tradingview.github.io/research/</loc>
     <lastmod>2019-07-06T15:27:17+06:00</lastmod>
   </url><url>
     <loc>https://taiwan-tradingview.github.io/tags/rules/</loc>
