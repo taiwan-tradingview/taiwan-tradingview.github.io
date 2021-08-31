@@ -68,6 +68,17 @@
     </item>
     
     <item>
+      <title>tw-tradingview 1.0.9版</title>
+      <link>https://taiwan-tradingview.github.io/notice/api-109/</link>
+      <pubDate>Sat, 23 Jan 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://taiwan-tradingview.github.io/notice/api-109/</guid>
+      <description>Installation Install using pip
+pip install tw_tradingview==1.0.9  本地端環境
+安裝talib並儲存至user  pip install TA_Lib-0.</description>
+    </item>
+    
+    <item>
       <title>tw-tradingview 1.0.8版</title>
       <link>https://taiwan-tradingview.github.io/notice/api-108/</link>
       <pubDate>Fri, 22 Jan 2021 15:27:17 +0800</pubDate>
